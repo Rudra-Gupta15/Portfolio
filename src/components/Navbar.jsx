@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: 'Skills',     href: '#skills' },
   { label: 'Experience', href: '#work' },
   { label: 'Contact',    href: '#contact' },
+  { label: 'Resume',     href: '/resume.pdf' },
 ];
 
 export default function Navbar() {
@@ -59,12 +60,14 @@ export default function Navbar() {
             return (
               <li key={label}>
                 <a
-                  href={href}
-                  className={active === id ? 'active' : ''}
-                  onClick={e => handleNav(e, href)}
-                >
-                  {label}
-                </a>
+                   href={href}
+                   className={active === id ? 'active' : ''}
+                   onClick={e => href.startsWith('#') ? handleNav(e, href) : undefined}
+                   target={href.endsWith('.pdf') ? '_blank' : undefined}
+                   rel={href.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
+                  >
+                   {label}
+                 </a>
               </li>
             );
           })}

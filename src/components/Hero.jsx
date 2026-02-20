@@ -115,7 +115,7 @@ export default function Hero() {
           </div>
           <p className="hero-desc">Crafting intelligent systems and immersive experiences at the intersection of hardware and AI.</p>
           <div className="hero-btns">
-            <a href="#" className="btn-gold">Download CV</a>
+            <a href="/resume.pdf" download="Rudra_Gupta_Resume.pdf" className="btn-gold">Download CV</a>
             <a href="#contact" className="btn-ghost" onClick={e => handleNav(e, '#contact')}>Contact Me</a>
           </div>
           <div className="scroll-cue">

@@ -172,6 +172,29 @@ const PROJECTS = [
     outcome: 'Automated cross-device industrial food production system',
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
   },
+  {
+  cat: 'web',
+  image: '/images/proj-yt-bookmark.png',
+  emoji: '🔖',
+  type: 'Chrome Extension · Manifest V3',
+  title: 'YouTube Timestamp Bookmarks',
+  subtitle: 'Browser Extension',
+  gradient: ['#8b0000', '#FF0000'],
+  gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
+  overview: 'A Chrome extension that lets you bookmark exact timestamps inside any YouTube video and jump back to them instantly — with a custom in-player button and a full popup panel.',
+  bullets: [
+    'Red bookmark button injected directly into the YouTube player controls',
+    'Popup panel shows video thumbnail, title, and live playback position',
+    'One-click seek to any saved timestamp — sorted and persistent per video',
+    'Per-video storage using chrome.storage.local — no server, 100% local',
+    'Duplicate guard prevents saving two bookmarks within 2 seconds',
+    'Handles YouTube SPA navigation — works across page changes without reload',
+  ],
+  techDetails: 'Built with Manifest V3 — the current Chrome extension standard. Uses chrome.scripting.executeScript to read and set video currentTime. MutationObserver handles YouTube\'s SPA routing to re-inject the button on navigation.',
+  outcome: 'Native YouTube integration with zero dependencies — pure browser APIs',
+  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
+  github: 'https://github.com/Rudra-Gupta15/YouTube_Bookmark',
+},
 ];
 
 const TABS = ['all', 'aiml', 'web', 'hardware'];
