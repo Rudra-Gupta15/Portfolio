@@ -20,7 +20,7 @@ const PROJECTS = [
     techDetails: 'Compares SVM, Random Forest, KNN, Logistic Regression & more. Auto-selects best model per dataset using cross-validation scoring.',
     outcome: 'Accelerates ML development by benchmarking performance fast',
     tags: ['Matplotlib', 'Sklearn', 'Python', 'Analytics', 'NumPy'],
-    github: 'https://github.com/Rudra-Gupta15',
+    github: 'https://github.com/Rudra-Gupta15/Algorithm_Comparison',
   },
   {
     cat: 'aiml web',
@@ -42,8 +42,7 @@ const PROJECTS = [
     techDetails: 'Model trained in Google Colab using Pandas feature engineering. Cosine Similarity computes distances across cast, plot, and genre vectors. Flask-style Streamlit frontend.',
     outcome: 'Live Streamlit app for instant personalized movie discovery',
     tags: ['Python', 'Scikit-learn', 'Streamlit', 'TMDB API', 'Pandas'],
-    github: 'https://github.com/Rudra-Gupta15',
-    live: 'https://streamlit.io',
+    github: 'https://github.com/Rudra-Gupta15/movie-recommender-system',
   },
   {
     cat: 'web',
@@ -65,7 +64,8 @@ const PROJECTS = [
     techDetails: 'No canvas or game engine — all game physics via React state and hooks. CSS transforms handle movement. Collision detection via bounding-box logic in useEffect.',
     outcome: 'Full browser game with boss fight — zero game engine, pure React',
     tags: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'Game Dev'],
-    github: 'https://github.com/Rudra-Gupta15',
+    github: 'https://github.com/Rudra-Gupta15/Snow_Run_Game',
+    live: 'https://snow-run-game.vercel.app/',
   },
   {
     cat: 'aiml',
@@ -86,7 +86,7 @@ const PROJECTS = [
     techDetails: 'YOLOv8 handles bounding box detection, CNN handles classification. Custom smoothing reduces flicker on borderline predictions.',
     outcome: 'Robust detection across 3 color scales in real-time',
     tags: ['YOLOv8', 'OpenCV', 'CNN', 'Tkinter', 'Python'],
-    github: 'https://github.com/Rudra-Gupta15',
+    github: 'https://github.com/Rudra-Gupta15/Sign-Language-Translator-YOLO-CNN',
   },
   {
     cat: 'aiml web',
@@ -107,7 +107,8 @@ const PROJECTS = [
     techDetails: 'Feature engineering: lag features (t-1, t-7, t-30) + seasonal interaction terms. Flask API serves predictions to a vanilla JS frontend.',
     outcome: 'Complex ML results delivered through an interactive dashboard',
     tags: ['Scikit-learn', 'Flask', 'JavaScript', 'Python', 'NumPy'],
-    github: 'https://github.com/Rudra-Gupta15',
+    github: 'https://github.com/Rudra-Gupta15/Hyperlocal_Weather_Impact_Prediction',
+    live: 'https://hyperlocal-weather-impact-predictio-tau.vercel.app/',
   },
   {
     cat: 'aiml',
@@ -128,7 +129,7 @@ const PROJECTS = [
     techDetails: 'Trained on Cleveland Heart Disease dataset. Serialized with joblib for fast inference. Flask API serves predictions in <50ms.',
     outcome: 'Early detection bridge for cardiovascular risks',
     tags: ['Gradient Boosting', 'Flask', 'Sklearn', 'Pandas', 'Python'],
-    github: 'https://github.com/Rudra-Gupta15',
+    github: 'https://github.com/Rudra-Gupta15/heart-disease-prediction',
   },
   {
     cat: 'web aiml',
@@ -149,7 +150,7 @@ const PROJECTS = [
     techDetails: 'Scoring engine weights specs by user priority. Flask API reads from regularly updated CSV dataset with 500+ devices.',
     outcome: 'Bridged hardware specs with user purchasing decisions',
     tags: ['Flask', 'Python', 'JavaScript', 'CSV', 'REST API'],
-    github: 'https://github.com/Rudra-Gupta15',
+    github: 'https://github.com/Rudra-Gupta15/Advance-device-recommendation-system',
   },
   {
     cat: 'hardware',
@@ -170,7 +171,6 @@ const PROJECTS = [
     techDetails: 'ESP32 microcontrollers with MQTT protocol. Temperature, pressure, and flow sensors feed real-time monitoring dashboards.',
     outcome: 'Automated cross-device industrial food production system',
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
-    github: 'https://github.com/Rudra-Gupta15',
   },
 ];
 

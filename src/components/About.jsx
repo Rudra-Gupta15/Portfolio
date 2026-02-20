@@ -56,13 +56,20 @@ export default function About() {
             <span className="ab-dot" />
             Electronics Engineer · AI/ML Developer
           </div>
-          <p className="ab-bio-text">
-            I'm an <strong>Electronics Engineering undergraduate</strong> passionate about building intelligent, real-world systems. From real-time sign language recognition to violence detection — I bridge hardware and AI to solve meaningful problems.
-          </p>
-          <p className="ab-bio-text">
-            I enjoy the full journey: concept → model → deployment. My stack spans Python, C/C++, OpenCV, Flask, and frontend tools.{' '}
-            <strong style={{ color: '#a855f7' }}>I'm also deeply into game development</strong> — building interactive experiences with Unity and C#.
-          </p>
+<p className="ab-bio-text">
+  I'm an <strong>Electronics Engineering undergraduate</strong> passionate about building intelligent, real-world systems. 
+  I bridge hardware and AI to solve meaningful problems through diverse applications: from <strong>Real-Time Sign Language Recognition</strong> and <strong>Violence Detection</strong> to high-precision systems like my <strong>Hyperlocal Weather Predictor</strong> and <strong>Heart Disease Prediction</strong> apps. 
+  My portfolio also spans intelligent <strong>Recommendation Engines</strong> and deep <strong>ML Algorithm Comparisons</strong>.
+</p>
+
+<p className="ab-bio-text">
+  I thrive on the full journey: <strong>Concept → Model → Deployment</strong>. My technical stack spans Python, C/C++, OpenCV, and Flask. 
+</p>
+
+<p className="ab-bio-text">
+  <strong style={{ color: '#a855f7' }}>Beyond AI, I’m deeply invested in Game Development</strong>, 
+  using Unity and C# to craft immersive, logic-driven experiences. For me, whether it’s a computer vision system or a 5-level 2D platformer, the goal is the same: <strong>building seamless, interactive technology that works.</strong>
+</p>
           <div className="ab-trait-row">
             {TRAITS.map(t => (
               <span key={t.label} className="ab-trait">{t.icon} {t.label}</span>
