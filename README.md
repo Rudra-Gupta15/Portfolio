@@ -5,7 +5,12 @@ Portfolio of Rudra Kumar Gupta — AI/ML Engineer specializing in Machine Learni
 ## 🚀 Demo
 
 <p align="center">
-  <img width="2851" height="1469" alt="Screenshot 2026-02-20 201059" src="https://github.com/user-attachments/assets/86b6787a-ba4f-4978-9c6b-7557b8a0d3e8" />
+  <img width="851" height="469" alt="Screenshot 2026-02-20 201059" src="https://github.com/user-attachments/assets/86b6787a-ba4f-4978-9c6b-7557b8a0d3e8" />
+</p>
+<p align="center">
+  <a href="https://rudra-gupta.vercel.app/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Site-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo" height="40">
+  </a>
 </p>
 
 ## Features
