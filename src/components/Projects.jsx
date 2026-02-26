@@ -108,7 +108,7 @@ const PROJECTS = [
     outcome: 'Complex ML results delivered through an interactive dashboard',
     tags: ['Scikit-learn', 'Flask', 'JavaScript', 'Python', 'NumPy'],
     github: 'https://github.com/Rudra-Gupta15/Hyperlocal_Weather_Impact_Prediction',
-    live: 'https://hyperlocal-weather-impact-predictio-tau.vercel.app/',
+    live: 'https://weather-app-15-henna.vercel.app/',
   },
   {
     cat: 'aiml',
