@@ -50,6 +50,7 @@ const BADGES = [
     { label: 'Arduino', bg: '#00979D', icon: 'https://cdn.simpleicons.org/arduino/ffffff' },
     { label: 'ngrok', bg: '#1F1E37', border: '#444', icon: 'https://cdn.simpleicons.org/ngrok/ffffff' },
     { label: 'Cloudflare', bg: '#F38020', icon: 'https://cdn.simpleicons.org/cloudflare/ffffff' },
+    { label: 'Kaggle', bg: '#20BEFF', icon: 'https://cdn.simpleicons.org/kaggle/ffffff' },
   ]},
 ];
 
