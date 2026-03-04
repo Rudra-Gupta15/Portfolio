@@ -195,6 +195,29 @@ const PROJECTS = [
   tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
   github: 'https://github.com/Rudra-Gupta15/YouTube_Bookmark',
 },
+{
+    cat: 'aiml web',
+    image: '/images/proj-rud-ai.png',
+    emoji: '🤖',
+    type: 'Conversational AI · Flask',
+    title: 'RUD AI',
+    subtitle: 'Multi-Mode AI Assistant',
+    gradient: ['#4a5a00', '#808000'],
+    gradientBg: 'linear-gradient(135deg, #1a1f00 0%, #4a5a00 50%, #808000 100%)',
+    overview: 'A fully offline conversational AI assistant with 6 specialized modes — powered by Ollama (llama3.1) and a custom Flask backend. No API key, no cost, runs entirely on local hardware.',
+    bullets: [
+      '6 intelligent modes: Normal, Banking, Cooking, Study, Entertainment, Fun',
+      'Full conversation memory — context-aware responses across the session',
+      'Banking mode powered by a custom 100+ Q&A knowledge base (CSV)',
+      'Cooking mode with auto step-by-step recipe formatting',
+      'Responsive UI — works seamlessly on mobile and desktop',
+      '100% free — zero cloud dependency, runs on local Ollama runtime',
+    ],
+    techDetails: 'Flask backend routes requests to Ollama (llama3.1) with mode-specific system prompts. Banking knowledge base loaded from CSV into the prompt context. Frontend uses vanilla JS with auto-resizing textarea and animated typing indicator.',
+    outcome: 'Production-grade local AI assistant — 6 modes, zero API cost',
+    tags: ['Python', 'Flask', 'Ollama', 'JavaScript', 'NLP'],
+    github: 'https://github.com/Rudra-Gupta15/Conversational_AI',
+  },
 ];
 
 const TABS = ['all', 'aiml', 'web', 'hardware'];
