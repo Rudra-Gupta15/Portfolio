@@ -34,9 +34,18 @@ export default function Contact() {
             <div className="c-info"><div className="c-lbl">GitHub</div><div className="c-val">Rudra-Gupta15</div></div>
             <span className="c-ext">↗</span>
           </a>
+            
+          <a href="https://www.kaggle.com/rudrakumargupta" target="_blank" rel="noreferrer" className="c-item">
+            <div className="c-icon-wrap">📊</div>
+            <div className="c-info"><div className="c-lbl">Kaggle</div><div className="c-val">rudrakumargupta</div></div>
+            <span className="c-ext">↗</span>
+          </a>
+
+          
           <div className="contact-socials">
             <a href="https://linkedin.com/in/rudra-kumar-gupta" target="_blank" rel="noreferrer" className="soc-btn">💼</a>
             <a href="https://github.com/Rudra-Gupta15" target="_blank" rel="noreferrer" className="soc-btn">🐙</a>
+            <a href="https://www.kaggle.com/rudrakumargupta" target="_blank" rel="noreferrer" className="soc-btn">📊</a>
           </div>
         </div>
         <div className="contact-right">

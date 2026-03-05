@@ -194,6 +194,31 @@ const PROJECTS = [
   outcome: 'Native YouTube integration with zero dependencies — pure browser APIs',
   tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
   github: 'https://github.com/Rudra-Gupta15/YouTube_Bookmark',
+  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/rud-ai-multi-mode-conversational-q-and-a-dataset',
+},
+{
+  cat: 'aiml web',
+  image: '/images/proj-banking-chatbot.png',
+  emoji: '🏦',
+  type: 'Machine Learning · Flask',
+  title: 'Banking ChatBot',
+  subtitle: 'TF-IDF + Cosine Similarity',
+  gradient: ['#003366', '#0066cc'],
+  gradientBg: 'linear-gradient(135deg, #000d1a 0%, #003366 50%, #0066cc 100%)',
+  overview: 'A banking FAQ chatbot built with Python, Flask, and ML — no LLM, no API key, runs entirely offline. Uses TF-IDF vectorization and Cosine Similarity to match user questions against 100+ banking Q&A pairs with confidence scoring.',
+  bullets: [
+    '🤖 ML-powered matching — TF-IDF vectorization + Cosine Similarity for best answer retrieval',
+    '🏦 100+ Banking Q&A pairs — accounts, loans, UPI, fraud, and general finance',
+    '📂 5 categories — Basic Accounts, Digital Banking, Loans & Interest, Operations & Security, General Finance',
+    '💬 Rule-based fallback — handles greetings, personal queries, and small talk',
+    '📊 Confidence scoring — returns match confidence % with every response',
+    '⚡ Evolved into RUD AI — the foundation for a full multi-mode Ollama-powered assistant',
+  ],
+  techDetails: 'Flask backend loads a pre-trained TF-IDF vectorizer and question vectors from Pickle files. On each query, Cosine Similarity is computed against all stored vectors — best match above 0.15 threshold is returned. Rule-based layer intercepts greetings and personal queries before ML inference. Frontend uses vanilla JS with a clean chat UI.',
+  outcome: 'Offline ML chatbot — 100+ Q&A pairs, zero API cost, confidence-scored responses',
+  tags: ['Python', 'Flask', 'Scikit-learn', 'TF-IDF', 'NLP', 'JavaScript'],
+  github: 'https://github.com/Rudra-Gupta15/Banking-ChatBot',
+  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/banking-faq-dataset-for-chatbot-training',
 },
 {
     cat: 'aiml web',
@@ -304,6 +329,12 @@ function ProjectModal({ project, onClose }) {
                   Live Demo ↗
                 </a>
               )}
+              {project.kaggle && (
+                <a href={project.kaggle} target="_blank" rel="noreferrer"
+                 className="pmodal-github" style={{ background: '#20beff', color: '#fff' }}>
+                Kaggle ↗
+              </a>
+               )}
               <a href={project.github} target="_blank" rel="noreferrer"
                 className="pmodal-github"
                 style={{ background: `linear-gradient(135deg, ${g0}, ${g1})` }}>
