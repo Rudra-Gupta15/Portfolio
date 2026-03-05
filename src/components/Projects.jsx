@@ -194,7 +194,6 @@ const PROJECTS = [
   outcome: 'Native YouTube integration with zero dependencies — pure browser APIs',
   tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
   github: 'https://github.com/Rudra-Gupta15/YouTube_Bookmark',
-  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/rud-ai-multi-mode-conversational-q-and-a-dataset',
 },
 {
   cat: 'aiml web',
@@ -242,6 +241,7 @@ const PROJECTS = [
     outcome: 'Production-grade local AI assistant — 6 modes, zero API cost',
     tags: ['Python', 'Flask', 'Ollama', 'JavaScript', 'NLP'],
     github: 'https://github.com/Rudra-Gupta15/Conversational_AI',
+    kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/rud-ai-multi-mode-conversational-q-and-a-dataset',
   },
 ];
 
