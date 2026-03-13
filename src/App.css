@@ -71,6 +71,14 @@ body::before {
   box-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
 
+/* Hide Navbar when project modal is open */
+body.modal-open .navbar {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
 /* Hexagon logo */
 .nav-logo-hex {
   position: relative;

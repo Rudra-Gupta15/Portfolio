@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 
 const PROJECTS = [
   {
@@ -276,14 +277,19 @@ const TABS_LABELS = { all: 'All', aiml: 'AI / ML', web: 'Web & Game', hardware: 
 function ProjectModal({ project, onClose }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
     const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', handleKey);
-    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', handleKey); };
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+      window.removeEventListener('keydown', handleKey);
+    };
   }, [onClose]);
   if (!project) return null;
   const [g0, g1] = project.gradient;
 
-  return (
+  return createPortal(
     <div className="pmodal-overlay" onClick={onClose}>
       <div className="pmodal pmodal-v2" onClick={e => e.stopPropagation()}>
 
@@ -356,10 +362,10 @@ function ProjectModal({ project, onClose }) {
               )}
               {project.kaggle && (
                 <a href={project.kaggle} target="_blank" rel="noreferrer"
-                 className="pmodal-github" style={{ background: '#20beff', color: '#fff' }}>
-                Kaggle ↗
-              </a>
-               )}
+                  className="pmodal-github" style={{ background: '#20beff', color: '#fff' }}>
+                  Kaggle ↗
+                </a>
+              )}
               <a href={project.github} target="_blank" rel="noreferrer"
                 className="pmodal-github"
                 style={{ background: `linear-gradient(135deg, ${g0}, ${g1})` }}>
@@ -369,7 +375,8 @@ function ProjectModal({ project, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
