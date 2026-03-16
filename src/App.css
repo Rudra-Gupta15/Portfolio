@@ -3838,3 +3838,92 @@ footer {
   .abt-stats-grid { grid-template-columns: 1fr 1fr; }
   .abt-specs-row { grid-template-columns: 1fr; }
 }
+
+/* ── Publications ─────────────────────────────────── */
+#publications { padding: 80px 0; }
+
+.pub-card {
+  display: flex;
+  gap: 36px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 98, 155, 0.35);
+  border-radius: 20px;
+  padding: 32px;
+  margin-top: 44px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.pub-card:hover {
+  border-color: rgba(0, 98, 155, 0.75);
+  box-shadow: 0 0 40px rgba(0, 98, 155, 0.12);
+}
+
+/* Left — certificate image */
+.pub-card-left { flex-shrink: 0; }
+.pub-cert-img {
+  width: 280px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  object-fit: cover;
+  display: block;
+}
+
+/* Right — content */
+.pub-card-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+}
+
+.pub-badge-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.pub-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pub-badge.ieee      { background: #00629b22; border: 1px solid #00629b66; color: #4db8ff; }
+.pub-badge.conf      { background: #7c3aed22; border: 1px solid #7c3aed66; color: #c084fc; }
+.pub-badge.presented { background: #06b6d422; border: 1px solid #06b6d466; color: #67e8f9; }
+
+.pub-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  line-height: 1.45;
+  margin: 0;
+}
+.pub-conf { font-size: 0.88rem; color: #94a3b8; }
+.pub-conf strong { color: #cbd5e1; }
+
+.pub-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.pub-desc {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.pub-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.pub-tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  background: rgba(0, 98, 155, 0.12);
+  border: 1px solid rgba(0, 98, 155, 0.3);
+  color: #4db8ff;
+}
+
+@media (max-width: 768px) {
+  .pub-card { flex-direction: column; }
+  .pub-cert-img { width: 100%; }
+}

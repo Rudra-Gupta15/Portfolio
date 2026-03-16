@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 const CERTS = [
   {
@@ -86,20 +87,6 @@ const CERTS = [
     verifyUrl: null,
   },
   {
-    icon: '⚡',
-    image: '/images/cert-fpga.jpg',
-    title: 'FPGA Timings P1: Static Timing Analysis with Vivado 2024',
-    program: 'Udemy Course',
-    issuer: 'Udemy · Kumar Khandagle',
-    date: 'Dec 4, 2025',
-    desc: 'In-depth STA concepts with Vivado 2024 — setup/hold timing, path analysis, constraint writing, and timing closure techniques.',
-    accent: '#f97316',
-    accentRgb: '249,115,22',
-    tags: ['FPGA', 'Vivado', 'STA', 'Hardware'],
-    badge: 'Completed',
-    verifyUrl: 'https://ude.my/UC-ce9653c5-d69d-404f-9f27-911926731761',
-  },
-  {
     icon: '✈️',
     image: '/images/cert-aeromodel.jpg',
     title: 'Glider Making Workshop',
@@ -130,12 +117,25 @@ const CERTS = [
 ];
 
 function CertModal({ cert, onClose }) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    document.body.classList.add('modal-open');
+    const handleKey = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+      window.removeEventListener('keydown', handleKey);
+    };
+  }, [onClose]);
+
   if (!cert) return null;
-  return (
+
+  return createPortal(
     <div className="cert-modal-overlay" onClick={onClose}>
       <div className="cert-modal" onClick={e => e.stopPropagation()} style={{ '--cm-accent': cert.accent }}>
         <button className="cert-modal-close" onClick={onClose}>✕</button>
-        
+
         {/* Header */}
         <div className="cert-modal-header" style={{ background: `linear-gradient(135deg, color-mix(in srgb, ${cert.accent} 25%, #0d1f3c), #0d1f3c)`, borderBottom: `1px solid ${cert.accent}33` }}>
           <div className="cert-modal-header-top">
@@ -174,7 +174,47 @@ function CertModal({ cert, onClose }) {
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
+  );
+}
+
+export function Publications() {
+  return (
+    <section id="publications">
+      <div className="sec-label">05 — Research & Publications</div>
+      <h2 className="sec-h">Published <em>Work</em></h2>
+
+      <div style={{ marginTop: 44 }}>
+        <div className="pub-card">
+          <div className="pub-card-left">
+            <img src="/images/cert-ieee-icetems.jpeg" alt="IEEE Certificate" className="pub-cert-img" />
+          </div>
+          <div className="pub-card-right">
+            <div className="pub-badge-row">
+              <span className="pub-badge ieee">IEEE</span>
+              <span className="pub-badge conf">International Conference</span>
+              <span className="pub-badge presented">Presented</span>
+            </div>
+            <h3 className="pub-title">Sign Language Translator using Machine Learning Algorithms on RGB Color Space</h3>
+            <div className="pub-conf">3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong></div>
+            <div className="pub-meta">
+              <span>📅 6–7 March 2026</span>
+              <span>📍 YCCE, Nagpur, India</span>
+              <span>🏛️ IEEE Maharashtra Section</span>
+            </div>
+            <p className="pub-desc">
+              Researched and presented a real-time sign language recognition system leveraging machine learning algorithms on RGB color space data. The system translates hand gestures into readable text, bridging communication for the hearing-impaired community.
+            </p>
+            <div className="pub-tags">
+              {['Machine Learning', 'Computer Vision', 'Sign Language', 'RGB Color Space', 'IEEE'].map(t => (
+                <span key={t} className="pub-tag">{t}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -192,7 +232,7 @@ export function Certifications() {
 
   return (
     <section id="certs">
-      <div className="sec-label">05 — Certifications & Courses</div>
+      <div className="sec-label">06 — Certifications & Courses</div>
 
       <div className="cert-header-row">
         <div>
@@ -220,8 +260,7 @@ export function Certifications() {
               >
                 <div className="cert-tile-glow" />
                 <div className="cert-tile-bar" />
-                
-                {/* Image preview strip if cert has image */}
+
                 {c.image && (
                   <div className="cert-tile-img-strip">
                     <img src={c.image} alt={c.title} className="cert-tile-img" />
@@ -256,7 +295,7 @@ export function Certifications() {
 export function Achievements() {
   return (
     <section id="achievements">
-      <div className="sec-label">06 — Leadership & Achievements</div>
+      <div className="sec-label">07 — Leadership & Achievements</div>
       <h2 className="sec-h">Beyond <em>Code</em></h2>
       <div style={{ marginTop: 44 }}>
         <div className="lead-card">

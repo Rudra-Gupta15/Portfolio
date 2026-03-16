@@ -75,8 +75,8 @@ const PROJECTS = [
     type: 'College Major · AI/ML/IoT',
     title: 'ASL Recognition',
     subtitle: 'Multi-Scale Machine Learning',
-    gradient: ['#1a6b4a', '#2d9b6f'],
-    gradientBg: 'linear-gradient(135deg, #0f4a35 0%, #1a6b4a 50%, #2d9b6f 100%)',
+gradient: ['#c8b89a', '#e8d5b7'],
+gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     overview: 'Real-time American Sign Language recognition using 3 parallel ML models trained across RGB, HSV, and Grayscale — achieving robust detection regardless of lighting conditions.',
     bullets: [
       '3 parallel models (RGB/HSV/Grayscale) — 9,000 training images total',
@@ -269,6 +269,66 @@ const PROJECTS = [
     live: 'https://prepmaster-gold.vercel.app',
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/prepmaster-placement-and-interview-quiz-questions',
   },
+  {
+  cat: 'ai tools',
+  image: '/images/proj-aimailassistant.png',
+  emoji: '🤖',
+  type: 'AI Assistant · Python · FastAPI',
+  title: 'AI Mail Assistant',
+  subtitle: 'Local LLM-Powered Email & Messaging Automation',
+gradient: ['#1a1a2e', '#4a4a6a'],
+gradientBg: 'linear-gradient(135deg, #0f0f0f 0%, #2a2a3e 50%, #6b6b8a 100%)',
+  overview:
+    'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
+  bullets: [
+    'Smart Auto-Reply engine classifies messages as AUTO or HUMAN (needs attention)',
+    'Approval Center — review and whitelist senders, with a manual "Process" button for complex messages',
+    'AI Agent Signature — every AI-generated reply includes a transparency disclaimer footer',
+    'Smart Timestamps — displays exact arrival date and time of pending emails on the dashboard',
+    'Gmail Integration via Google Cloud Console; WhatsApp Integration via Twilio API',
+    'Privacy-First: all AI processing runs locally via Ollama — no data leaves your machine',
+    'Dynamic sidebar navigation: Overview, Connection, API Docs, Helper, and Automation Stats',
+    'Built-in one-click "How to use" guide accessible from the sidebar',
+  ],
+  techDetails:
+    'Backend built with FastAPI and Python. AI processing handled entirely locally via Ollama running Llama 3.1. Gmail sync via Google Cloud Console OAuth2. WhatsApp integration via Twilio API. Pydantic models for data validation. Structured into api, services, models, and utils layers. Frontend served as static HTML/CSS/JS assets.',
+  outcome:
+    'Production-ready local AI assistant — zero cloud AI cost, full privacy, Gmail + WhatsApp automation in one dashboard',
+  tags: ['Python', 'FastAPI', 'Ollama', 'Llama 3.1', 'Gmail API', 'Twilio', 'Pydantic'],
+  github: 'https://github.com/Rudra-Gupta15/ai-mail-assistant',
+  live: '',
+  kaggle: '',
+},
+{
+  cat: 'ai tools',
+  image: '/images/proj-resumeai.png',
+  emoji: '🚀',
+  type: 'AI Tool · React · Groq · Ollama',
+  title: 'ResumeAI',
+  subtitle: 'Premium ATS Resume Analyzer',
+  gradient: ['#0f2027', '#1a6b4a'],
+  gradientBg: 'linear-gradient(135deg, #0f2027 0%, #1a6b4a 50%, #2ecc71 100%)',
+  overview:
+    'An AI-powered ATS resume analyzer delivering instant scoring, domain-specific feedback, cross-functional career insights, and tailored project suggestions. Supports both cloud (Groq) and fully offline (Ollama) modes — zero build step, runs directly in the browser.',
+  bullets: [
+    '5-tab split-screen dashboard — ATS Scoring, Domain Review, Improvements, Project Ideas, and Abilities',
+    'Dual processing engine: Online via Groq (Llama 3.3 70B) or fully Offline via Ollama — 100% private',
+    'Smart Domain Detection — auto-identifies specific roles like "AIML Engineer" or "Full Stack Developer"',
+    'Realistic ATS scoring — honest, unbiased section scores across 7 resume dimensions',
+    'Cross-Functional Abilities — AI identifies 3–5 alternative roles based on transferable skills',
+    'Multi-format support — PDF, DOCX, TXT, MD, and images (JPG, PNG, WebP via OCR)',
+    'Real-time streaming feedback with smart rate-limit countdown timer for shared API key',
+    'No build step — pure static HTML/CSS/JS with CDN dependencies, Vercel-ready',
+  ],
+  techDetails:
+    'Frontend built with React 18 via Babel standalone and Vanilla CSS — no bundler required. Cloud AI via Groq API (Llama 3.3 70B); local AI via Ollama. PDF parsing with pdf.js, OCR via Tesseract.js, DOCX parsing via Mammoth.js. Glassmorphism dark-mode UI with iPad-style dashboard layout. Runs as a fully static site with no backend.',
+  outcome:
+    'Zero-cost, privacy-first ATS analyzer — dual AI engine, 5-tab insights, runs in any browser with no setup',
+  tags: ['React', 'JavaScript', 'Groq API', 'Ollama', 'Llama 3.3', 'pdf.js', 'Tesseract.js'],
+  github: 'https://github.com/Rudra-Gupta15/Resume-AI-analyzer',
+  live: 'https://resume-ai-analyzer.vercel.app',
+  kaggle: '',
+},
 ];
 
 const TABS = ['all', 'aiml', 'web', 'hardware'];

@@ -6,7 +6,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
-import { Certifications, Achievements } from './components/Extras';
+import { Publications, Certifications, Achievements } from './components/Extras';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import useMagneticTilt from './components/useMagneticTilt';
@@ -22,6 +22,7 @@ export default function App() {
       <Skills />
       <Projects />
       <Experience />
+      <Publications />
       <Certifications />
       <Achievements />
       <Contact />
