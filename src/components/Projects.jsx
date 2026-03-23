@@ -75,8 +75,8 @@ const PROJECTS = [
     type: 'College Major · AI/ML/IoT',
     title: 'ASL Recognition',
     subtitle: 'Multi-Scale Machine Learning',
-gradient: ['#c8b89a', '#e8d5b7'],
-gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
+    gradient: ['#c8b89a', '#e8d5b7'],
+    gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     overview: 'Real-time American Sign Language recognition using 3 parallel ML models trained across RGB, HSV, and Grayscale — achieving robust detection regardless of lighting conditions.',
     bullets: [
       '3 parallel models (RGB/HSV/Grayscale) — 9,000 training images total',
@@ -174,7 +174,7 @@ gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
   },
   {
-    cat: 'web',
+    cat: 'web chrome',
     image: '/images/proj-yt-bookmark.png',
     emoji: '🔖',
     type: 'Chrome Extension · Manifest V3',
@@ -196,7 +196,7 @@ gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
   },
   {
-    cat: 'aiml web',
+    cat: 'aiml web dataset',
     image: '/images/proj-banking-chatbot.png',
     emoji: '🏦',
     type: 'Machine Learning · Flask',
@@ -220,7 +220,7 @@ gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/banking-faq-dataset-for-chatbot-training',
   },
   {
-    cat: 'aiml web',
+    cat: 'aiml web dataset',
     image: '/images/proj-rud-ai.png',
     emoji: '🤖',
     type: 'Conversational AI · Flask',
@@ -244,7 +244,7 @@ gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/rud-ai-multi-mode-conversational-q-and-a-dataset',
   },
   {
-    cat: 'web education',
+    cat: 'web education dataset',
     image: '/images/proj-prepmaster.png',
     emoji: '⚡',
     type: 'Quiz Platform · React · Vite',
@@ -269,69 +269,100 @@ gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/prepmaster-placement-and-interview-quiz-questions',
   },
   {
-  cat: 'ai tools',
-  image: '/images/proj-aimailassistant.png',
-  emoji: '🤖',
-  type: 'AI Assistant · Python · FastAPI',
-  title: 'AI Mail Assistant',
-  subtitle: 'Local LLM-Powered Email & Messaging Automation',
-gradient: ['#1a1a2e', '#4a4a6a'],
-gradientBg: 'linear-gradient(135deg, #0f0f0f 0%, #2a2a3e 50%, #6b6b8a 100%)',
-  overview:
-    'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
-  bullets: [
-    'Smart Auto-Reply engine classifies messages as AUTO or HUMAN (needs attention)',
-    'Approval Center — review and whitelist senders, with a manual "Process" button for complex messages',
-    'AI Agent Signature — every AI-generated reply includes a transparency disclaimer footer',
-    'Smart Timestamps — displays exact arrival date and time of pending emails on the dashboard',
-    'Gmail Integration via Google Cloud Console; WhatsApp Integration via Twilio API',
-    'Privacy-First: all AI processing runs locally via Ollama — no data leaves your machine',
-    'Dynamic sidebar navigation: Overview, Connection, API Docs, Helper, and Automation Stats',
-    'Built-in one-click "How to use" guide accessible from the sidebar',
-  ],
-  techDetails:
-    'Backend built with FastAPI and Python. AI processing handled entirely locally via Ollama running Llama 3.1. Gmail sync via Google Cloud Console OAuth2. WhatsApp integration via Twilio API. Pydantic models for data validation. Structured into api, services, models, and utils layers. Frontend served as static HTML/CSS/JS assets.',
-  outcome:
-    'Production-ready local AI assistant — zero cloud AI cost, full privacy, Gmail + WhatsApp automation in one dashboard',
-  tags: ['Python', 'FastAPI', 'Ollama', 'Llama 3.1', 'Gmail API', 'Twilio', 'Pydantic'],
-  github: 'https://github.com/Rudra-Gupta15/ai-mail-assistant',
-  live: '',
-  kaggle: '',
-},
-{
-  cat: 'ai tools',
-  image: '/images/proj-resumeai.png',
-  emoji: '🚀',
-  type: 'AI Tool · React · Groq · Ollama',
-  title: 'ResumeAI',
-  subtitle: 'Premium ATS Resume Analyzer',
-  gradient: ['#0f2027', '#1a6b4a'],
-  gradientBg: 'linear-gradient(135deg, #0f2027 0%, #1a6b4a 50%, #2ecc71 100%)',
-  overview:
-    'An AI-powered ATS resume analyzer delivering instant scoring, domain-specific feedback, cross-functional career insights, and tailored project suggestions. Supports both cloud (Groq) and fully offline (Ollama) modes — zero build step, runs directly in the browser.',
-  bullets: [
-    '5-tab split-screen dashboard — ATS Scoring, Domain Review, Improvements, Project Ideas, and Abilities',
-    'Dual processing engine: Online via Groq (Llama 3.3 70B) or fully Offline via Ollama — 100% private',
-    'Smart Domain Detection — auto-identifies specific roles like "AIML Engineer" or "Full Stack Developer"',
-    'Realistic ATS scoring — honest, unbiased section scores across 7 resume dimensions',
-    'Cross-Functional Abilities — AI identifies 3–5 alternative roles based on transferable skills',
-    'Multi-format support — PDF, DOCX, TXT, MD, and images (JPG, PNG, WebP via OCR)',
-    'Real-time streaming feedback with smart rate-limit countdown timer for shared API key',
-    'No build step — pure static HTML/CSS/JS with CDN dependencies, Vercel-ready',
-  ],
-  techDetails:
-    'Frontend built with React 18 via Babel standalone and Vanilla CSS — no bundler required. Cloud AI via Groq API (Llama 3.3 70B); local AI via Ollama. PDF parsing with pdf.js, OCR via Tesseract.js, DOCX parsing via Mammoth.js. Glassmorphism dark-mode UI with iPad-style dashboard layout. Runs as a fully static site with no backend.',
-  outcome:
-    'Zero-cost, privacy-first ATS analyzer — dual AI engine, 5-tab insights, runs in any browser with no setup',
-  tags: ['React', 'JavaScript', 'Groq API', 'Ollama', 'Llama 3.3', 'pdf.js', 'Tesseract.js'],
-  github: 'https://github.com/Rudra-Gupta15/Resume-AI-analyzer',
-  live: 'https://resume-ai-analyzer-coral.vercel.app/',
-  kaggle: '',
-},
+    cat: 'ai tools',
+    image: '/images/proj-aimailassistant.png',
+    emoji: '🤖',
+    type: 'AI Assistant · Python · FastAPI',
+    title: 'AI Mail Assistant',
+    subtitle: 'Local LLM-Powered Email & Messaging Automation',
+    gradient: ['#1a1a2e', '#4a4a6a'],
+    gradientBg: 'linear-gradient(135deg, #0f0f0f 0%, #2a2a3e 50%, #6b6b8a 100%)',
+    overview:
+      'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
+    bullets: [
+      'Smart Auto-Reply engine classifies messages as AUTO or HUMAN (needs attention)',
+      'Approval Center — review and whitelist senders, with a manual "Process" button for complex messages',
+      'AI Agent Signature — every AI-generated reply includes a transparency disclaimer footer',
+      'Smart Timestamps — displays exact arrival date and time of pending emails on the dashboard',
+      'Gmail Integration via Google Cloud Console; WhatsApp Integration via Twilio API',
+      'Privacy-First: all AI processing runs locally via Ollama — no data leaves your machine',
+      'Dynamic sidebar navigation: Overview, Connection, API Docs, Helper, and Automation Stats',
+      'Built-in one-click "How to use" guide accessible from the sidebar',
+    ],
+    techDetails:
+      'Backend built with FastAPI and Python. AI processing handled entirely locally via Ollama running Llama 3.1. Gmail sync via Google Cloud Console OAuth2. WhatsApp integration via Twilio API. Pydantic models for data validation. Structured into api, services, models, and utils layers. Frontend served as static HTML/CSS/JS assets.',
+    outcome:
+      'Production-ready local AI assistant — zero cloud AI cost, full privacy, Gmail + WhatsApp automation in one dashboard',
+    tags: ['Python', 'FastAPI', 'Ollama', 'Llama 3.1', 'Gmail API', 'Twilio', 'Pydantic'],
+    github: 'https://github.com/Rudra-Gupta15/ai-mail-assistant',
+    live: '',
+    kaggle: '',
+  },
+  {
+    cat: 'ai tools',
+    image: '/images/proj-resumeai.png',
+    emoji: '🚀',
+    type: 'AI Tool · React · Groq · Ollama',
+    title: 'ResumeAI',
+    subtitle: 'Premium ATS Resume Analyzer',
+    gradient: ['#0f2027', '#1a6b4a'],
+    gradientBg: 'linear-gradient(135deg, #0f2027 0%, #1a6b4a 50%, #2ecc71 100%)',
+    overview:
+      'An AI-powered ATS resume analyzer delivering instant scoring, domain-specific feedback, cross-functional career insights, and tailored project suggestions. Supports both cloud (Groq) and fully offline (Ollama) modes — zero build step, runs directly in the browser.',
+    bullets: [
+      '5-tab split-screen dashboard — ATS Scoring, Domain Review, Improvements, Project Ideas, and Abilities',
+      'Dual processing engine: Online via Groq (Llama 3.3 70B) or fully Offline via Ollama — 100% private',
+      'Smart Domain Detection — auto-identifies specific roles like "AIML Engineer" or "Full Stack Developer"',
+      'Realistic ATS scoring — honest, unbiased section scores across 7 resume dimensions',
+      'Cross-Functional Abilities — AI identifies 3–5 alternative roles based on transferable skills',
+      'Multi-format support — PDF, DOCX, TXT, MD, and images (JPG, PNG, WebP via OCR)',
+      'Real-time streaming feedback with smart rate-limit countdown timer for shared API key',
+      'No build step — pure static HTML/CSS/JS with CDN dependencies, Vercel-ready',
+    ],
+    techDetails:
+      'Frontend built with React 18 via Babel standalone and Vanilla CSS — no bundler required. Cloud AI via Groq API (Llama 3.3 70B); local AI via Ollama. PDF parsing with pdf.js, OCR via Tesseract.js, DOCX parsing via Mammoth.js. Glassmorphism dark-mode UI with iPad-style dashboard layout. Runs as a fully static site with no backend.',
+    outcome:
+      'Zero-cost, privacy-first ATS analyzer — dual AI engine, 5-tab insights, runs in any browser with no setup',
+    tags: ['React', 'JavaScript', 'Groq API', 'Ollama', 'Llama 3.3', 'pdf.js', 'Tesseract.js'],
+    github: 'https://github.com/Rudra-Gupta15/ResumeAI-Premium-ATS-Analyzer',
+    live: 'https://resume-ai-analyzer-coral.vercel.app/',
+    kaggle: '',
+  },
+  {
+    cat: 'web chrome',
+    image: '/images/proj-balancetab.png',
+    emoji: '⚖️',
+    type: 'Chrome Extension · Manifest V3',
+    title: 'BalanceTab',
+    subtitle: 'Gamer + Office New Tab Dashboard',
+    gradient: ['#1a1a1a', '#555555'],
+    gradientBg: 'linear-gradient(135deg, #000000 0%, #1a1a1a 45%, #444444 100%)',
+    overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook. All in one tab.',
+    bullets: [
+      'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
+      'Live clock with real-time weather via Open-Meteo API + browser geolocation',
+      'Smart search bar supporting Google, DuckDuckGo, Bing, YouTube, and GitHub engines',
+      'AI Quick Links panel — one-click access to Claude, ChatGPT, Gemini, Perplexity, Copilot & Mistral',
+      '7 built-in mini-games: Snake, Breakout, Flappy Bird, Cyber Pong, Super Mario, Dash Racer, Space Shooter',
+      'Recent Tabs panel via chrome.sessions API — reopen closed tabs instantly',
+      'Auto-saving Notebook — local notes via chrome.storage.local, never uploaded',
+      'Productivity & Gaming quick-launch dock — Gmail, Slack, Notion, Steam, Discord & more',
+    ],
+    techDetails: 'Built with Manifest V3. Weather from Open-Meteo API via browser geolocation. Recent tabs via chrome.sessions + chrome.tabs APIs. All 7 games on HTML5 Canvas with pure JS game loops. Settings and notebook persisted in chrome.storage.local. Zero dependencies — no npm, no bundler, single HTML + JS file.',
+    outcome: 'Every new tab becomes a gamer dashboard — 7 games, live weather, AI links, zero cloud storage',
+    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Canvas API', 'Open-Meteo API'],
+  },
 ];
 
-const TABS = ['all', 'aiml', 'web', 'hardware'];
-const TABS_LABELS = { all: 'All', aiml: 'AI / ML', web: 'Web & Game', hardware: 'Hardware' };
+const TABS = ['all', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
+const TABS_LABELS = {
+  all: 'All',
+  aiml: 'AI / ML',
+  web: 'Web & Game',
+  hardware: 'Hardware',
+  dataset: 'Datasets',
+  chrome: 'Chrome Ext',
+};
 
 function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -425,11 +456,13 @@ function ProjectModal({ project, onClose }) {
                   Kaggle ↗
                 </a>
               )}
-              <a href={project.github} target="_blank" rel="noreferrer"
-                className="pmodal-github"
-                style={{ background: `linear-gradient(135deg, ${g0}, ${g1})` }}>
-                GitHub ↗
-              </a>
+              {project.github && (
+                <a href={project.github} target="_blank" rel="noreferrer"
+                  className="pmodal-github"
+                  style={{ background: `linear-gradient(135deg, ${g0}, ${g1})` }}>
+                  GitHub ↗
+                </a>
+              )}
             </div>
           </div>
         </div>
