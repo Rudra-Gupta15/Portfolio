@@ -21,7 +21,7 @@ const PROJECTS = [
     techDetails: 'Compares SVM, Random Forest, KNN, Logistic Regression & more. Auto-selects best model per dataset using cross-validation scoring.',
     outcome: 'Accelerates ML development by benchmarking performance fast',
     tags: ['Matplotlib', 'Sklearn', 'Python', 'Analytics', 'NumPy'],
-    github: 'https://github.com/Rudra-Gupta15/Algorithm_Comparison',
+    github: 'https://github.com/Rudra-Gupta15/Algorithm_Comparison'
   },
   {
     cat: 'aiml web',
@@ -194,7 +194,6 @@ gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
     techDetails: 'Built with Manifest V3 — the current Chrome extension standard. Uses chrome.scripting.executeScript to read and set video currentTime. MutationObserver handles YouTube\'s SPA routing to re-inject the button on navigation.',
     outcome: 'Native YouTube integration with zero dependencies — pure browser APIs',
     tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
-    github: 'https://github.com/Rudra-Gupta15/YouTube_Bookmark',
   },
   {
     cat: 'aiml web',
@@ -326,7 +325,7 @@ gradientBg: 'linear-gradient(135deg, #0f0f0f 0%, #2a2a3e 50%, #6b6b8a 100%)',
     'Zero-cost, privacy-first ATS analyzer — dual AI engine, 5-tab insights, runs in any browser with no setup',
   tags: ['React', 'JavaScript', 'Groq API', 'Ollama', 'Llama 3.3', 'pdf.js', 'Tesseract.js'],
   github: 'https://github.com/Rudra-Gupta15/Resume-AI-analyzer',
-  live: 'https://resume-ai-analyzer.vercel.app',
+  live: 'https://resume-ai-analyzer-coral.vercel.app/',
   kaggle: '',
 },
 ];
