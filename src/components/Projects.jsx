@@ -1,7 +1,71 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
+/* ─── Scroll-reveal hook ─── */
+function useScrollReveal(selector) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    const els = root.querySelectorAll(selector);
+    if (!els.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('sr--vis');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [selector]);
+  return ref;
+}
+
+const REVEAL_CSS = `
+  .proj-sr {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    transition:
+      opacity  0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .proj-sr.sr--vis {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .proj-sr-d0 { transition-delay: 0ms;   }
+  .proj-sr-d1 { transition-delay: 100ms; }
+  .proj-sr-d2 { transition-delay: 200ms; }
+  .proj-sr-d3 { transition-delay: 300ms; }
+`;
+
 const PROJECTS = [
+  {
+    cat: 'aiml',
+    image: '/images/proj-heart-disease.png',
+    emoji: '❤️',
+    type: 'Healthcare AI',
+    title: 'Heart Disease Prediction',
+    subtitle: 'ML-Powered Early Detection',
+    gradient: ['#3e0a15', '#5a0f1f'],
+    gradientBg: 'linear-gradient(135deg, #2a050c 0%, #3e0a15 50%, #5a0f1f 100%)',
+    overview: 'A clinical decision-support system predicting cardiovascular disease risk using Gradient Boosting with a Flask backend — delivering near-zero-latency predictions.',
+    bullets: [
+      'Gradient Boosting model tuned for high precision and recall',
+      'Flask backend with .pkl pipelines — zero-latency predictions',
+      'ROC-AUC validation to minimize false negatives in diagnosis',
+      'Pandas/NumPy feature scaling & preprocessing pipeline',
+    ],
+    techDetails: 'Trained on Cleveland Heart Disease dataset. Serialized with joblib for fast inference. Flask API serves predictions in <50ms.',
+    outcome: 'Early detection bridge for cardiovascular risks',
+    tags: ['Gradient Boosting', 'Flask', 'Sklearn', 'Pandas', 'Python'],
+    github: 'https://github.com/Rudra-Gupta15/heart-disease-prediction',
+  },
   {
     cat: 'aiml',
     image: '/images/proj-ml-comparison.png',
@@ -25,13 +89,56 @@ const PROJECTS = [
   },
   {
     cat: 'aiml web',
+    image: '/images/proj-weather.png',
+    emoji: '🌦️',
+    type: 'ML Dashboard',
+    title: 'Hyperlocal Weather Impact',
+    subtitle: 'Forecasting & Analytics',
+    gradient: ['#1a3a6b', '#f0a500'],
+    gradientBg: 'linear-gradient(135deg, #0a1428 0%, #1a3a6b 45%, #c47f00 100%)',
+    overview: 'End-to-end weather forecasting comparing 3 ML models through an interactive JS dashboard with live analytics — translating complex ML metrics into clear, actionable visuals.',
+    bullets: [
+      'Compares Linear Regression, Random Forest & Gradient Boosting',
+      'Dashboard: MAE, RMSE, R² and actual vs. predicted charts',
+      'Robust ML pipeline with feature lags and interaction terms',
+      'JavaScript UI with live forecasts and analytics modal',
+    ],
+    techDetails: 'Feature engineering: lag features (t-1, t-7, t-30) + seasonal interaction terms. Flask API serves predictions to a vanilla JS frontend.',
+    outcome: 'Complex ML results delivered through an interactive dashboard',
+    tags: ['Scikit-learn', 'Flask', 'JavaScript', 'Python', 'NumPy'],
+    github: 'https://github.com/Rudra-Gupta15/Hyperlocal_Weather_Impact_Prediction',
+    live: 'https://weather-app-15-henna.vercel.app/',
+  },
+  {
+    cat: 'web aiml',
+    image: '/images/proj-versustech.png',
+    emoji: '📱',
+    type: 'Full-Stack Data Science',
+    title: 'VersusTech',
+    subtitle: 'Device Recommendation Engine',
+    gradient: ['#4b3621', '#d2b48c'],
+    gradientBg: 'linear-gradient(135deg, #2c1e12 0%, #4b3621 50%, #d2b48c 100%)',
+    overview: 'A full-stack device recommendation engine helping users compare and choose smartphones/laptops using a multi-layered weighted scoring algorithm.',
+    bullets: [
+      'Multi-layered filtering scoring devices on 12+ weighted parameters',
+      'RESTful Flask API serving real-time CSV-to-UI device data',
+      'Advanced "Tech-Filter" for granular hardware spec filtering',
+      'Automated Amazon & Flipkart marketplace price mapping',
+    ],
+    techDetails: 'Scoring engine weights specs by user priority. Flask API reads from regularly updated CSV dataset with 500+ devices.',
+    outcome: 'Bridged hardware specs with user purchasing decisions',
+    tags: ['Flask', 'Python', 'JavaScript', 'CSV', 'REST API'],
+    github: 'https://github.com/Rudra-Gupta15/Advance-device-recommendation-system',
+  },
+  {
+    cat: 'aiml web',
     image: '/images/proj-movie-recommender.png',
     emoji: '🎬',
     type: 'ML + Streamlit',
     title: 'Movie Recommender System',
     subtitle: 'Content-Based Filtering',
-    gradient: ['#7a4a00', '#e8a020'],
-    gradientBg: 'linear-gradient(135deg, #1f1000 0%, #7a4a00 50%, #e8a020 100%)',
+    gradient: ['#4a4a4a', '#d1d1d1'],
+    gradientBg: 'linear-gradient(135deg, #2e2e2e 0%, #4a4a4a 50%, #d1d1d1 100%)',
     overview: 'An interactive ML-powered web app that delivers personalized movie recommendations using content-based filtering. Fetches real-time posters and metadata from the TMDB API.',
     bullets: [
       'Smart recommendations via Cosine Similarity on metadata features',
@@ -75,8 +182,8 @@ const PROJECTS = [
     type: 'College Major · AI/ML/IoT',
     title: 'ASL Recognition',
     subtitle: 'Multi-Scale Machine Learning',
-    gradient: ['#c8b89a', '#e8d5b7'],
-    gradientBg: 'linear-gradient(135deg, #6b5a45 0%, #c8b89a 50%, #e8d5b7 100%)',
+    gradient: ['#5c3b1e', '#f5e6d3'],
+gradientBg: 'linear-gradient(135deg, #5c3b1e 0%, #5c3b1e 50%, #f5e6d3 50%, #f5e6d3 100%)',
     overview: 'Real-time American Sign Language recognition using 3 parallel ML models trained across RGB, HSV, and Grayscale — achieving robust detection regardless of lighting conditions.',
     bullets: [
       '3 parallel models (RGB/HSV/Grayscale) — 9,000 training images total',
@@ -90,78 +197,14 @@ const PROJECTS = [
     github: 'https://github.com/Rudra-Gupta15/Sign-Language-Translator-YOLO-CNN',
   },
   {
-    cat: 'aiml web',
-    image: '/images/proj-weather.png',
-    emoji: '🌦️',
-    type: 'ML Dashboard',
-    title: 'Hyperlocal Weather Impact',
-    subtitle: 'Forecasting & Analytics',
-    gradient: ['#1a3a6b', '#f0a500'],
-    gradientBg: 'linear-gradient(135deg, #0a1428 0%, #1a3a6b 45%, #c47f00 100%)',
-    overview: 'End-to-end weather forecasting comparing 3 ML models through an interactive JS dashboard with live analytics — translating complex ML metrics into clear, actionable visuals.',
-    bullets: [
-      'Compares Linear Regression, Random Forest & Gradient Boosting',
-      'Dashboard: MAE, RMSE, R² and actual vs. predicted charts',
-      'Robust ML pipeline with feature lags and interaction terms',
-      'JavaScript UI with live forecasts and analytics modal',
-    ],
-    techDetails: 'Feature engineering: lag features (t-1, t-7, t-30) + seasonal interaction terms. Flask API serves predictions to a vanilla JS frontend.',
-    outcome: 'Complex ML results delivered through an interactive dashboard',
-    tags: ['Scikit-learn', 'Flask', 'JavaScript', 'Python', 'NumPy'],
-    github: 'https://github.com/Rudra-Gupta15/Hyperlocal_Weather_Impact_Prediction',
-    live: 'https://weather-app-15-henna.vercel.app/',
-  },
-  {
-    cat: 'aiml',
-    image: '/images/proj-heart-disease.png',
-    emoji: '❤️',
-    type: 'Healthcare AI',
-    title: 'Heart Disease Prediction',
-    subtitle: 'ML-Powered Early Detection',
-    gradient: ['#7b1a2e', '#c0392b'],
-    gradientBg: 'linear-gradient(135deg, #5a0f1f 0%, #8b2030 50%, #c0392b 100%)',
-    overview: 'A clinical decision-support system predicting cardiovascular disease risk using Gradient Boosting with a Flask backend — delivering near-zero-latency predictions.',
-    bullets: [
-      'Gradient Boosting model tuned for high precision and recall',
-      'Flask backend with .pkl pipelines — zero-latency predictions',
-      'ROC-AUC validation to minimize false negatives in diagnosis',
-      'Pandas/NumPy feature scaling & preprocessing pipeline',
-    ],
-    techDetails: 'Trained on Cleveland Heart Disease dataset. Serialized with joblib for fast inference. Flask API serves predictions in <50ms.',
-    outcome: 'Early detection bridge for cardiovascular risks',
-    tags: ['Gradient Boosting', 'Flask', 'Sklearn', 'Pandas', 'Python'],
-    github: 'https://github.com/Rudra-Gupta15/heart-disease-prediction',
-  },
-  {
-    cat: 'web aiml',
-    image: '/images/proj-versustech.png',
-    emoji: '📱',
-    type: 'Full-Stack Data Science',
-    title: 'VersusTech',
-    subtitle: 'Device Recommendation Engine',
-    gradient: ['#6a1a4a', '#e05b9a'],
-    gradientBg: 'linear-gradient(135deg, #3a0d2a 0%, #6a1a4a 50%, #c0398a 100%)',
-    overview: 'A full-stack device recommendation engine helping users compare and choose smartphones/laptops using a multi-layered weighted scoring algorithm.',
-    bullets: [
-      'Multi-layered filtering scoring devices on 12+ weighted parameters',
-      'RESTful Flask API serving real-time CSV-to-UI device data',
-      'Advanced "Tech-Filter" for granular hardware spec filtering',
-      'Automated Amazon & Flipkart marketplace price mapping',
-    ],
-    techDetails: 'Scoring engine weights specs by user priority. Flask API reads from regularly updated CSV dataset with 500+ devices.',
-    outcome: 'Bridged hardware specs with user purchasing decisions',
-    tags: ['Flask', 'Python', 'JavaScript', 'CSV', 'REST API'],
-    github: 'https://github.com/Rudra-Gupta15/Advance-device-recommendation-system',
-  },
-  {
     cat: 'hardware',
     image: '/images/proj-food-machine.png',
     emoji: '⚙️',
     type: 'Electronics & IoT',
     title: 'Raj Food Machine',
     subtitle: 'Industrial Automation',
-    gradient: ['#7a3a0d', '#c0671a'],
-    gradientBg: 'linear-gradient(135deg, #4a2008 0%, #7a3a0d 50%, #c0671a 100%)',
+    gradient: ['#6a1a4a', '#e05b9a'],
+    gradientBg: 'linear-gradient(135deg, #3a0d2a 0%, #6a1a4a 50%, #c0398a 100%)',
     overview: 'IoT-based automation system for an industrial food production facility — integrating sensors and hardware modules across Boondi, Frier, and Laddo machines.',
     bullets: [
       'IoT modules integrated across Boondi, Frier, and Laddo machines',
@@ -174,27 +217,30 @@ const PROJECTS = [
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
   },
   {
-    cat: 'web chrome',
-    image: '/images/proj-yt-bookmark.png',
-    emoji: '🔖',
-    type: 'Chrome Extension · Manifest V3',
-    title: 'YouTube Timestamp Bookmarks',
-    subtitle: 'Browser Extension',
-    gradient: ['#8b0000', '#FF0000'],
-    gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
-    overview: 'A Chrome extension that lets you bookmark exact timestamps inside any YouTube video and jump back to them instantly — with a custom in-player button and a full popup panel.',
-    bullets: [
-      'Red bookmark button injected directly into the YouTube player controls',
-      'Popup panel shows video thumbnail, title, and live playback position',
-      'One-click seek to any saved timestamp — sorted and persistent per video',
-      'Per-video storage using chrome.storage.local — no server, 100% local',
-      'Duplicate guard prevents saving two bookmarks within 2 seconds',
-      'Handles YouTube SPA navigation — works across page changes without reload',
-    ],
-    techDetails: 'Built with Manifest V3 — the current Chrome extension standard. Uses chrome.scripting.executeScript to read and set video currentTime. MutationObserver handles YouTube\'s SPA routing to re-inject the button on navigation.',
-    outcome: 'Native YouTube integration with zero dependencies — pure browser APIs',
-    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts'],
-  },
+  cat: 'web chrome',
+  image: '/images/proj-yt-bookmark.png',
+  emoji: '🔖',
+  type: 'Chrome Extension · Manifest V3',
+  title: 'TimeMark — Video Timestamp Bookmarks',
+  subtitle: 'Browser Extension',
+  gradient: ['#8b0000', '#FF0000'],
+  gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
+  overview:
+    'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
+  bullets: [
+    'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
+    'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
+    'Popup panel shows video thumbnail, title, and live playback position updated in real time',
+    'One-click seek to any saved bookmark — sorted by time, with delete-one and clear-all options',
+    'Flat chrome.storage.local structure (ytbm_all array) with per-video filtering — no server, 100% local',
+    'Duplicate guard blocks saves within 2 seconds of an existing bookmark for the same video',
+    'Handles YouTube SPA navigation — MutationObserver re-injects the button across page changes without reload',
+  ],
+  techDetails:
+    'Built with Manifest V3. content.js reads video.currentTime directly from the DOM and injects the bookmark button into .ytp-right-controls. chrome.scripting.executeScript is used by popup.js to seek the video by setting currentTime on the active tab. MutationObserver tracks URL changes for SPA re-injection. Bookmarks stored as a flat array keyed by ytbm_all, filtered client-side by videoId.',
+  outcome: 'Native YouTube integration at v1.4 — zero dependencies, pure browser APIs',
+  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts', 'MutationObserver'],
+},
   {
     cat: 'aiml web dataset',
     image: '/images/proj-banking-chatbot.png',
@@ -252,7 +298,7 @@ const PROJECTS = [
     subtitle: 'Complete Placement & Interview Prep',
     gradient: ['#2d1b69', '#7c3aed'],
     gradientBg: 'linear-gradient(135deg, #0d0a1f 0%, #2d1b69 50%, #7c3aed 100%)',
-    overview: 'A premium, high-performance quiz platform built to help students and professionals crack placements and technical interviews — featuring 4000+ curated questions, 5 career tracks, a smart quiz engine, and a dedicated topic notebook. Fully mobile responsive with a modern Glassmorphism UI.',
+    overview: 'A premium, high-performance quiz platform built to help students and professionals crack placements and technical interviews — featuring 4000+ curated questions, 5 career tracks, a smart quiz engine, and a dedicated topic notebook.',
     bullets: [
       '4000+ verified questions across TCS NQT, AI & ML, React, SAP, and DevOps tracks',
       'Smart Quiz Engine with per-question timer, progress tracking, and score breakdown',
@@ -275,10 +321,9 @@ const PROJECTS = [
     type: 'AI Assistant · Python · FastAPI',
     title: 'AI Mail Assistant',
     subtitle: 'Local LLM-Powered Email & Messaging Automation',
-    gradient: ['#1a1a2e', '#4a4a6a'],
-    gradientBg: 'linear-gradient(135deg, #0f0f0f 0%, #2a2a3e 50%, #6b6b8a 100%)',
-    overview:
-      'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
+    gradient: ['#6f5e4d', '#bfbfbf'],
+gradientBg: 'linear-gradient(135deg, #5a4a3b 0%, #8c7762 50%, #cfcfcf 100%)',
+    overview: 'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
     bullets: [
       'Smart Auto-Reply engine classifies messages as AUTO or HUMAN (needs attention)',
       'Approval Center — review and whitelist senders, with a manual "Process" button for complex messages',
@@ -289,14 +334,10 @@ const PROJECTS = [
       'Dynamic sidebar navigation: Overview, Connection, API Docs, Helper, and Automation Stats',
       'Built-in one-click "How to use" guide accessible from the sidebar',
     ],
-    techDetails:
-      'Backend built with FastAPI and Python. AI processing handled entirely locally via Ollama running Llama 3.1. Gmail sync via Google Cloud Console OAuth2. WhatsApp integration via Twilio API. Pydantic models for data validation. Structured into api, services, models, and utils layers. Frontend served as static HTML/CSS/JS assets.',
-    outcome:
-      'Production-ready local AI assistant — zero cloud AI cost, full privacy, Gmail + WhatsApp automation in one dashboard',
+    techDetails: 'Backend built with FastAPI and Python. AI processing handled entirely locally via Ollama running Llama 3.1. Gmail sync via Google Cloud Console OAuth2. WhatsApp integration via Twilio API. Pydantic models for data validation. Structured into api, services, models, and utils layers. Frontend served as static HTML/CSS/JS assets.',
+    outcome: 'Production-ready local AI assistant — zero cloud AI cost, full privacy, Gmail + WhatsApp automation in one dashboard',
     tags: ['Python', 'FastAPI', 'Ollama', 'Llama 3.1', 'Gmail API', 'Twilio', 'Pydantic'],
     github: 'https://github.com/Rudra-Gupta15/ai-mail-assistant',
-    live: '',
-    kaggle: '',
   },
   {
     cat: 'ai tools',
@@ -307,8 +348,7 @@ const PROJECTS = [
     subtitle: 'Premium ATS Resume Analyzer',
     gradient: ['#0f2027', '#1a6b4a'],
     gradientBg: 'linear-gradient(135deg, #0f2027 0%, #1a6b4a 50%, #2ecc71 100%)',
-    overview:
-      'An AI-powered ATS resume analyzer delivering instant scoring, domain-specific feedback, cross-functional career insights, and tailored project suggestions. Supports both cloud (Groq) and fully offline (Ollama) modes — zero build step, runs directly in the browser.',
+    overview: 'An AI-powered ATS resume analyzer delivering instant scoring, domain-specific feedback, cross-functional career insights, and tailored project suggestions. Supports both cloud (Groq) and fully offline (Ollama) modes.',
     bullets: [
       '5-tab split-screen dashboard — ATS Scoring, Domain Review, Improvements, Project Ideas, and Abilities',
       'Dual processing engine: Online via Groq (Llama 3.3 70B) or fully Offline via Ollama — 100% private',
@@ -319,14 +359,11 @@ const PROJECTS = [
       'Real-time streaming feedback with smart rate-limit countdown timer for shared API key',
       'No build step — pure static HTML/CSS/JS with CDN dependencies, Vercel-ready',
     ],
-    techDetails:
-      'Frontend built with React 18 via Babel standalone and Vanilla CSS — no bundler required. Cloud AI via Groq API (Llama 3.3 70B); local AI via Ollama. PDF parsing with pdf.js, OCR via Tesseract.js, DOCX parsing via Mammoth.js. Glassmorphism dark-mode UI with iPad-style dashboard layout. Runs as a fully static site with no backend.',
-    outcome:
-      'Zero-cost, privacy-first ATS analyzer — dual AI engine, 5-tab insights, runs in any browser with no setup',
+    techDetails: 'Frontend built with React 18 via Babel standalone and Vanilla CSS — no bundler required. Cloud AI via Groq API (Llama 3.3 70B); local AI via Ollama. PDF parsing with pdf.js, OCR via Tesseract.js, DOCX parsing via Mammoth.js.',
+    outcome: 'Zero-cost, privacy-first ATS analyzer — dual AI engine, 5-tab insights, runs in any browser with no setup',
     tags: ['React', 'JavaScript', 'Groq API', 'Ollama', 'Llama 3.3', 'pdf.js', 'Tesseract.js'],
     github: 'https://github.com/Rudra-Gupta15/ResumeAI-Premium-ATS-Analyzer',
     live: 'https://resume-ai-analyzer-coral.vercel.app/',
-    kaggle: '',
   },
   {
     cat: 'web chrome',
@@ -337,7 +374,7 @@ const PROJECTS = [
     subtitle: 'Gamer + Office New Tab Dashboard',
     gradient: ['#1a1a1a', '#555555'],
     gradientBg: 'linear-gradient(135deg, #000000 0%, #1a1a1a 45%, #444444 100%)',
-    overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook. All in one tab.',
+    overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook.',
     bullets: [
       'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
       'Live clock with real-time weather via Open-Meteo API + browser geolocation',
@@ -382,8 +419,6 @@ function ProjectModal({ project, onClose }) {
   return createPortal(
     <div className="pmodal-overlay" onClick={onClose}>
       <div className="pmodal pmodal-v2" onClick={e => e.stopPropagation()}>
-
-        {/* Gradient header */}
         <div className="pmodal-header" style={{ background: project.gradientBg }}>
           <button className="pmodal-close" onClick={onClose}>✕</button>
           <div className="pmodal-header-content">
@@ -395,8 +430,6 @@ function ProjectModal({ project, onClose }) {
             </div>
           </div>
         </div>
-
-        {/* Project image if available */}
         {project.image ? (
           <div className="pmodal-img-wrap">
             <img src={project.image} alt={project.title} className="pmodal-img"
@@ -408,37 +441,27 @@ function ProjectModal({ project, onClose }) {
             <span className="pmodal-banner-emoji">{project.emoji}</span>
           </div>
         )}
-
         <div className="pmodal-body">
-          {/* Overview */}
           <div className="pmodal-section">
             <div className="pmodal-section-label">📋 Overview</div>
             <p className="pmodal-overview">{project.overview}</p>
           </div>
-
-          {/* What it does */}
           <div className="pmodal-section">
             <div className="pmodal-section-label">🔧 What It Does</div>
             <ul className="pmodal-bullets">
               {project.bullets.map(b => <li key={b}>{b}</li>)}
             </ul>
           </div>
-
-          {/* Tech details */}
           {project.techDetails && (
             <div className="pmodal-section">
               <div className="pmodal-section-label">⚙️ Technical Details</div>
               <p className="pmodal-tech-detail">{project.techDetails}</p>
             </div>
           )}
-
-          {/* Outcome */}
           <div className="pmodal-outcome">
             <span className="pmodal-outcome-icon">🏆</span>
             {project.outcome}
           </div>
-
-          {/* Footer: tags + buttons */}
           <div className="pmodal-footer">
             <div className="pmodal-tags">
               {project.tags.map(t => <span key={t} className="pmodal-tag">{t}</span>)}
@@ -475,8 +498,10 @@ function ProjectModal({ project, onClose }) {
 export default function Projects() {
   const [filter, setFilter] = useState('all');
   const [selected, setSelected] = useState(null);
-  const scrollRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const scrollRef   = useRef(null);
+  const progressRef = useRef(null);
+  const sectionRef  = useScrollReveal('.proj-sr');
+  const [canScrollLeft,  setCanScrollLeft]  = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const checkScroll = () => {
@@ -503,16 +528,19 @@ export default function Projects() {
   const visible = PROJECTS.filter(p => filter === 'all' || p.cat.includes(filter));
 
   return (
-    <section id="projects">
-      <div className="sec-label">03 — Selected Work</div>
-      <div className="proj-header-row">
+    <section id="projects" ref={sectionRef}>
+      <style>{REVEAL_CSS}</style>
+
+      <div className="sec-label proj-sr proj-sr-d0">03 — Selected Work</div>
+
+      <div className="proj-header-row proj-sr proj-sr-d1">
         <h2 className="sec-h">🚀 <em>Projects</em></h2>
         <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 340 }}>
           Production systems — real pipelines solving real problems.
         </p>
       </div>
 
-      <div className="proj-tabs">
+      <div className="proj-tabs proj-sr proj-sr-d2">
         {TABS.map(tab => (
           <button key={tab} className={`p-tab${filter === tab ? ' active' : ''}`} onClick={() => setFilter(tab)}>
             {TABS_LABELS[tab]}
@@ -520,7 +548,7 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="pcard-nav">
+      <div className="pcard-nav proj-sr proj-sr-d3">
         <div className="pscroll-hint">
           <span className="pscroll-arrow-anim">←</span>
           swipe to explore
@@ -532,21 +560,24 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="pcard-scroll" ref={scrollRef}>
+      <div className="pcard-scroll" ref={scrollRef} onScroll={(e) => {
+        const t = e.currentTarget;
+        const max = t.scrollWidth - t.clientWidth;
+        if (max <= 0) return;
+        if (progressRef.current) progressRef.current.style.width = (t.scrollLeft / max * 100) + '%';
+        checkScroll();
+      }}>
         <div className="pcard-track">
           {visible.map((p, i) => (
             <div key={p.title} className="pcard" style={{ animationDelay: `${i * 0.07}s` }} onClick={() => setSelected(p)}>
               <div className="pcard-bg" style={{ background: p.gradientBg }} />
               <div className="pcard-blob1" style={{ background: p.gradient[1] }} />
               <div className="pcard-blob2" style={{ background: p.gradient[0] }} />
-
               <div className="pcard-top">
                 <div className="pcard-type">{p.type}</div>
                 <h3 className="pcard-title">{p.title}</h3>
                 <p className="pcard-sub">{p.subtitle}</p>
               </div>
-
-              {/* Image or emoji fallback */}
               <div className="pcard-img-stage">
                 <div className="pcard-img-frame">
                   {p.image ? (
@@ -556,22 +587,26 @@ export default function Projects() {
                   <div className="pcard-img-placeholder" style={{ opacity: p.image ? 0.12 : 0.5, fontSize: p.image ? 72 : 56 }}>{p.emoji}</div>
                 </div>
               </div>
-
               <div className="pcard-bottom">
                 <p className="pcard-desc">{p.outcome}</p>
                 <div className="pcard-tags">
                   {p.tags.slice(0, 3).map(t => <span key={t} className="pcard-tag">{t}</span>)}
                 </div>
               </div>
-
               <div className="pcard-tap">tap to expand ↗</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="pscroll-dots">
-        {visible.map((_, i) => <div key={i} className="pscroll-dot" />)}
+      {/* Progress bar */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8, padding: '0 24px' }}>
+        <div style={{ flex: 1, height: 2, background: 'rgba(255,255,255,0.07)', borderRadius: 2, overflow: 'hidden' }}>
+          <div ref={progressRef} style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }} />
+        </div>
+        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+          drag or use arrows to explore
+        </span>
       </div>
 
       {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}

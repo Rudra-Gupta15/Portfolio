@@ -1,6 +1,81 @@
 import { useRef, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
+/* ══════════════════════════════════════════
+   SCROLL-REVEAL HOOK
+   Watches every element matching `selector`
+   inside the returned ref, adds --visible
+   once it enters viewport. Fires once only.
+══════════════════════════════════════════ */
+function useScrollReveal(selector) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    const els = root.querySelectorAll(selector);
+    if (!els.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('sr--vis');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' }
+    );
+
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [selector]);
+  return ref;
+}
+
+/* ══════════════════════════════════════════
+   GLOBAL REVEAL CSS (injected once)
+══════════════════════════════════════════ */
+const REVEAL_CSS = `
+  .sr-item {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    transition:
+      opacity  0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .sr-item.sr--vis {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  /* delay helpers */
+  .sr-d0 { transition-delay: 0ms;   }
+  .sr-d1 { transition-delay: 100ms; }
+  .sr-d2 { transition-delay: 200ms; }
+  .sr-d3 { transition-delay: 300ms; }
+  .sr-d4 { transition-delay: 400ms; }
+  .sr-d5 { transition-delay: 500ms; }
+  .sr-d6 { transition-delay: 600ms; }
+  .sr-d7 { transition-delay: 700ms; }
+
+  /* ── cert tile shadow fix ── */
+  .cert-scroll-wrap {
+    overflow: visible !important;
+    padding-bottom: 24px;
+  }
+  .cert-scroll {
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    padding-bottom: 24px !important;
+  }
+  .cert-track {
+    overflow: visible !important;
+  }
+`;
+
+/* ══════════════════════════════════════════
+   CERTS DATA
+══════════════════════════════════════════ */
 const CERTS = [
   {
     icon: '🧠',
@@ -116,6 +191,9 @@ const CERTS = [
   },
 ];
 
+/* ══════════════════════════════════════════
+   CERT MODAL
+══════════════════════════════════════════ */
 function CertModal({ cert, onClose }) {
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -135,9 +213,13 @@ function CertModal({ cert, onClose }) {
     <div className="cert-modal-overlay" onClick={onClose}>
       <div className="cert-modal" onClick={e => e.stopPropagation()} style={{ '--cm-accent': cert.accent }}>
         <button className="cert-modal-close" onClick={onClose}>✕</button>
-
-        {/* Header */}
-        <div className="cert-modal-header" style={{ background: `linear-gradient(135deg, color-mix(in srgb, ${cert.accent} 25%, #0d1f3c), #0d1f3c)`, borderBottom: `1px solid ${cert.accent}33` }}>
+        <div
+          className="cert-modal-header"
+          style={{
+            background: `linear-gradient(135deg, color-mix(in srgb, ${cert.accent} 25%, #0d1f3c), #0d1f3c)`,
+            borderBottom: `1px solid ${cert.accent}33`,
+          }}
+        >
           <div className="cert-modal-header-top">
             <span className="cert-modal-icon">{cert.icon}</span>
             <div>
@@ -148,23 +230,26 @@ function CertModal({ cert, onClose }) {
           </div>
           <div className="cert-modal-meta">
             <span className="cert-modal-date">📅 {cert.date}</span>
-            <span className="cert-modal-badge" style={{ background: `${cert.accent}22`, border: `1px solid ${cert.accent}55`, color: cert.accent }}>{cert.badge}</span>
+            <span
+              className="cert-modal-badge"
+              style={{ background: `${cert.accent}22`, border: `1px solid ${cert.accent}55`, color: cert.accent }}
+            >{cert.badge}</span>
           </div>
         </div>
-
-        {/* Certificate image if available */}
         {cert.image && (
           <div className="cert-modal-img-wrap">
             <img src={cert.image} alt={cert.title} className="cert-modal-img" />
           </div>
         )}
-
-        {/* Body */}
         <div className="cert-modal-body">
           <div className="cert-modal-desc">{cert.desc}</div>
           <div className="cert-modal-tags">
             {cert.tags.map(t => (
-              <span key={t} className="cert-modal-tag" style={{ background: `${cert.accent}15`, border: `1px solid ${cert.accent}35`, color: cert.accent }}>{t}</span>
+              <span
+                key={t}
+                className="cert-modal-tag"
+                style={{ background: `${cert.accent}15`, border: `1px solid ${cert.accent}35`, color: cert.accent }}
+              >{t}</span>
             ))}
           </div>
           {cert.verifyUrl && (
@@ -179,14 +264,21 @@ function CertModal({ cert, onClose }) {
   );
 }
 
+/* ══════════════════════════════════════════
+   PUBLICATIONS
+══════════════════════════════════════════ */
 export function Publications() {
+  const ref = useScrollReveal('.sr-item');
+
   return (
-    <section id="publications">
-      <div className="sec-label">05 — Research & Publications</div>
-      <h2 className="sec-h">Published <em>Work</em></h2>
+    <section id="publications" ref={ref}>
+      <style>{REVEAL_CSS}</style>
+
+      <div className="sec-label sr-item sr-d0">05 — Research &amp; Publications</div>
+      <h2 className="sec-h sr-item sr-d1">Published <em>Work</em></h2>
 
       <div style={{ marginTop: 44 }}>
-        <div className="pub-card">
+        <div className="pub-card sr-item sr-d2">
           <div className="pub-card-left">
             <img src="/images/cert-ieee-icetems.jpeg" alt="IEEE Certificate" className="pub-cert-img" />
           </div>
@@ -197,7 +289,9 @@ export function Publications() {
               <span className="pub-badge presented">Presented</span>
             </div>
             <h3 className="pub-title">Sign Language Translator using Machine Learning Algorithms on RGB Color Space</h3>
-            <div className="pub-conf">3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong></div>
+            <div className="pub-conf">
+              3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong>
+            </div>
             <div className="pub-meta">
               <span>📅 6–7 March 2026</span>
               <span>📍 YCCE, Nagpur, India</span>
@@ -218,56 +312,64 @@ export function Publications() {
   );
 }
 
+/* ══════════════════════════════════════════
+   CERTIFICATIONS
+══════════════════════════════════════════ */
 export function Certifications() {
-  const scrollRef = useRef(null);
+  const scrollRef   = useRef(null);
+  const progressRef = useRef(null);
+  const sectionRef  = useScrollReveal('.sr-item');
   const [scrollIdx, setScrollIdx] = useState(0);
-  const [selected, setSelected] = useState(null);
+  const [selected,  setSelected]  = useState(null);
 
   const scroll = (dir) => {
     if (!scrollRef.current) return;
-    const cardW = 320 + 20;
-    scrollRef.current.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+    scrollRef.current.scrollBy({ left: dir * 340, behavior: 'smooth' });
     setScrollIdx(i => Math.max(0, Math.min(CERTS.length - 3, i + dir)));
   };
 
   return (
-    <section id="certs">
-      <div className="sec-label">06 — Certifications & Courses</div>
+    <section id="certs" ref={sectionRef}>
+      <div className="sec-label sr-item sr-d0">06 — Certifications &amp; Courses</div>
 
       <div className="cert-header-row">
         <div>
-          <h2 className="sec-h" style={{ marginBottom: 6 }}>Continuous <em>Learning</em></h2>
-          <div className="cert-scroll-hint">
+          <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Continuous <em>Learning</em></h2>
+          <div className="cert-scroll-hint sr-item sr-d2">
             <span>scroll to explore</span>
             <span className="cert-arrow-anim">→</span>
           </div>
         </div>
-        <div className="cert-nav-btns">
+        <div className="cert-nav-btns sr-item sr-d2">
           <button className="cert-nav-btn" onClick={() => scroll(-1)} disabled={scrollIdx === 0}>‹</button>
           <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={scrollIdx >= CERTS.length - 3}>›</button>
         </div>
       </div>
 
       <div className="cert-scroll-wrap">
-        <div className="cert-scroll" ref={scrollRef}>
+        <div className="cert-scroll" ref={scrollRef} onScroll={(e) => {
+          const t = e.currentTarget;
+          const max = t.scrollWidth - t.clientWidth;
+          if (max <= 0) return;
+          const pct = (t.scrollLeft / max) * 100;
+          if (progressRef.current) progressRef.current.style.width = pct + '%';
+        }}>
           <div className="cert-track">
-            {CERTS.map((c) => (
+            {CERTS.map((c, i) => (
               <div
                 key={c.title}
-                className="cert-tile"
+                className={`cert-tile sr-item sr-d${Math.min(i, 7)}`}
                 style={{ '--accent': c.accent, '--accent-rgb': c.accentRgb }}
                 onClick={() => setSelected(c)}
               >
                 <div className="cert-tile-glow" />
                 <div className="cert-tile-bar" />
-
                 {c.image && (
                   <div className="cert-tile-img-strip">
                     <img src={c.image} alt={c.title} className="cert-tile-img" />
                     <div className="cert-tile-img-overlay" />
                   </div>
                 )}
-
                 <div className="cert-tile-content">
                   <div className="cert-tile-top">
                     <span className="cert-tile-icon">{c.icon}</span>
@@ -287,18 +389,37 @@ export function Certifications() {
         </div>
       </div>
 
+      {/* Progress bar + hint — same as Experience section */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8, padding: '0 24px' }}>
+        <div style={{ flex: 1, height: 2, background: 'rgba(255,255,255,0.07)', borderRadius: 2, overflow: 'hidden' }}>
+          <div
+            ref={progressRef}
+            style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }}
+          />
+        </div>
+        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+          drag or use arrows to explore
+        </span>
+      </div>
+
       {selected && <CertModal cert={selected} onClose={() => setSelected(null)} />}
     </section>
   );
 }
 
+/* ══════════════════════════════════════════
+   ACHIEVEMENTS
+══════════════════════════════════════════ */
 export function Achievements() {
+  const ref = useScrollReveal('.sr-item');
+
   return (
-    <section id="achievements">
-      <div className="sec-label">07 — Leadership & Achievements</div>
-      <h2 className="sec-h">Beyond <em>Code</em></h2>
+    <section id="achievements" ref={ref}>
+      <div className="sec-label sr-item sr-d0">07 — Leadership &amp; Achievements</div>
+      <h2 className="sec-h sr-item sr-d1">Beyond <em>Code</em></h2>
+
       <div style={{ marginTop: 44 }}>
-        <div className="lead-card">
+        <div className="lead-card sr-item sr-d2">
           <div className="lead-role">🎯 Vice President — Sponsorship</div>
           <div className="lead-org">College Technical Fest (ICON)</div>
           <ul className="lead-bullets">
@@ -314,10 +435,20 @@ export function Achievements() {
             <span className="lead-tag">Team Coordination</span>
           </div>
         </div>
-        <div className="ach-grid">
-          <div className="ach-card"><div className="ach-icon">🏆</div><div className="ach-title">Inter-School Chess Champion</div><div className="ach-loc">Nagpur</div><div className="ach-sub">Championship in inter-school chess — strategic thinking and competitive excellence.</div></div>
-          <div className="ach-card"><div className="ach-icon">👑</div><div className="ach-title">Nagpur District Chess Champion</div><div className="ach-loc">Nagpur District Level</div><div className="ach-sub">District-level chess victory showcasing advanced strategy and analytical problem-solving.</div></div>
-          <div className="ach-card"><div className="ach-icon">⭐</div><div className="ach-title">State-Level Chess Qualifier</div><div className="ach-loc">8th Grade Achievement</div><div className="ach-sub">Qualified for state-level chess in 8th grade — early proof of sustained competitive focus.</div></div>
+
+        <div className="ach-grid" style={{ marginTop: 24 }}>
+          {[
+            { icon: '🏆', title: 'Inter-School Chess Champion',   loc: 'Nagpur',               sub: 'Championship in inter-school chess — strategic thinking and competitive excellence.' },
+            { icon: '👑', title: 'Nagpur District Chess Champion', loc: 'Nagpur District Level', sub: 'District-level chess victory showcasing advanced strategy and analytical problem-solving.' },
+            { icon: '⭐', title: 'State-Level Chess Qualifier',    loc: '8th Grade Achievement', sub: 'Qualified for state-level chess in 8th grade — early proof of sustained competitive focus.' },
+          ].map((a, i) => (
+            <div key={a.title} className={`ach-card sr-item sr-d${i + 3}`}>
+              <div className="ach-icon">{a.icon}</div>
+              <div className="ach-title">{a.title}</div>
+              <div className="ach-loc">{a.loc}</div>
+              <div className="ach-sub">{a.sub}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

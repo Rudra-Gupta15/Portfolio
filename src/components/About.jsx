@@ -3,8 +3,8 @@ import { useState } from 'react';
 const STATS = [
   { n: '95%', icon: '🤖', label: 'ML Accuracy',     sub: 'across deployed models',  color: '#d4a843' },
   { n: '9K+', icon: '📸', label: 'Training Images', sub: 'for computer vision',     color: '#4da8e8' },
-  { n: '7+',  icon: '🚀', label: 'Projects Built',  sub: 'in production',           color: '#a855f7' },
-  { n: '2',   icon: '🎮', label: 'Games Shipped',   sub: 'Unity engine',            color: '#5be05b' },
+  { n: '15+',  icon: '🚀', label: 'Projects Built',  sub: 'in production',           color: '#a855f7' },
+  { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',            color: '#5be05b' },
 ];
 
 const TRAITS = [
