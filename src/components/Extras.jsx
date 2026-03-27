@@ -67,6 +67,7 @@ const REVEAL_CSS = `
     overflow-x: auto !important;
     overflow-y: visible !important;
     padding-bottom: 24px !important;
+    overscroll-behavior-x: contain;
   }
   .cert-track {
     overflow: visible !important;
