@@ -1,5 +1,5 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 :root {
   --bg: #0a1628;
@@ -255,6 +255,12 @@ body.modal-open .navbar {
 }
 .h-role { font-size: 11px; font-weight: 700; color: var(--gold); }
 .h-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin: 0 14px; opacity: 0.7; }
+
+@media(max-width:480px){
+  .hero-roles { justify-content: center; gap: 4px; }
+  .h-dot { margin: 0 8px; }
+  .hero-desc { text-align: center; font-size: 10px; }
+}
 .hero-desc {
   font-size: 11px;
   color: rgba(255,255,255,.55);
@@ -929,8 +935,33 @@ footer {
   footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 22px; }
   .nav-links { display: none; }
 }
-@media(max-width:540px){
+@media(max-width:600px){
+  .hero-name { font-size: clamp(40px, 12vw, 64px); letter-spacing: -1px; margin-bottom: 20px; }
+  .hero-tag { font-size: 11px; letter-spacing: 2px; }
+  .hero-tagline { font-size: 15px; line-height: 1.45; }
+  .hero-btns { flex-direction: column; width: 100%; }
+  .btn-gold, .btn-ghost { width: 100%; justify-content: center; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  .astat-n { font-size: 18px; }
+  .astat-l { font-size: 11px; }
+  .contact-wrap { margin-top: 30px; }
+  .contact-left, .contact-right { padding: 30px 20px; }
+  .sec-h { font-size: 32px; }
+}
+@media(max-width:480px){
+  .navbar,.navbar.scrolled { padding: 12px 16px; }
+  .nav-right { gap: 8px; }
+  .btn-lets-talk { padding: 8px 16px; font-size: 10px; }
+  .theme-toggle { width: 40px; height: 22px; }
+  .theme-toggle::after { width: 14px; height: 14px; top: 2.5px; left: 2.5px; }
+  .theme-toggle.on::after { transform: translateX(18px); }
   .proj-grid,.cert-grid,.ach-grid { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .astat { padding: 16px 8px; }
+  .spec-card-new { padding: 16px 18px; }
+  .spec-icon-new { font-size: 26px; }
+  .spec-title-new { font-size: 12px; }
+  .spec-card-new.spec-active { transform: scale(1.01) !important; }
 }
 
 /* ══ LIVE / INTERACTIVE ENHANCEMENTS ══ */
