@@ -65,9 +65,11 @@ const REVEAL_CSS = `
   }
   .cert-scroll {
     overflow-x: auto !important;
-    overflow-y: visible !important;
+    overflow-y: hidden !important;
     padding-bottom: 24px !important;
-    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
   }
   .cert-track {
     overflow: visible !important;
@@ -320,13 +322,32 @@ export function Certifications() {
   const scrollRef   = useRef(null);
   const progressRef = useRef(null);
   const sectionRef  = useScrollReveal('.sr-item');
-  const [scrollIdx, setScrollIdx] = useState(0);
-  const [selected,  setSelected]  = useState(null);
+  const [selected, setSelected] = useState(null);
+  const [canScroll, setCanScroll] = useState({ left: false, right: true });
 
   const scroll = (dir) => {
     if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: dir * 340, behavior: 'smooth' });
-    setScrollIdx(i => Math.max(0, Math.min(CERTS.length - 3, i + dir)));
+    const { clientWidth } = scrollRef.current;
+    // Scroll by roughly 80% of view width for better UX on all devices
+    scrollRef.current.scrollBy({ left: dir * clientWidth * 0.8, behavior: 'smooth' });
+  };
+
+  const onScroll = (e) => {
+    const t = e.currentTarget;
+    const { scrollLeft, scrollWidth, clientWidth } = t;
+    const max = scrollWidth - clientWidth;
+
+    // Update buttons
+    setCanScroll({
+      left: scrollLeft > 10,
+      right: scrollLeft < max - 10
+    });
+
+    // Update progress bar
+    if (max > 0 && progressRef.current) {
+      const pct = (scrollLeft / max) * 100;
+      progressRef.current.style.width = pct + '%';
+    }
   };
 
   return (
@@ -342,19 +363,13 @@ export function Certifications() {
           </div>
         </div>
         <div className="cert-nav-btns sr-item sr-d2">
-          <button className="cert-nav-btn" onClick={() => scroll(-1)} disabled={scrollIdx === 0}>‹</button>
-          <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={scrollIdx >= CERTS.length - 3}>›</button>
+          <button className="cert-nav-btn" onClick={() => scroll(-1)} disabled={!canScroll.left}>‹</button>
+          <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={!canScroll.right}>›</button>
         </div>
       </div>
 
       <div className="cert-scroll-wrap">
-        <div className="cert-scroll" ref={scrollRef} onScroll={(e) => {
-          const t = e.currentTarget;
-          const max = t.scrollWidth - t.clientWidth;
-          if (max <= 0) return;
-          const pct = (t.scrollLeft / max) * 100;
-          if (progressRef.current) progressRef.current.style.width = pct + '%';
-        }}>
+        <div className="cert-scroll" ref={scrollRef} onScroll={onScroll}>
           <div className="cert-track">
             {CERTS.map((c, i) => (
               <div
