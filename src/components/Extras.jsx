@@ -271,45 +271,170 @@ function CertModal({ cert, onClose }) {
    PUBLICATIONS
 ══════════════════════════════════════════ */
 export function Publications() {
-  const ref = useScrollReveal('.sr-item');
+  const sectionRef = useScrollReveal('.sr-item');
+  const scrollRef = useRef(null);
+  const progressRef = useRef(null);
+  const [canScroll, setCanScroll] = useState({ left: false, right: true });
+
+  const scroll = (dir) => {
+    if (!scrollRef.current) return;
+    const { clientWidth } = scrollRef.current;
+    // Scroll by full view width + gap for predictable card-by-card movement
+    // The gap in CSS is 80px, so we scroll by roughly 100% of container
+    scrollRef.current.scrollBy({ left: dir * (clientWidth + 80), behavior: 'smooth' });
+  };
+
+  const onScroll = (e) => {
+    const t = e.currentTarget;
+    const { scrollLeft, scrollWidth, clientWidth } = t;
+    const max = scrollWidth - clientWidth;
+
+    // Update buttons
+    setCanScroll({
+      left: scrollLeft > 10,
+      right: scrollLeft < max - 10
+    });
+
+    // Update progress bar
+    if (max > 0 && progressRef.current) {
+      const pct = (scrollLeft / max) * 100;
+      progressRef.current.style.width = pct + '%';
+    }
+  };
 
   return (
-    <section id="publications" ref={ref}>
+    <section id="publications" ref={sectionRef}>
       <style>{REVEAL_CSS}</style>
 
       <div className="sec-label sr-item sr-d0">05 — Research &amp; Publications</div>
-      <h2 className="sec-h sr-item sr-d1">Published <em>Work</em></h2>
-
-      <div style={{ marginTop: 44 }}>
-        <div className="pub-card sr-item sr-d2">
-          <div className="pub-card-left">
-            <img src="/images/cert-ieee-icetems.jpeg" alt="IEEE Certificate" className="pub-cert-img" />
+      <div className="cert-header-row">
+        <div>
+          <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Published <em>Work</em></h2>
+          <div className="cert-scroll-hint sr-item sr-d2">
+            <span>scroll or drag to explore</span>
+            <span className="cert-arrow-anim">→</span>
           </div>
-          <div className="pub-card-right">
-            <div className="pub-badge-row">
-              <span className="pub-badge ieee">IEEE</span>
-              <span className="pub-badge conf">International Conference</span>
-              <span className="pub-badge presented">Presented</span>
+        </div>
+        <div className="cert-nav-btns sr-item sr-d2">
+          <button className="cert-nav-btn" onClick={() => scroll(-1)} disabled={!canScroll.left}>‹</button>
+          <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={!canScroll.right}>›</button>
+        </div>
+      </div>
+
+      <div className="pub-scroll-wrap" style={{ marginTop: 24 }}>
+        <div className="pub-scroll" ref={scrollRef} onScroll={onScroll}>
+          <div className="pub-track">
+            {/* IEEE Publication */}
+            <div className="pub-card sr-item sr-d2">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img src="/images/cert-ieee-icetems.jpeg" alt="IEEE Certificate" className="pub-cert-img" />
+                </div>
+              </div>
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge ieee">IEEE</span>
+                  <span className="pub-badge conf">International Conference</span>
+                  <span className="pub-badge presented">Presented</span>
+                </div>
+                <h3 className="pub-title">Sign Language Translator using Machine Learning Algorithms on RGB Color Space</h3>
+                <div className="pub-conf">
+                  3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong>
+                </div>
+                <div className="pub-meta">
+                  <span>📅 6–7 March 2026</span>
+                  <span>📍 YCCE, Nagpur, India</span>
+                  <span>🏛️ IEEE Maharashtra Section</span>
+                </div>
+                <p className="pub-desc">
+                  Researched and presented a real-time sign language recognition system leveraging machine learning algorithms on RGB color space data.
+                </p>
+                <div className="pub-tags">
+                  {['Machine Learning', 'Computer Vision', 'Sign Language', 'IEEE'].map(t => (
+                    <span key={t} className="pub-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <h3 className="pub-title">Sign Language Translator using Machine Learning Algorithms on RGB Color Space</h3>
-            <div className="pub-conf">
-              3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong>
+
+            {/* BalanceTab Extension */}
+            <div className="pub-card sr-item sr-d3">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img src="/images/proj-balancetab.png" alt="BalanceTab Extension" className="pub-cert-img" />
+                </div>
+              </div>
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge presented" style={{ background: '#3b82f622', border: '1px solid #3b82f666', color: '#60a5fa' }}>BalanceTab</span>
+                  <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.9</span>
+                </div>
+                <h3 className="pub-title">Gamer + Productivity Dashboard — BalanceTab</h3>
+                <div className="pub-conf"> Chrome &amp; Edge New Tab Replacement </div>
+                <div className="pub-meta">
+                  <span>📅 25 March 2026</span>
+                  <span>📅 1 April 2026</span>
+                  <span>📦 Chrome Web Store (v3)</span>
+                  <span>🎮 7 Arcade Games</span>
+                </div>
+                <p className="pub-desc">
+                  Fuses gamer aesthetics with a productivity dashboard. Features an Orbitron-font dashboard, 7 HTML5 Canvas mini-games, real-time weather, an AI quick-launch dock, and zero-cloud local storage.
+                </p>
+                <div className="pub-tags">
+                  {['Manifest V3', 'Canvas API', 'Open-Meteo API', 'Pure JS', 'Performance'].map(t => (
+                    <span key={t} className="pub-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="pub-meta">
-              <span>📅 6–7 March 2026</span>
-              <span>📍 YCCE, Nagpur, India</span>
-              <span>🏛️ IEEE Maharashtra Section</span>
-            </div>
-            <p className="pub-desc">
-              Researched and presented a real-time sign language recognition system leveraging machine learning algorithms on RGB color space data. The system translates hand gestures into readable text, bridging communication for the hearing-impaired community.
-            </p>
-            <div className="pub-tags">
-              {['Machine Learning', 'Computer Vision', 'Sign Language', 'RGB Color Space', 'IEEE'].map(t => (
-                <span key={t} className="pub-tag">{t}</span>
-              ))}
+
+            {/* TimeMark Extension */}
+            <div className="pub-card sr-item sr-d4">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img src="/images/proj-yt-bookmark.png" alt="TimeMark Extension" className="pub-cert-img" />
+                </div>
+              </div>
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge presented" style={{ background: '#e91e6322', border: '1px solid #e91e6366', color: '#f06292' }}>TimeMark</span>
+                  <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v1.4</span>
+                </div>
+                <h3 className="pub-title">YouTube Timestamp Bookmarks — TimeMark</h3>
+                <div className="pub-conf"> Native Browser Integration &amp; Utility </div>
+                <div className="pub-meta">
+                  <span>📅 24 March 2026</span>
+                  <span>📅 1 April 2026</span>
+                  <span>📦 Chrome Web Store (v3)</span>
+                  <span>🛠️ Pure Browser APIs</span>
+                </div>
+                <p className="pub-desc">
+                  Lets users bookmark exact timestamps in any YouTube video with a native in-player button. Features high-precision seeking, green flash feedback, and a dynamic popup panel with real-time playback updates.
+                </p>
+                <div className="pub-tags">
+                  {['Manifest V3', 'JavaScript', 'MutationObserver', 'Content Scripts', 'Storage API'].map(t => (
+                    <span key={t} className="pub-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Progress bar + hint */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8, padding: '0 24px' }}>
+        <div style={{ flex: 1, height: 2, background: 'rgba(255,255,255,0.07)', borderRadius: 2, overflow: 'hidden' }}>
+          <div
+            ref={progressRef}
+            style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }}
+          />
+        </div>
+        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+          drag or use arrows to explore
+        </span>
       </div>
     </section>
   );
@@ -319,9 +444,9 @@ export function Publications() {
    CERTIFICATIONS
 ══════════════════════════════════════════ */
 export function Certifications() {
-  const scrollRef   = useRef(null);
+  const scrollRef = useRef(null);
   const progressRef = useRef(null);
-  const sectionRef  = useScrollReveal('.sr-item');
+  const sectionRef = useScrollReveal('.sr-item');
   const [selected, setSelected] = useState(null);
   const [canScroll, setCanScroll] = useState({ left: false, right: true });
 
@@ -454,9 +579,9 @@ export function Achievements() {
 
         <div className="ach-grid" style={{ marginTop: 24 }}>
           {[
-            { icon: '🏆', title: 'Inter-School Chess Champion',   loc: 'Nagpur',               sub: 'Championship in inter-school chess — strategic thinking and competitive excellence.' },
+            { icon: '🏆', title: 'Inter-School Chess Champion', loc: 'Nagpur', sub: 'Championship in inter-school chess — strategic thinking and competitive excellence.' },
             { icon: '👑', title: 'Nagpur District Chess Champion', loc: 'Nagpur District Level', sub: 'District-level chess victory showcasing advanced strategy and analytical problem-solving.' },
-            { icon: '⭐', title: 'State-Level Chess Qualifier',    loc: '8th Grade Achievement', sub: 'Qualified for state-level chess in 8th grade — early proof of sustained competitive focus.' },
+            { icon: '⭐', title: 'State-Level Chess Qualifier', loc: '8th Grade Achievement', sub: 'Qualified for state-level chess in 8th grade — early proof of sustained competitive focus.' },
           ].map((a, i) => (
             <div key={a.title} className={`ach-card sr-item sr-d${i + 3}`}>
               <div className="ach-icon">{a.icon}</div>

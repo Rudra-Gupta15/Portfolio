@@ -26,6 +26,16 @@ function useScrollReveal(selector) {
   return ref;
 }
 
+/* ─── TECHNICAL STEP 1: Define the Icon component ─── */
+const ChromeIcon = ({ size = 15, margin = 6 }) => (
+  <svg width={size} height={size} viewBox="0 0 48 48" style={{ marginRight: margin }}>
+    <circle cx="24" cy="24" r="24" fill="#DB4437"/>
+    <path d="M24 24 L44 24 A20 20 0 0 1 12 42 Z" fill="#0F9D58"/>
+    <path d="M24 24 L12 42 A20 20 0 0 1 4 16 Z" fill="#F4B400"/>
+    <circle cx="24" cy="24" r="10" fill="#4285F4" stroke="#fff" strokeWidth="2"/>
+  </svg>
+);
+
 const REVEAL_CSS = `
   .proj-sr {
     opacity: 0;
@@ -241,6 +251,7 @@ const PROJECTS = [
     'Built with Manifest V3. content.js reads video.currentTime directly from the DOM and injects the bookmark button into .ytp-right-controls. chrome.scripting.executeScript is used by popup.js to seek the video by setting currentTime on the active tab. MutationObserver tracks URL changes for SPA re-injection. Bookmarks stored as a flat array keyed by ytbm_all, filtered client-side by videoId.',
   outcome: 'Native YouTube integration at v1.4 — zero dependencies, pure browser APIs',
   tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts', 'MutationObserver'],
+  webstore: 'https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea',
 },
   {
     cat: 'aiml web dataset',
@@ -249,8 +260,8 @@ const PROJECTS = [
     type: 'Machine Learning · Flask',
     title: 'Banking ChatBot',
     subtitle: 'TF-IDF + Cosine Similarity',
-    gradient: ['#0a3d2e', '#00a86b'],
-    gradientBg: 'linear-gradient(135deg, #021a12 0%, #0a3d2e 50%, #00a86b 100%)',
+    gradient: ['#0a3d2e', '#4f4a4d'],
+    gradientBg: 'linear-gradient(135deg, #0a3d2e 0%, #0a3d2e 50%, #414f2e 50%, #808000 100%)',
     overview: 'A banking FAQ chatbot built with Python, Flask, and ML — no LLM, no API key, runs entirely offline. Uses TF-IDF vectorization and Cosine Similarity to match user questions against 100+ banking Q&A pairs with confidence scoring.',
     bullets: [
       '🤖 ML-powered matching — TF-IDF vectorization + Cosine Similarity for best answer retrieval',
@@ -274,7 +285,7 @@ const PROJECTS = [
     title: 'RUD AI',
     subtitle: 'Multi-Mode AI Assistant',
     gradient: ['#4a5a00', '#808000'],
-    gradientBg: 'linear-gradient(135deg, #1a1f00 0%, #4a5a00 50%, #808000 100%)',
+    gradientBg: 'linear-gradient(135deg, #1a1f00 0%, #1a1f00 50%, #67672d 50%, #808000 100%)',
     overview: 'A fully offline conversational AI assistant with 6 specialized modes — powered by Ollama (llama3.1) and a custom Flask backend. No API key, no cost, runs entirely on local hardware.',
     bullets: [
       '6 intelligent modes: Normal, Banking, Cooking, Study, Entertainment, Fun',
@@ -298,7 +309,7 @@ const PROJECTS = [
     title: 'PrepMaster',
     subtitle: 'Complete Placement & Interview Prep',
     gradient: ['#2d1b69', '#7c3aed'],
-    gradientBg: 'linear-gradient(135deg, #0d0a1f 0%, #2d1b69 50%, #7c3aed 100%)',
+    gradientBg: 'linear-gradient(135deg, #2d1b69 0%, #2d1b69 50%, #1f0a45 50%, #7c3aed 100%)',
     overview: 'A premium, high-performance quiz platform built to help students and professionals crack placements and technical interviews — featuring 4000+ curated questions, 5 career tracks, a smart quiz engine, and a dedicated topic notebook.',
     bullets: [
       '4000+ verified questions across TCS NQT, AI & ML, React, SAP, and DevOps tracks',
@@ -431,6 +442,7 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
     techDetails: 'Built with Manifest V3. Weather from Open-Meteo API via browser geolocation. Recent tabs via chrome.sessions + chrome.tabs APIs. All 7 games on HTML5 Canvas with pure JS game loops. Settings and notebook persisted in chrome.storage.local. Zero dependencies — no npm, no bundler, single HTML + JS file.',
     outcome: 'Every new tab becomes a gamer dashboard — 7 games, live weather, AI links, zero cloud storage',
     tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Canvas API', 'Open-Meteo API'],
+    webstore: 'https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki',
   },
 ];
 
@@ -457,7 +469,6 @@ function ProjectModal({ project, onClose }) {
     };
   }, [onClose]);
   if (!project) return null;
-  const [g0, g1] = project.gradient;
 
   return createPortal(
     <div className="pmodal-overlay" onClick={onClose}>
@@ -516,16 +527,22 @@ function ProjectModal({ project, onClose }) {
                   Live Demo ↗
                 </a>
               )}
+              {project.webstore && (
+                <a href={project.webstore} target="_blank" rel="noreferrer"
+                  className="pmodal-github" style={{background: '#ffffff', color: '#000000'}}>
+                  Web-Store ↗
+                </a>
+              )}              
               {project.kaggle && (
                 <a href={project.kaggle} target="_blank" rel="noreferrer"
-                  className="pmodal-github" style={{ background: '#20beff', color: '#fff' }}>
+                  className="pmodal-github" style={{ background: '#3b82f6', color: '#fff' }}>
                   Kaggle ↗
                 </a>
               )}
               {project.github && (
                 <a href={project.github} target="_blank" rel="noreferrer"
                   className="pmodal-github"
-                  style={{ background: `linear-gradient(135deg, ${g0}, ${g1})` }}>
+                  style={{background: `linear-gradient(135deg, #000000, #fff)`}}>
                   GitHub ↗
                 </a>
               )}
@@ -617,7 +634,10 @@ export default function Projects() {
               <div className="pcard-blob1" style={{ background: p.gradient[1] }} />
               <div className="pcard-blob2" style={{ background: p.gradient[0] }} />
               <div className="pcard-top">
-                <div className="pcard-type">{p.type}</div>
+                <div className="pcard-type" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  {p.cat.includes('chrome') && <ChromeIcon size={20} margin={0} />}
+                  {p.type}
+                </div>
                 <h3 className="pcard-title">{p.title}</h3>
                 <p className="pcard-sub">{p.subtitle}</p>
               </div>
