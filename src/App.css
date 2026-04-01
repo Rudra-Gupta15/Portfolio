@@ -373,6 +373,11 @@ section:not(#home) {
   position: relative;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  section:not(#home) {
+    padding: 60px 20px;
+  }
+}
 .sec-label {
   font-size: 11px;
   font-weight: 600;
@@ -3881,9 +3886,9 @@ footer {
 }
 .pub-scroll {
   overflow-x: auto !important;
-  overflow-y: visible !important; /* Changed to visible where possible */
-  padding: 60px 0 !important; /* VITAL: Vertical breathing room for top/bottom glows and hover translateY */
-  margin: -60px 0 !important; /* Pull container back so it doesn't add extra space to the section */
+  overflow-y: visible !important;
+  padding: 60px 0 20px 0 !important; /* Plenty of top room, some bottom breathing room */
+  margin: -60px 0 0 0 !important; /* Only pull top UP, don't pull bottom elements under */
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -3926,10 +3931,12 @@ footer {
 /* Left — certificate image */
 .pub-card-left { flex-shrink: 0; }
 .pub-cert-img {
-  width: 320px;
+  width: 100%;
+  max-width: 320px; /* Limit image width on desktop */
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  object-fit: cover;
+  object-fit: contain; /* Don't cut parts of the cert/dashboard */
+  background: rgba(0,0,0,0.2);
   display: block;
 }
 
@@ -3990,6 +3997,33 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .pub-card { flex-direction: column; }
-  .pub-cert-img { width: 100%; }
+  /* Publications section */
+  .pub-scroll-wrap { padding: 0; margin-top: 16px; overflow: visible !important; }
+  .pub-scroll { padding: 40px 0 20px 0 !important; margin: -40px 0 0 0 !important; overflow-x: auto !important; overflow-y: visible !important; }
+  .pub-track { gap: 16px; padding: 0 40px; } /* Increased horizontal padding to allow shadows to breathe */
+  .pub-card {
+    flex-direction: column;
+    width: calc(100vw - 80px); /* Slightly narrower card to show more of the next card/shadows */
+    min-width: calc(100vw - 80px);
+    padding: 24px;
+    gap: 24px;
+    scroll-snap-align: center;
+  }
+  .pub-card-left { width: 100%; display: flex; justify-content: center; }
+  .pub-cert-img { width: 100%; max-width: 100%; height: auto; aspect-ratio: auto; } /* Let cert-img scale naturally on mobile */
+  .pub-title { font-size: 1.1rem; }
+  .pub-meta { gap: 10px; font-size: 0.75rem; }
+
+  /* Achievements section */
+  .ach-grid { grid-template-columns: 1fr; gap: 16px; }
+  .lead-card { padding: 24px; }
+  .lead-tag { font-size: 0.7rem; padding: 3px 8px; }
+
+  /* Certifications section */
+  .cert-tile {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+  }
+  .cert-header-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .cert-nav-btns { display: none; } /* Hide navigation arrows on mobile as scroll-snap is better */
 }
