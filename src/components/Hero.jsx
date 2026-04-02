@@ -1,7 +1,48 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
   const canvasRef = useRef(null);
+  
+  const roles = [
+    "AI/ML Engineer",
+    "Chrome Extension Developer",
+    "IOT Engineer",
+    "Electronics Engineer",
+    "Game Dev Enthusiast",
+    "Data Scientist [Kaggle]"
+  ];
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [text, setText] = useState('');
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleType = () => {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        setText(currentRole.substring(0, charIndex - 1));
+        setCharIndex(prev => prev - 1);
+        setTypingSpeed(50);
+      } else {
+        setText(currentRole.substring(0, charIndex + 1));
+        setCharIndex(prev => prev + 1);
+        setTypingSpeed(150);
+      }
+
+      if (!isDeleting && charIndex === currentRole.length) {
+        setIsDeleting(true);
+        setTypingSpeed(2000); // Wait before deleting
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setRoleIndex(prev => (prev + 1) % roles.length);
+        setTypingSpeed(500); // Wait before typing next
+      }
+    };
+
+    const timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, roleIndex, typingSpeed]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -103,7 +144,7 @@ export default function Hero() {
     <>
       <section id="home">
         <div className="hero-left">
-          <p className="hero-tag">AI/ML Engineer</p>
+          <p className="hero-tag">{text}<span className="hero-cursor">_</span></p>
           <h1 className="hero-name"><span className="gn">RUDRA GUPTA</span></h1>
           <p className="hero-tagline">Building intelligent systems that bridge the gap between hardware and artificial intelligence</p>
           <div className="hero-roles">

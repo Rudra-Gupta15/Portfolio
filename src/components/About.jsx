@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STATS = [
-  { n: '95%', icon: '🤖', label: 'ML Accuracy',     sub: 'across deployed models',  color: '#d4a843' },
-  { n: '9K+', icon: '📸', label: 'Training Images', sub: 'for computer vision',     color: '#4da8e8' },
   { n: '15+',  icon: '🚀', label: 'Projects Built',  sub: 'in production',           color: '#a855f7' },
-  { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',            color: '#5be05b' },
+  { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',   color: '#5be05b' },
+  { n: '2', icon: '📦', label: 'Extensions Built',     sub: 'Chrome + Firefox compatible',  color: '#d4a843' },
+  { n: '9K+', icon: '📸', label: 'Training Images', sub: 'for computer vision',     color: '#4da8e8' },
 ];
 
 const TRAITS = [
@@ -19,10 +19,10 @@ const TRAITS = [
 const SPECS = [
   {
     icon: '🤖', title: 'AI/ML Engineering',
-    desc: 'Building and deploying ML models with 95%+ accuracy across real-world applications.',
+    desc: 'Building and deploying ML models with 90%+ accuracy across real-world applications.',
     accent: '#d4a843', accentRgb: '212,168,67',
     chips: ['TensorFlow', 'PyTorch', 'Sklearn'],
-    stat: '95%', statLabel: 'Accuracy',
+    stat: '90%', statLabel: 'Accuracy',
   },
   {
     icon: '👁️', title: 'Computer Vision',

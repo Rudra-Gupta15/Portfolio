@@ -446,9 +446,10 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
   },
 ];
 
-const TABS = ['all', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
+const TABS = ['all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
 const TABS_LABELS = {
   all: 'All',
+  live: 'Live / Launched',
   aiml: 'AI / ML',
   web: 'Web & Game',
   hardware: 'Hardware',
@@ -585,7 +586,11 @@ export default function Projects() {
     el.scrollBy({ left: dir * 440, behavior: 'smooth' });
   };
 
-  const visible = PROJECTS.filter(p => filter === 'all' || p.cat.includes(filter));
+  const visible = PROJECTS.filter(p => {
+    if (filter === 'all') return true;
+    if (filter === 'live') return !!(p.live || p.webstore);
+    return (p.cat || '').includes(filter);
+  });
 
   return (
     <section id="projects" ref={sectionRef}>
@@ -633,6 +638,11 @@ export default function Projects() {
               <div className="pcard-bg" style={{ background: p.gradientBg }} />
               <div className="pcard-blob1" style={{ background: p.gradient[1] }} />
               <div className="pcard-blob2" style={{ background: p.gradient[0] }} />
+              {(p.live || p.webstore) && (
+                <div className="pcard-live-badge">
+                  🚀 LIVE
+                </div>
+              )}
               <div className="pcard-top">
                 <div className="pcard-type" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                   {p.cat.includes('chrome') && <ChromeIcon size={20} margin={0} />}

@@ -369,6 +369,7 @@ export function Publications() {
                   <span className="pub-badge presented" style={{ background: '#3b82f622', border: '1px solid #3b82f666', color: '#60a5fa' }}>BalanceTab</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
                   <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.9</span>
+                  <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">Gamer + Productivity Dashboard — BalanceTab</h3>
                 <div className="pub-conf"> Chrome &amp; Edge New Tab Replacement </div>
@@ -401,6 +402,7 @@ export function Publications() {
                   <span className="pub-badge presented" style={{ background: '#e91e6322', border: '1px solid #e91e6366', color: '#f06292' }}>TimeMark</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
                   <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v1.4</span>
+                  <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">YouTube Timestamp Bookmarks — TimeMark</h3>
                 <div className="pub-conf"> Native Browser Integration &amp; Utility </div>
