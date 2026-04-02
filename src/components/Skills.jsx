@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
 const SKILLS = [
-  { n: '01', label: 'Python / ML ⭐ daily usage', pct: 94 },
-  { n: '02', label: 'Computer Vision ⭐ daily usage', pct: 80 },
-  { n: '03', label: 'Deep Learning ⭐ daily usage', pct: 75 },
-  { n: '04', label: 'Unity / Game Dev ⭐ daily usage', pct: 40 },
-  { n: '05', label: 'Hardware / IoT ⭐ daily usage', pct: 40 },
+  { n: '01', label: 'Python / ML ⭐ weekly usage', pct: 94 },
+  { n: '02', label: 'Computer Vision ⭐ weekly usage', pct: 80 },
+  { n: '03', label: 'Deep Learning ⭐ weekly usage', pct: 75 },
+  { n: '04', label: 'Unity / Game Dev ⭐ weekly usage', pct: 40 },
+  { n: '05', label: 'Hardware / IoT ⭐ weekly usage', pct: 40 },
 ];
 
 const BADGES = [

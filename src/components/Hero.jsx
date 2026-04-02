@@ -4,7 +4,7 @@ export default function Hero() {
   const canvasRef = useRef(null);
   
   const roles = [
-    "AI/ML Engineer",
+    "AI/ML Intern",
     "Chrome Extension Developer",
     "IOT Engineer",
     "Electronics Engineer",
