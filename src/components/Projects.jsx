@@ -98,7 +98,7 @@ const PROJECTS = [
     github: 'https://github.com/Rudra-Gupta15/Algorithm_Comparison'
   },
   {
-    cat: 'aiml web',
+    cat: 'web',
     image: '/images/proj-weather.png',
     emoji: '🌦️',
     type: 'ML Dashboard',
@@ -147,8 +147,8 @@ const PROJECTS = [
     type: 'ML + Streamlit',
     title: 'Movie Recommender System',
     subtitle: 'Content-Based Filtering',
-    gradient: ['#4a4a4a', '#d1d1d1'],
-    gradientBg: 'linear-gradient(135deg, #2e2e2e 0%, #4a4a4a 50%, #d1d1d1 100%)',
+    gradient: ['#1a1a1a', '#d1d1d1'],
+    gradientBg: 'linear-gradient(135deg, #121212 0%, #2e2e2e 40%, #d1d1d1 100%)',
     overview: 'An interactive ML-powered web app that delivers personalized movie recommendations using content-based filtering. Fetches real-time posters and metadata from the TMDB API.',
     bullets: [
       'Smart recommendations via Cosine Similarity on metadata features',
@@ -192,8 +192,8 @@ const PROJECTS = [
     type: 'College Major · AI/ML/IoT',
     title: 'ASL Recognition',
     subtitle: 'Multi-Scale Machine Learning',
-    gradient: ['#5c3b1e', '#f5e6d3'],
-    gradientBg: 'linear-gradient(135deg, #5c3b1e 0%, #5c3b1e 50%, #f5e6d3 50%, #f5e6d3 100%)',
+    gradient: ['#321f0f', '#f5e6d3'],
+    gradientBg: 'linear-gradient(135deg, #321f0f 0%, #5c3b1e 40%, #f5e6d3 100%)',
     overview: 'Real-time American Sign Language recognition using 3 parallel ML models trained across RGB, HSV, and Grayscale — achieving robust detection regardless of lighting conditions.',
     bullets: [
       '3 parallel models (RGB/HSV/Grayscale) — 9,000 training images total',
@@ -228,7 +228,7 @@ const PROJECTS = [
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
   },
   {
-  cat: 'web chrome',
+  cat: 'chrome',
   image: '/images/proj-yt-bookmark.png',
   emoji: '🔖',
   type: 'Chrome Extension · Manifest V3',
@@ -260,8 +260,8 @@ const PROJECTS = [
     type: 'Machine Learning · Flask',
     title: 'Banking ChatBot',
     subtitle: 'TF-IDF + Cosine Similarity',
-    gradient: ['#0a3d2e', '#4f4a4d'],
-    gradientBg: 'linear-gradient(135deg, #0a3d2e 0%, #0a3d2e 50%, #414f2e 50%, #808000 100%)',
+    gradient: ['#0a3d2e', '#808000'],
+    gradientBg: 'linear-gradient(135deg, #0a3d2e 0%, #414f2e 50%, #808000 100%)',
     overview: 'A banking FAQ chatbot built with Python, Flask, and ML — no LLM, no API key, runs entirely offline. Uses TF-IDF vectorization and Cosine Similarity to match user questions against 100+ banking Q&A pairs with confidence scoring.',
     bullets: [
       '🤖 ML-powered matching — TF-IDF vectorization + Cosine Similarity for best answer retrieval',
@@ -284,8 +284,8 @@ const PROJECTS = [
     type: 'Conversational AI · Flask',
     title: 'RUD AI',
     subtitle: 'Multi-Mode AI Assistant',
-    gradient: ['#4a5a00', '#808000'],
-    gradientBg: 'linear-gradient(135deg, #1a1f00 0%, #1a1f00 50%, #67672d 50%, #808000 100%)',
+    gradient: ['#1a1f00', '#4a5a00'],
+    gradientBg: 'linear-gradient(135deg, #0d1000 0%, #1a1f00 50%, #4a5a00 100%)',
     overview: 'A fully offline conversational AI assistant with 6 specialized modes — powered by Ollama (llama3.1) and a custom Flask backend. No API key, no cost, runs entirely on local hardware.',
     bullets: [
       '6 intelligent modes: Normal, Banking, Cooking, Study, Entertainment, Fun',
@@ -309,7 +309,7 @@ const PROJECTS = [
     title: 'PrepMaster',
     subtitle: 'Complete Placement & Interview Prep',
     gradient: ['#2d1b69', '#7c3aed'],
-    gradientBg: 'linear-gradient(135deg, #2d1b69 0%, #2d1b69 50%, #1f0a45 50%, #7c3aed 100%)',
+    gradientBg: 'linear-gradient(135deg, #1f0a45 0%, #2d1b69 50%, #7c3aed 100%)',
     overview: 'A premium, high-performance quiz platform built to help students and professionals crack placements and technical interviews — featuring 4000+ curated questions, 5 career tracks, a smart quiz engine, and a dedicated topic notebook.',
     bullets: [
       '4000+ verified questions across TCS NQT, AI & ML, React, SAP, and DevOps tracks',
@@ -327,14 +327,14 @@ const PROJECTS = [
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/prepmaster-placement-and-interview-quiz-questions',
   },
   {
-    cat: 'ai tools',
+    cat: 'aiml',
     image: '/images/proj-aimailassistant.png',
     emoji: '🤖',
     type: 'AI Assistant · Python · FastAPI',
     title: 'AI Mail Assistant',
     subtitle: 'Local LLM-Powered Email & Messaging Automation',
-    gradient: ['#6f5e4d', '#bfbfbf'],
-gradientBg: 'linear-gradient(135deg, #5a4a3b 0%, #8c7762 50%, #cfcfcf 100%)',
+    gradient: ['#4a3d31', '#d1d1d1'],
+gradientBg: 'linear-gradient(135deg, #4a3d31 0%, #6f5e4d 40%, #d1d1d1 100%)',
     overview: 'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
     bullets: [
       'Smart Auto-Reply engine classifies messages as AUTO or HUMAN (needs attention)',
@@ -352,7 +352,7 @@ gradientBg: 'linear-gradient(135deg, #5a4a3b 0%, #8c7762 50%, #cfcfcf 100%)',
     github: 'https://github.com/Rudra-Gupta15/ai-mail-assistant',
   },
   {
-    cat: 'ai tools',
+    cat: 'aiml',
     image: '/images/proj-resumeai.png',
     emoji: '🚀',
     type: 'AI Tool · React · Groq · Ollama',
@@ -420,7 +420,7 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
   kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/animation-movies-complete-dataset-18782029',
 },
   {
-    cat: 'web chrome',
+    cat: 'chrome',
     image: '/images/proj-balancetab.png',
     emoji: '⚖️',
     type: 'Chrome Extension · Manifest V3',
