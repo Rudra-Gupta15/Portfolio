@@ -444,6 +444,27 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
     tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Canvas API', 'Open-Meteo API'],
     webstore: 'https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki',
   },
+  {
+  cat: 'dataset',
+  image: '/images/proj-llm-catalog.png',
+  emoji: '🤖',
+  type: 'Data Science · Dataset Creation',
+  title: 'LLM Models Comparison: 220+ AI Models',
+  subtitle: 'Specs, Price & Performance of 229 AI Models',
+  gradient: ['#0a0a1a', '#00c2ff'],
+  gradientBg: 'linear-gradient(135deg, #0a0a1a 0%, #0a0a1a 50%, #00c2ff 50%, #00c2ff 100%)',
+  overview: '229 large language models compared across 57 columns — covering specs, API pricing, hallucination rates, context windows, platform support, and capabilities. Hand-curated from official model cards and provider documentation across 40+ companies.',
+  bullets: [
+    '229 models from 40+ providers — OpenAI, Anthropic, Google, Meta, Mistral & more',
+    '57 columns: specs, pricing, benchmarks, modalities, deployment & licensing',
+    'Covers 14 model types: LLM, VLM, MoE, Code LLM, SLM, Reasoning LLM & more',
+    'Timeline from 2021–2026 with Live, Beta, Legacy & Deprecated status tracking',
+  ],
+  techDetails: 'Built by manually cross-referencing official model cards, Hugging Face listings, and public benchmark leaderboards. Includes boolean _Flag columns for programmatic filtering, hallucination rate estimates, API pricing per 1M tokens, and platform performance ratings across Mac, Windows, and Linux.',
+  outcome: '229 models · 57 columns · The most comprehensive open LLM comparison dataset on Kaggle',
+  tags: ['LLM', 'Benchmarking', 'NLP', 'AI', 'Pandas', 'EDA', 'Model Comparison'],
+  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/the-global-llm-catalog',
+},
 ];
 
 const TABS = ['all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
