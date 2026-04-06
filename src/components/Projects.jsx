@@ -463,7 +463,7 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
   techDetails: 'Built by manually cross-referencing official model cards, Hugging Face listings, and public benchmark leaderboards. Includes boolean _Flag columns for programmatic filtering, hallucination rate estimates, API pricing per 1M tokens, and platform performance ratings across Mac, Windows, and Linux.',
   outcome: '229 models · 57 columns · The most comprehensive open LLM comparison dataset on Kaggle',
   tags: ['LLM', 'Benchmarking', 'NLP', 'AI', 'Pandas', 'EDA', 'Model Comparison'],
-  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/the-global-llm-catalog',
+  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/llm-showdown-200-ai-models-57-metrics',
 },
 ];
 
