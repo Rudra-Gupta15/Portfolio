@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const STATS = [
   { n: '15+',  icon: '🚀', label: 'Projects Built',  sub: 'in production',           color: '#a855f7' },
-  { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',   color: '#5be05b' },
-  { n: '2', icon: '📦', label: 'Extensions Built',     sub: 'Chrome + Firefox compatible',  color: '#d4a843' },
-  { n: '9K+', icon: '📸', label: 'Training Images', sub: 'for computer vision',     color: '#4da8e8' },
+  { n: 'Top 4%', icon: '📊', label: 'Kaggle Global',  sub: 'Rank 360 / 9,044',        color: '#d4a843' },
+  { n: '2', icon: '📦', label: 'Extensions Built',     sub: 'Chrome + Firefox compatible',  color: '#5be05b' },
+  { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',   color: '#4da8e8' },
 ];
 
 const TRAITS = [
@@ -54,7 +54,7 @@ export default function About() {
         <div className="ab-card abt-bio-card">
           <div className="ab-bio-tag">
             <span className="ab-dot" />
-            Electronics Engineer · AI/ML Developer
+            Kaggle Datasets Expert · Ranked 360 / 9,044 globally
           </div>
 <p className="ab-bio-text">
   I'm an <strong>Electronics Engineering undergraduate</strong> passionate about building intelligent, real-world systems. 

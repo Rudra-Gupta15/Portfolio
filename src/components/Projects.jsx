@@ -232,7 +232,7 @@ const PROJECTS = [
   image: '/images/proj-yt-bookmark.png',
   emoji: '🔖',
   type: 'Chrome Extension · Manifest V3',
-  title: 'TimeMark — Video Timestamp Bookmarks',
+  title: 'TimeMark',
   subtitle: 'Browser Extension',
   gradient: ['#8b0000', '#FF0000'],
   gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
@@ -445,11 +445,34 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
     webstore: 'https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki',
   },
   {
+  cat: 'aiml',
+  image: '/images/proj-jarvis.png',
+  emoji: '🤖',
+  type: 'Desktop AI · FastAPI · React',
+  title: 'JARVIS',
+  subtitle: 'Advanced Desktop AI Assistant',
+  gradient: ['#000a1a', '#001a3a'],
+  gradientBg: 'linear-gradient(135deg, #000510 0%, #000a1a 50%, #001a3a 100%)',
+  overview: 'A premium, always-on desktop AI assistant inspired by Tony Stark\'s JARVIS — combining local LLM reasoning, offline voice recognition, and a 3D glassmorphic interface for an immersive experience.',
+  bullets: [
+    'Dual interaction modes: LIVE_SPEECH (wake-word "Jarvis") and TEXT_ONLY — switchable from dashboard',
+    'Offline STT via Vosk (Kaldi-based) + Windows SAPI5 TTS with sequential speech queue',
+    'Local LLM brain via Ollama (Llama 3.1 / Qwen2.5-VL / phi3) with history pruning',
+    'Smart automation: dynamic path resolution, fuzzy app matching, web fallback for missing apps',
+    'Floating 3D Globe desktop widget built with Three.js and glassmorphic design',
+    '100% offline & free — zero cloud dependency, runs entirely on local hardware',
+  ],
+  techDetails: 'FastAPI backend powers voice, vision (Tesseract OCR), and LLM engines. Real-time SSE broadcasts sync interaction mode across the React/Vite Aura dashboard and floating widget. Context window managed via character-based truncation and conversational history pruning.',
+  outcome: 'Full-stack local AI ecosystem — voice + vision + automation, zero API cost',
+  tags: ['Python', 'FastAPI', 'Ollama', 'React', 'Vite', 'Vosk', 'Three.js', 'SSE'],
+  github: 'https://github.com/Rudra-Gupta15/jarvis-desktop-assistant',
+  },
+  {
   cat: 'dataset',
   image: '/images/proj-llm-catalog.png',
   emoji: '🤖',
   type: 'Data Science · Dataset Creation',
-  title: 'LLM Models Comparison: 220+ AI Models',
+  title: 'LLM Catalog Dataset',
   subtitle: 'Specs, Price & Performance of 229 AI Models',
   gradient: ['#0a0a1a', '#00c2ff'],
   gradientBg: 'linear-gradient(135deg, #0a0a1a 0%, #0a0a1a 50%, #00c2ff 50%, #00c2ff 100%)',
@@ -465,10 +488,50 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
   tags: ['LLM', 'Benchmarking', 'NLP', 'AI', 'Pandas', 'EDA', 'Model Comparison'],
   kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/llm-showdown-200-ai-models-57-metrics',
 },
+{
+  cat: 'chrome',
+  image: '/images/proj-growth-tracker.png',
+  emoji: '🌴',
+  type: 'Chrome Extension · Manifest V3',
+  title: 'Growth Tracker',
+  subtitle: 'Browser Extension',
+  gradient: ['#1e3a0f', '#8db660'],
+  gradientBg: 'linear-gradient(135deg, #0a1f05 0%, #1e3a0f 50%, #4a7c2f 100%)',
+  overview:
+    'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
+  bullets: [
+    'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
+    'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
+    'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
+    'YouTube smart detection — classifies educational videos as productive using title keyword matching',
+    '15 achievements across streaks, volume, behavior patterns (Early Bird, Night Owl, Comeback Kid, Century Club)',
+    '4 animated SVG tree themes — Oasis (coconut), Desert (cactus), Sakura, and Midnight — each reacts to productivity %',
+    'Weekly pulse chart, visit history, domain breakdowns, and calendar with daily notes — all stored locally via Chrome Storage API',
+  ],
+  techDetails:
+    'Built with Manifest V3. background.js service worker handles all tracking via chrome.tabs and chrome.idle APIs, with a 1-minute alarm for periodic updates and midnight reset. Site blocking uses chrome.declarativeNetRequest dynamic rules — enabled on focus start, removed on stop. Pomodoro state machine lives in the service worker with chrome.notifications for interval alerts. customDomains synced via chrome.storage.onChanged listener. Four SVG tree renderers (createCoconutTree, createCactusTree, createSakuraTree, createMidnightTree) in tree.js with productivity-driven animations. Achievement engine in calculateAchievements() reads historyLog, targetHistory, and visitHistory.',
+  outcome: 'Published on Chrome Web Store at v2.6.0 — zero dependencies, fully offline, no data collection',
+  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'declarativeNetRequest', 'Chrome Storage API', 'SVG Animation', 'Pomodoro'],
+  webstore: 'https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar',
+},
 ];
 
-const TABS = ['all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
+const BEST_TITLES = new Set([
+  'JARVIS',
+  'ResumeAI',
+  'ASL Recognition',
+  'LLM Catalog Dataset',
+  'Growth Tracker',
+  'PrepMaster',
+  'RUD AI',
+  'AI Mail Assistant',
+  'TimeMark',
+  'BalanceTab',
+]);
+
+const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
 const TABS_LABELS = {
+  best: '⭐ Best',
   all: 'All',
   live: 'Live / Launched',
   aiml: 'AI / ML',
@@ -578,7 +641,7 @@ function ProjectModal({ project, onClose }) {
 }
 
 export default function Projects() {
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState('best');
   const [selected, setSelected] = useState(null);
   const scrollRef   = useRef(null);
   const progressRef = useRef(null);
@@ -608,6 +671,7 @@ export default function Projects() {
   };
 
   const visible = PROJECTS.filter(p => {
+    if (filter === 'best') return BEST_TITLES.has(p.title);
     if (filter === 'all') return true;
     if (filter === 'live') return !!(p.live || p.webstore);
     return (p.cat || '').includes(filter);

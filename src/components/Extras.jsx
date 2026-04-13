@@ -195,6 +195,67 @@ const CERTS = [
 ];
 
 /* ══════════════════════════════════════════
+   ACHIEVEMENTS DATA
+══════════════════════════════════════════ */
+const ACHIEVEMENTS = [
+  {
+    icon: '📊',
+    title: 'Kaggle Datasets Expert',
+    loc: 'Global Rank: 360 / 9,044',
+    date: '2026',
+    sub: 'Ranked in the Top 4% globally for high-quality dataset creation and data science contributions. Recognized for impactful community contributions as a final-year student.',
+    accent: '#4da8e8',
+    accentRgb: '77,168,232',
+    badge: 'Kaggle',
+    tags: ['Data Science', 'datasets', 'AI']
+  },
+  {
+    icon: '🎯',
+    title: 'Vice President — Sponsorship',
+    loc: 'College Technical Fest (ICON)',
+    date: '2025',
+    sub: 'Coordinated with sponsors and corporate partners to secure funding and support for the technical fest. Led team coordination and managed relationships throughout the event.',
+    accent: '#d4a843',
+    accentRgb: '212,168,67',
+    badge: 'Leadership',
+    tags: ['Sponsorship', 'Management', 'Leadership']
+  },
+  {
+  icon: '🤖',
+  title: 'Event Manager — RoboRace',
+  loc: 'College Technical Fest (ICON)',
+  date: '2024',
+  sub: 'Managed and executed RoboRace, a flagship robotics competition at ICON. Handled end-to-end event logistics, participant coordination, judging criteria, and on-ground operations.',
+  accent: '#e05b9a',
+  accentRgb: '224,91,154',
+  badge: 'Event Management',
+  tags: ['Robotics', 'Event Management', 'Operations']
+  },
+  {
+    icon: '👑',
+    title: 'Nagpur District Chess Qualifier',
+    loc: 'Nagpur District Level',
+    date: '2017',
+    sub: 'District-level chess victory demonstrating advanced strategy and analytical problem-solving skills.',
+    accent: '#ec4899',
+    accentRgb: '236,72,153',
+    badge: 'Chess',
+    tags: ['Logic', 'Excellence']
+  },
+  {
+    icon: '🏆',
+    title: 'Inter-School Chess Champion',
+    loc: 'Nagpur',
+    date: '2016',
+    sub: 'Championship victory in inter-school chess competition, showcasing strategic thinking and competitive excellence.',
+    accent: '#a855f7',
+    accentRgb: '168,85,247',
+    badge: 'Chess',
+    tags: ['Strategy', 'Competition']
+  },
+];
+
+/* ══════════════════════════════════════════
    CERT MODAL
 ══════════════════════════════════════════ */
 function CertModal({ cert, onClose }) {
@@ -279,8 +340,6 @@ export function Publications() {
   const scroll = (dir) => {
     if (!scrollRef.current) return;
     const { clientWidth } = scrollRef.current;
-    // Scroll by full view width + gap for predictable card-by-card movement
-    // The gap in CSS is 80px, so we scroll by roughly 100% of container
     scrollRef.current.scrollBy({ left: dir * (clientWidth + 80), behavior: 'smooth' });
   };
 
@@ -288,14 +347,10 @@ export function Publications() {
     const t = e.currentTarget;
     const { scrollLeft, scrollWidth, clientWidth } = t;
     const max = scrollWidth - clientWidth;
-
-    // Update buttons
     setCanScroll({
       left: scrollLeft > 10,
       right: scrollLeft < max - 10
     });
-
-    // Update progress bar
     if (max > 0 && progressRef.current) {
       const pct = (scrollLeft / max) * 100;
       progressRef.current.style.width = pct + '%';
@@ -305,7 +360,6 @@ export function Publications() {
   return (
     <section id="publications" ref={sectionRef}>
       <style>{REVEAL_CSS}</style>
-
       <div className="sec-label sr-item sr-d0">05 — Research &amp; Publications</div>
       <div className="cert-header-row">
         <div>
@@ -320,7 +374,6 @@ export function Publications() {
           <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={!canScroll.right}>›</button>
         </div>
       </div>
-
       <div className="pub-scroll-wrap" style={{ marginTop: 24 }}>
         <div className="pub-scroll" ref={scrollRef} onScroll={onScroll}>
           <div className="pub-track">
@@ -338,17 +391,13 @@ export function Publications() {
                   <span className="pub-badge presented">Presented</span>
                 </div>
                 <h3 className="pub-title">Sign Language Translator using Machine Learning Algorithms on RGB Color Space</h3>
-                <div className="pub-conf">
-                  3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong>
-                </div>
+                <div className="pub-conf">3rd International Conference on Emerging Trends in Engineering and Medical Sciences <strong>(ICETEMS 2026)</strong></div>
                 <div className="pub-meta">
                   <span>📅 6–7 March 2026</span>
                   <span>📍 YCCE, Nagpur, India</span>
                   <span>🏛️ IEEE Maharashtra Section</span>
                 </div>
-                <p className="pub-desc">
-                  Researched and presented a real-time sign language recognition system leveraging machine learning algorithms on RGB color space data.
-                </p>
+                <p className="pub-desc">Researched and presented a real-time sign language recognition system leveraging machine learning algorithms on RGB color space data.</p>
                 <div className="pub-tags">
                   {['Machine Learning', 'Computer Vision', 'Sign Language', 'IEEE'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
@@ -422,21 +471,48 @@ export function Publications() {
                 </div>
               </div>
             </div>
+
+            {/* Growth Tracker Extension */}
+            <div className="pub-card sr-item sr-d5">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img src="/images/proj-growth-tracker.png" alt="Growth Tracker Extension" className="pub-cert-img" />
+                </div>
+              </div>
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge presented" style={{ background: '#14532d22', border: '1px solid #14532d66', color: '#4ade80' }}>Growth Tracker</span>
+                  <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.6</span>
+                  <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
+                </div>
+                <h3 className="pub-title">Productivity Tree — Growth Tracker</h3>
+                <div className="pub-conf"> Chrome New Tab · Behavioral Productivity Tracker </div>
+                <div className="pub-meta">
+                  <span>📅 10 April 2026</span>
+                  <span>📅 13 April 2026</span>
+                  <span>📦 Chrome Web Store (v3)</span>
+                  <span>🌴 4 Tree Themes</span>
+                  <span>🏆 15 Achievements</span>
+                </div>
+                <p className="pub-desc">
+                  Tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not a manually started timer. Features Pomodoro mode, declarativeNetRequest site blocking, YouTube smart detection, weekly stats, and a full task manager. Zero data collection, 100% local.
+                </p>
+                <div className="pub-tags">
+                  {['Manifest V3', 'declarativeNetRequest', 'SVG Animation', 'Chrome Storage API', 'Pomodoro', 'Pure JS'].map(t => (
+                    <span key={t} className="pub-tag">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Progress bar + hint */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8, padding: '0 24px' }}>
         <div style={{ flex: 1, height: 2, background: 'rgba(255,255,255,0.07)', borderRadius: 2, overflow: 'hidden' }}>
-          <div
-            ref={progressRef}
-            style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }}
-          />
+          <div ref={progressRef} style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }} />
         </div>
-        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-          drag or use arrows to explore
-        </span>
+        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>drag or use arrows to explore</span>
       </div>
     </section>
   );
@@ -455,7 +531,6 @@ export function Certifications() {
   const scroll = (dir) => {
     if (!scrollRef.current) return;
     const { clientWidth } = scrollRef.current;
-    // Scroll by roughly 80% of view width for better UX on all devices
     scrollRef.current.scrollBy({ left: dir * clientWidth * 0.8, behavior: 'smooth' });
   };
 
@@ -463,14 +538,10 @@ export function Certifications() {
     const t = e.currentTarget;
     const { scrollLeft, scrollWidth, clientWidth } = t;
     const max = scrollWidth - clientWidth;
-
-    // Update buttons
     setCanScroll({
       left: scrollLeft > 10,
       right: scrollLeft < max - 10
     });
-
-    // Update progress bar
     if (max > 0 && progressRef.current) {
       const pct = (scrollLeft / max) * 100;
       progressRef.current.style.width = pct + '%';
@@ -480,7 +551,6 @@ export function Certifications() {
   return (
     <section id="certs" ref={sectionRef}>
       <div className="sec-label sr-item sr-d0">06 — Certifications &amp; Courses</div>
-
       <div className="cert-header-row">
         <div>
           <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Continuous <em>Learning</em></h2>
@@ -494,7 +564,6 @@ export function Certifications() {
           <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={!canScroll.right}>›</button>
         </div>
       </div>
-
       <div className="cert-scroll-wrap">
         <div className="cert-scroll" ref={scrollRef} onScroll={onScroll}>
           <div className="cert-track">
@@ -522,7 +591,9 @@ export function Certifications() {
                   <div className="cert-tile-issuer">{c.issuer}</div>
                   <div className="cert-tile-date">{c.date}</div>
                   <div className="cert-tile-tags">
-                    {c.tags.slice(0, 3).map(t => <span key={t} className="cert-tile-tag">{t}</span>)}
+                    {c.tags.slice(0, 3).map(t => (
+                      <span key={t} className="cert-tile-tag">{t}</span>
+                    ))}
                   </div>
                   <div className="cert-tile-tap">click to view →</div>
                 </div>
@@ -531,20 +602,12 @@ export function Certifications() {
           </div>
         </div>
       </div>
-
-      {/* Progress bar + hint — same as Experience section */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8, padding: '0 24px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 16, padding: '0 24px' }}>
         <div style={{ flex: 1, height: 2, background: 'rgba(255,255,255,0.07)', borderRadius: 2, overflow: 'hidden' }}>
-          <div
-            ref={progressRef}
-            style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }}
-          />
+          <div ref={progressRef} style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }} />
         </div>
-        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-          drag or use arrows to explore
-        </span>
+        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>drag or use arrows to explore</span>
       </div>
-
       {selected && <CertModal cert={selected} onClose={() => setSelected(null)} />}
     </section>
   );
@@ -554,45 +617,82 @@ export function Certifications() {
    ACHIEVEMENTS
 ══════════════════════════════════════════ */
 export function Achievements() {
-  const ref = useScrollReveal('.sr-item');
+  const scrollRef = useRef(null);
+  const progressRef = useRef(null);
+  const sectionRef = useScrollReveal('.sr-item');
+  const [canScroll, setCanScroll] = useState({ left: false, right: true });
+
+  const scroll = (dir) => {
+    if (!scrollRef.current) return;
+    const { clientWidth } = scrollRef.current;
+    scrollRef.current.scrollBy({ left: dir * clientWidth * 0.8, behavior: 'smooth' });
+  };
+
+  const onScroll = (e) => {
+    const t = e.currentTarget;
+    const { scrollLeft, scrollWidth, clientWidth } = t;
+    const max = scrollWidth - clientWidth;
+    setCanScroll({
+      left: scrollLeft > 10,
+      right: scrollLeft < max - 10
+    });
+    if (max > 0 && progressRef.current) {
+      const pct = (scrollLeft / max) * 100;
+      progressRef.current.style.width = pct + '%';
+    }
+  };
 
   return (
-    <section id="achievements" ref={ref}>
+    <section id="achievements" ref={sectionRef}>
       <div className="sec-label sr-item sr-d0">07 — Leadership &amp; Achievements</div>
-      <h2 className="sec-h sr-item sr-d1">Beyond <em>Code</em></h2>
-
-      <div style={{ marginTop: 44 }}>
-        <div className="lead-card sr-item sr-d2">
-          <div className="lead-role">🎯 Vice President — Sponsorship</div>
-          <div className="lead-org">College Technical Fest (ICON)</div>
-          <ul className="lead-bullets">
-            <li>Coordinated with sponsors and corporate partners to secure funding and support</li>
-            <li>Assisted in event planning, budgeting, and resource allocation for technical fest</li>
-            <li>Led team coordination and managed sponsor relationships throughout the event</li>
-            <li>Gained valuable leadership, communication, and organizational experience</li>
-          </ul>
-          <div className="lead-tags">
-            <span className="lead-tag">Leadership</span>
-            <span className="lead-tag">Sponsorship</span>
-            <span className="lead-tag">Event Planning</span>
-            <span className="lead-tag">Team Coordination</span>
+      <div className="cert-header-row">
+        <div>
+          <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Beyond <em>Code</em></h2>
+          <div className="cert-scroll-hint sr-item sr-d2">
+            <span>scroll or drag to explore</span>
+            <span className="cert-arrow-anim">→</span>
           </div>
         </div>
-
-        <div className="ach-grid" style={{ marginTop: 24 }}>
-          {[
-            { icon: '🏆', title: 'Inter-School Chess Champion', loc: 'Nagpur', sub: 'Championship in inter-school chess — strategic thinking and competitive excellence.' },
-            { icon: '👑', title: 'Nagpur District Chess Champion', loc: 'Nagpur District Level', sub: 'District-level chess victory showcasing advanced strategy and analytical problem-solving.' },
-            { icon: '⭐', title: 'State-Level Chess Qualifier', loc: '8th Grade Achievement', sub: 'Qualified for state-level chess in 8th grade — early proof of sustained competitive focus.' },
-          ].map((a, i) => (
-            <div key={a.title} className={`ach-card sr-item sr-d${i + 3}`}>
-              <div className="ach-icon">{a.icon}</div>
-              <div className="ach-title">{a.title}</div>
-              <div className="ach-loc">{a.loc}</div>
-              <div className="ach-sub">{a.sub}</div>
-            </div>
-          ))}
+        <div className="cert-nav-btns sr-item sr-d2">
+          <button className="cert-nav-btn" onClick={() => scroll(-1)} disabled={!canScroll.left}>‹</button>
+          <button className="cert-nav-btn" onClick={() => scroll(1)} disabled={!canScroll.right}>›</button>
         </div>
+      </div>
+      <div className="cert-scroll-wrap" style={{ marginTop: 24 }}>
+        <div className="cert-scroll" ref={scrollRef} onScroll={onScroll}>
+          <div className="cert-track">
+            {ACHIEVEMENTS.map((a, i) => (
+              <div
+                key={a.title}
+                className={`ach-tile sr-item sr-d${Math.min(i, 7)}`}
+                style={{ '--accent': a.accent, '--accent-rgb': a.accentRgb }}
+              >
+                <div className="ach-tile-left">
+                  <div className="ach-tile-glow" />
+                  <div className="ach-tile-icon-wrap">{a.icon}</div>
+                  <div className="ach-tile-badge">{a.badge}</div>
+                </div>
+                <div className="ach-tile-right">
+                  <div className="ach-tile-title">{a.title}</div>
+                  <div className="ach-tile-loc">{a.loc}</div>
+                  <div className="ach-tile-date">{a.date}</div>
+                  <div className="ach-tile-desc">{a.sub}</div>
+                  <div className="ach-tile-tags">
+                    {a.tags.map(t => (
+                      <span key={t} className="ach-tile-tag">{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 8, padding: '0 24px' }}>
+        <div style={{ flex: 1, height: 2, background: 'rgba(255,255,255,0.07)', borderRadius: 2, overflow: 'hidden' }}>
+          <div ref={progressRef} style={{ height: '100%', background: 'linear-gradient(90deg, #d4a843, #a855f7)', borderRadius: 2, transition: 'width 0.1s ease', width: '0%' }} />
+        </div>
+        <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>drag or use arrows to explore</span>
       </div>
     </section>
   );
