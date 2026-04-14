@@ -3,7 +3,7 @@ import { useState } from 'react';
 const STATS = [
   { n: '15+',  icon: '🚀', label: 'Projects Built',  sub: 'in production',           color: '#a855f7' },
   { n: 'Top 4%', icon: '📊', label: 'Kaggle Global',  sub: 'Rank 360 / 9,044',        color: '#d4a843' },
-  { n: '2', icon: '📦', label: 'Extensions Built',     sub: 'Chrome + Firefox compatible',  color: '#5be05b' },
+  { n: '3', icon: '📦', label: 'Extensions Built',     sub: 'Chrome + Firefox compatible',  color: '#5be05b' },
   { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',   color: '#4da8e8' },
 ];
 
