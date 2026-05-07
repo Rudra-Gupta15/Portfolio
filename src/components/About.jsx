@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 const STATS = [
-  { n: '15+',  icon: '🚀', label: 'Projects Built',  sub: 'in production',           color: '#a855f7' },
-  { n: 'Top 4%', icon: '📊', label: 'Kaggle Global',  sub: 'Rank 360 / 9,044',        color: '#d4a843' },
-  { n: '3', icon: '📦', label: 'Extensions Built',     sub: 'Chrome + Firefox compatible',  color: '#5be05b' },
-  { n: '11',   icon: '🎮', label: 'Games Shipped',   sub: 'React, Vite, Extension',   color: '#4da8e8' },
+  { n: '15+', icon: '🚀', label: 'Projects Built', sub: 'in production', color: '#a855f7' },
+  { n: 'Top 3%', icon: '📊', label: 'Kaggle Global', sub: 'Rank 282 / 9,414', color: '#d4a843' },
+  { n: '3', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
+  { n: '11', icon: '🎮', label: 'Games Shipped', sub: 'React, Vite, Extension', color: '#4da8e8' },
 ];
 
 const TRAITS = [
@@ -18,25 +18,25 @@ const TRAITS = [
 
 const SPECS = [
   {
-    icon: '🤖', title: 'AI/ML Engineering',
-    desc: 'Building and deploying ML models with 90%+ accuracy across real-world applications.',
+    icon: '🚀', title: 'LLM & Autonomous Agents',
+    desc: 'Building self-correcting AI systems like CodeFix and privacy-first local LLM assistants.',
     accent: '#d4a843', accentRgb: '212,168,67',
-    chips: ['TensorFlow', 'PyTorch', 'Sklearn'],
-    stat: '90%', statLabel: 'Accuracy',
+    chips: ['Ollama', 'FastAPI', 'LangChain'],
+    stat: 'Zero', statLabel: 'Cloud Cost',
   },
   {
     icon: '👁️', title: 'Computer Vision',
-    desc: 'YOLOv8, CNN-LSTM, real-time object detection for security and medical AI.',
+    desc: 'Developing high-precision biometric systems and real-time ASL recognition models.',
     accent: '#4da8e8', accentRgb: '77,168,232',
-    chips: ['YOLOv8', 'OpenCV', 'CNN'],
-    stat: '9K+', statLabel: 'Images',
+    chips: ['Face-API', 'OpenCV', 'YOLOv8'],
+    stat: 'Local', statLabel: 'Processing',
   },
   {
-    icon: '🎮', title: 'Game Development',
-    desc: 'Interactive 2D/3D experiences using Unity 6 with C#, physics systems, and game architecture.',
+    icon: '💻', title: 'Full-Stack Platforms',
+    desc: 'Architecting production-ready platforms like PrepMaster and ConvoSec AI.',
     accent: '#a855f7', accentRgb: '168,85,247',
-    chips: ['Unity 6', 'C#', 'Physics'],
-    stat: '2', statLabel: 'Games',
+    chips: ['React', 'Node.js', 'Vercel'],
+    stat: '4K+', statLabel: 'Users',
   },
 ];
 
@@ -54,22 +54,21 @@ export default function About() {
         <div className="ab-card abt-bio-card">
           <div className="ab-bio-tag">
             <span className="ab-dot" />
-            Kaggle Datasets Expert · Ranked 360 / 9,044 globally
+            Kaggle Datasets Expert · Ranked 282 / 9,414 globally
           </div>
-<p className="ab-bio-text">
-  I'm an <strong>Electronics Engineering undergraduate</strong> passionate about building intelligent, real-world systems. 
-  I bridge hardware and AI to solve meaningful problems through diverse applications: from <strong>Real-Time Sign Language Recognition</strong> and <strong>Violence Detection</strong> to high-precision systems like my <strong>Hyperlocal Weather Predictor</strong> and <strong>Heart Disease Prediction</strong> apps. 
-  My portfolio also spans intelligent <strong>Recommendation Engines</strong> and deep <strong>ML Algorithm Comparisons</strong>.
-</p>
+          <p className="ab-bio-text">
+            I am an <strong>Electronics Engineering undergraduate</strong> dedicated to engineering high-impact, AI-driven solutions that bridge the gap between hardware and software. My work ranges from foundational research in <strong>Real-Time Sign Language Recognition</strong> to architecting complex platforms like <strong>ConvoSec AI</strong>. 
+            I specialize in building autonomous, privacy-first systems such as <strong>CodeFix</strong> (an AI debugger) and a <strong>Biometric Attendance System</strong>, alongside production-grade platforms like <strong>PrepMaster</strong> and <strong>ResumeAI</strong>.
+          </p>
 
-<p className="ab-bio-text">
-  I thrive on the full journey: <strong>Concept → Model → Deployment</strong>. My technical stack spans Python, C/C++, OpenCV, and Flask. 
-</p>
+          <p className="ab-bio-text">
+            I thrive on the full journey: <strong>Concept → Model → Deployment</strong>. My technical stack spans Python, C/C++, OpenCV, and Flask.
+          </p>
 
-<p className="ab-bio-text">
-  <strong style={{ color: '#a855f7' }}>Beyond AI, I’m deeply invested in Game Development</strong>, 
-  using Unity and C# to craft immersive, logic-driven experiences. For me, whether it’s a computer vision system or a 5-level 2D platformer, the goal is the same: <strong>building seamless, interactive technology that works.</strong>
-</p>
+          <p className="ab-bio-text">
+            <strong style={{ color: '#a855f7' }}>Beyond AI, I’m deeply invested in Game Development</strong>,
+            using Unity and C# to craft immersive, logic-driven experiences. For me, whether it’s a computer vision system or a 5-level 2D platformer, the goal is the same: <strong>building seamless, interactive technology that works.</strong>
+          </p>
           <div className="ab-trait-row">
             {TRAITS.map(t => (
               <span key={t.label} className="ab-trait">{t.icon} {t.label}</span>

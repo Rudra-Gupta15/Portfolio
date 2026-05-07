@@ -472,6 +472,78 @@ export function Publications() {
                   {['Machine Learning', 'Computer Vision', 'Sign Language', 'IEEE'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
+                  <a 
+                    href="https://ieeexplore.ieee.org/document/11469377" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="pub-link"
+                  >
+                    View IEEE Paper ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* ConvoSec AI Official Website */}
+            <div className="pub-card sr-item sr-d3">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img
+                    src="/images/convosecai.png"
+                    alt="ConvoSec AI Website"
+                    className="pub-cert-img"
+                  />
+                </div>
+              </div>
+
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge startup">Startup</span>
+                  <span className="pub-badge live">Live Website</span>
+                  <span className="pub-badge ai">AI + Cybersecurity</span>
+                </div>
+
+                <h3 className="pub-title">
+                  ConvoSec AI — Official Company Website
+                </h3>
+
+                <div className="pub-conf">
+                  Full-stack AI & Cybersecurity platform designed and developed for{" "}
+                  <strong>ConvoSec AI</strong>
+                </div>
+
+                <div className="pub-meta">
+                  <span>🌐 www.convosecai.com</span>
+                  <span>📍 Nagpur, India</span>
+                  <span>⚡ React • Node.js • Vercel</span>
+                </div>
+
+                <p className="pub-desc">
+                  A modern AI and cybersecurity-focused technology platform designed to deliver intelligent digital solutions through secure, scalable, and innovative web technologies. The platform integrates modern frontend frameworks with backend APIs to create a fast, interactive, and enterprise-ready experience — reflecting a mission of combining artificial intelligence with cybersecurity innovation for next-generation digital systems.
+                </p>
+
+                <div className="pub-tags">
+                  {[
+                    "React",
+                    "Node.js",
+                    "Cybersecurity",
+                    "AI Platform",
+                    "Full Stack",
+                    "Vercel"
+                  ].map((t) => (
+                    <span key={t} className="pub-tag">
+                      {t}
+                    </span>
+                  ))}
+
+                  <a
+                    href="https://www.convosecai.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pub-link"
+                  >
+                    Visit Website ↗
+                  </a>
                 </div>
               </div>
             </div>
@@ -505,6 +577,14 @@ export function Publications() {
                   {['Manifest V3', 'Canvas API', 'Open-Meteo API', 'Pure JS', 'Performance'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
+                  <a 
+                    href="https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="pub-link"
+                  >
+                    View Extension ↗
+                  </a>
                 </div>
               </div>
             </div>
@@ -538,6 +618,14 @@ export function Publications() {
                   {['Manifest V3', 'JavaScript', 'MutationObserver', 'Content Scripts', 'Storage API'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
+                  <a 
+                    href="https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="pub-link"
+                  >
+                    View Extension ↗
+                  </a>
                 </div>
               </div>
             </div>
@@ -572,6 +660,14 @@ export function Publications() {
                   {['Manifest V3', 'declarativeNetRequest', 'SVG Animation', 'Chrome Storage API', 'Pomodoro', 'Pure JS'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
+                  <a 
+                    href="https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="pub-link"
+                  >
+                    View Extension ↗
+                  </a>
                 </div>
               </div>
             </div>

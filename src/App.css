@@ -3943,6 +3943,7 @@ footer {
 
 .pub-card {
   display: flex;
+  align-items: center;
   gap: 36px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(0, 98, 155, 0.35);
@@ -3997,6 +3998,9 @@ footer {
 .pub-badge.ieee      { background: #00629b22; border: 1px solid #00629b66; color: #4db8ff; }
 .pub-badge.conf      { background: #7c3aed22; border: 1px solid #7c3aed66; color: #c084fc; }
 .pub-badge.presented { background: #06b6d422; border: 1px solid #06b6d466; color: #67e8f9; }
+.pub-badge.startup   { background: #f59e0b22; border: 1px solid #f59e0b66; color: #fbbf24; }
+.pub-badge.live      { background: #10b98122; border: 1px solid #10b98166; color: #34d399; }
+.pub-badge.ai        { background: #6366f122; border: 1px solid #6366f166; color: #818cf8; }
 
 .pub-title {
   font-size: 1.25rem;
@@ -4031,6 +4035,53 @@ footer {
   background: rgba(0, 98, 155, 0.12);
   border: 1px solid rgba(0, 98, 155, 0.3);
   color: #4db8ff;
+}
+
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4db8ff;
+  text-decoration: none;
+  padding: 4px 12px;
+  background: rgba(0, 98, 155, 0.15);
+  border: 1px solid rgba(0, 98, 155, 0.4);
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  margin-left: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.pub-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.pub-link:hover::before {
+  left: 100%;
+}
+
+.pub-link:hover {
+  background: rgba(0, 98, 155, 0.2);
+  border-color: #4db8ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 98, 155, 0.3);
+  color: #fff;
 }
 
 @media (max-width: 768px) {

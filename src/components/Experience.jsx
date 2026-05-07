@@ -3,6 +3,20 @@ import { useRef, useEffect } from 'react';
 const TIMELINE = [
   {
     date: 'Current',
+    role: 'Full-Stack Developer',
+    org: 'ConvoSec AI · Startup',
+    type: 'work',
+    accent: '#10b981',
+    desc: 'Leading the design and development of an intelligent AI & Cybersecurity platform — operating as a foundational Full-Stack Developer, Extension Developer, and AI/ML researcher.',
+    bullets: [
+      'Architected and deployed the official full-stack company platform.',
+      'Integrating AI-driven solutions with robust cybersecurity protocols.',
+      'Optimizing enterprise-grade deployment infrastructure on Vercel.',
+    ],
+    chips: ['React', 'Node.js', 'Cybersecurity', 'AI Solutions'],
+  },
+  {
+    date: 'Current',
     role: 'AI/ML Intern',
     org: 'Freelance / Remote',
     type: 'work',
@@ -93,11 +107,11 @@ const TIMELINE = [
 const TYPE_BADGE = {
   work: { label: 'Work', color: '#d4a843' },
   self: { label: 'Self', color: '#a855f7' },
-  edu:  { label: 'Edu',  color: '#4da8e8' },
+  edu: { label: 'Edu', color: '#4da8e8' },
 };
 
 export default function Experience() {
-  const scrollRef  = useRef(null);
+  const scrollRef = useRef(null);
   const sectionRef = useRef(null);
 
   // Scroll-reveal: each card fades + slides up when section enters viewport
@@ -272,9 +286,10 @@ export default function Experience() {
         /* ─── Card ─── */
         .htl-card {
           width: 100%;
+          height: 420px; /* Adjusted height for tighter fit */
           border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
           border-radius: 14px;
-          padding: 20px;
+          padding: 18px;
           background: rgba(255,255,255,0.025);
           backdrop-filter: blur(6px);
           display: flex;
@@ -284,7 +299,6 @@ export default function Experience() {
           overflow: hidden;
           box-shadow: 0 4px 24px rgba(0,0,0,0.35);
           transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
-          min-height: 340px;
         }
         .htl-card:hover {
           border-color: color-mix(in srgb, var(--accent) 50%, transparent);
@@ -307,6 +321,7 @@ export default function Experience() {
           align-items: flex-start;
           justify-content: space-between;
           gap: 8px;
+          margin-bottom: 4px;
         }
         .htl-role {
           font-size: 0.95rem;
@@ -430,7 +445,7 @@ export default function Experience() {
         </div>
         <div style={{ display: 'flex', gap: 10 }}>
           <button className="htl-scroll-btn" onClick={() => scroll(-1)} aria-label="Previous">‹</button>
-          <button className="htl-scroll-btn" onClick={() => scroll(1)}  aria-label="Next">›</button>
+          <button className="htl-scroll-btn" onClick={() => scroll(1)} aria-label="Next">›</button>
         </div>
       </div>
 
@@ -451,7 +466,7 @@ export default function Experience() {
           return (
             <div className="htl-item" key={i}>
               <div className="htl-node">
-                <div className="htl-dot"       style={{ '--dc': item.accent }} />
+                <div className="htl-dot" style={{ '--dc': item.accent }} />
                 <div className="htl-date-pill" style={{ '--dc': item.accent }}>{item.date}</div>
               </div>
               <div className="htl-card" style={{ '--accent': item.accent }}>
