@@ -55,7 +55,7 @@ const REVEAL_CSS = `
 `;
 
 const PROJECTS = [
-  {
+   {
     cat: 'aiml',
     image: '/images/proj-heart-disease.png',
     emoji: '❤️',
@@ -545,7 +545,7 @@ gradientBg: 'linear-gradient(135deg, #020617 0%, #020617 50%, #0ea5e9 50%, #0ea5
   title: 'Ultimate Games Dataset',
   subtitle: '15,000 Games | 43 Features | 1979–2026',
   gradient: ['#08040f', '#ff3c00'],
-gradientBg: 'linear-gradient(135deg, #08040f 0%, #08040f 50%, #ff3c00 50%, #ffa500 100%)',
+  gradientBg: 'linear-gradient(135deg, #08040f 0%, #08040f 50%, #ff3c00 50%, #ffa500 100%)',
   overview: '15,000 video games catalogued across 43 columns — covering ratings, playtime, genres, art styles, platforms, store availability, and engagement metrics. Sourced and cleaned from community and critic data spanning nearly five decades of gaming history.',
   bullets: [
     '15,000 games from 1979–2026 across PC, console, and multi-platform ecosystems',
@@ -581,6 +581,55 @@ gradientBg: 'linear-gradient(135deg, #08040f 0%, #08040f 50%, #ff3c00 50%, #ffa5
   tags: ['Flask', 'Python', 'Ollama', 'CodeMirror', 'Piston API', 'Pylint', 'Vanilla JS', 'REST API', 'HTML5', 'CSS3'],
   github: 'https://github.com/Rudra-Gupta15/CodeFix---AI-Powered-Autonomous-Debugger',
 },
+{
+    cat: 'aiml web',
+    image: '/images/earth.jpeg',
+    emoji: '🛰️',
+    type: 'AI Environmental System · FastAPI',
+    title: 'Earth Intelligence',
+    subtitle: 'AI-Powered Multi-Hazard Satellite Monitoring',
+    gradient: ['#0f0f0f', '#2a2a2a'],
+gradientBg: 'linear-gradient(135deg, #000000 0%, #0f0f0f 50%, #2a2a2a 100%)',
+
+boxShadow: '0 20px 40px rgba(0, 0, 0, 0.55)',
+    overview: 'A unified, real-time environmental monitoring platform integrating live satellite and hazard data from NASA FIRMS and GDACS. Features a local AI reasoning layer that translates complex geographic data into human-readable risk assessments and categorical tiers.',
+    bullets: [
+      'Aggregates multi-hazard data (wildfires, floods, earthquakes, cyclones) into a single interactive Leaflet.js map',
+      'AI-powered reasoning layer generates plain English risk summaries and categorical risk tiers for any location',
+      'Local, privacy-preserving AI inference engine designed for government, military, and institutional deployments',
+      'Analytics pipeline derives CO₂ emission estimates, air quality impact indices, and affected area calculations',
+      'Modular FastAPI backend architecture allowing seamless integration of future satellite data streams',
+      'Zero-build-tool frontend using Vanilla JS, HTML5, CSS3, and Chart.js for fast initial load times'
+    ],
+    techDetails: 'Backend: Python 3.10+, FastAPI, Pydantic, SQLite/PostgreSQL. Frontend: Vanilla JS, Leaflet.js, Chart.js. Integrates NASA FIRMS and GDACS JSON/RSS feeds. Supports offline private AI inference with future-proof abstractions for RAG and vision-language models.',
+    outcome: 'AI platform processing live satellite data with risk assessments generated under 5 seconds',
+    tags: ['FastAPI', 'Python', 'LLM', 'Leaflet.js', 'Vanilla JS', 'NASA API', 'GDACS'],
+  },
+  {
+    cat: 'web aiml',
+    image: '/images/convosecai.png',
+    emoji: '🎓',
+    type: 'Full-Stack EdTech · React · Node.js',
+    title: 'ConvoSec AI Education Platform',
+    subtitle: 'AI & Cybersecurity Learning Ecosystem',
+    textColor: '#181717ff',
+    gradient: ['#faf7f2', '#ede7dc'],
+    gradientBg: 'linear-gradient(135deg, #fffdf9 0%, #faf7f2 50%, #ede7dc 100%)',
+    overview: 'A full-stack, production-ready EdTech platform for AI and cybersecurity education. Features a polished dark-theme Vite/React frontend with Tailwind CSS and Framer Motion, and an Express/SQLite backend with JWT authentication and REST APIs.',
+    bullets: [
+      'Polished dark-theme UI with Tailwind CSS 3 and Framer Motion animations',
+      'Express/SQLite backend with JWT authentication and full CRUD REST APIs',
+      'Courses module with AI & Cybersecurity categories, difficulty filters, and numbered syllabus',
+      'Personalized learning dashboard with animated progress bars for live and recorded sessions',
+      'Blog and Projects showcase sections with category filters and detailed meta',
+      'Zod validation, Helmet security, Morgan logging, and rate limiting integrated in backend'
+    ],
+    techDetails: 'Frontend built with React 18 and Vite 6. Backend uses Node.js, Express 4, SQLite, and JSON Web Tokens for authentication. Includes Zod for validation, Helmet for security. Frontend deployed on Vercel, Backend on Render.',
+    outcome: 'Production-ready full-stack EdTech platform with responsive design and secure JWT auth',
+    tags: ['React', 'Node.js', 'Express', 'SQLite', 'Tailwind CSS', 'Framer Motion'],
+    live: 'https://convosecai.vercel.app',
+  },
+ 
 ];
 
 const BEST_TITLES = new Set([
@@ -589,11 +638,12 @@ const BEST_TITLES = new Set([
   'ASL Recognition',
   'CodeFix',
   'Growth Tracker',
-  'PrepMaster',
   'RUD AI',
   'AI Mail Assistant',
   'TimeMark',
   'BalanceTab',
+  'ConvoSec AI Education Platform',
+  'Earth Intelligence',
 ]);
 
 const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
@@ -624,15 +674,15 @@ function ProjectModal({ project, onClose }) {
 
   return createPortal(
     <div className="pmodal-overlay" onClick={onClose}>
-      <div className="pmodal pmodal-v2" onClick={e => e.stopPropagation()}>
+      <div className="pmodal pmodal-v2" onClick={e => e.stopPropagation()} style={{ color: project.textColor || 'inherit' }}>
         <div className="pmodal-header" style={{ background: project.gradientBg }}>
-          <button className="pmodal-close" onClick={onClose}>✕</button>
+          <button className="pmodal-close" onClick={onClose} style={{ color: project.textColor || 'inherit' }}>✕</button>
           <div className="pmodal-header-content">
             <span className="pmodal-emoji">{project.emoji}</span>
             <div>
-              <div className="pmodal-type">{project.type}</div>
-              <h2 className="pmodal-title">{project.title}</h2>
-              <div className="pmodal-subtitle-txt">{project.subtitle}</div>
+              <div className="pmodal-type" style={{ color: project.textColor ? project.textColor : 'inherit' }}>{project.type}</div>
+              <h2 className="pmodal-title" style={{ color: project.textColor ? project.textColor : 'inherit' }}>{project.title}</h2>
+              <div className="pmodal-subtitle-txt" style={{ color: project.textColor ? project.textColor : 'inherit' }}>{project.subtitle}</div>
             </div>
           </div>
         </div>
@@ -786,7 +836,7 @@ export default function Projects() {
       }}>
         <div className="pcard-track">
           {visible.map((p, i) => (
-            <div key={p.title} className="pcard" style={{ animationDelay: `${i * 0.07}s` }} onClick={() => setSelected(p)}>
+            <div key={p.title} className="pcard" style={{ animationDelay: `${i * 0.07}s`, color: p.textColor || 'inherit' }} onClick={() => setSelected(p)}>
               <div className="pcard-bg" style={{ background: p.gradientBg }} />
               <div className="pcard-blob1" style={{ background: p.gradient[1] }} />
               <div className="pcard-blob2" style={{ background: p.gradient[0] }} />
@@ -796,12 +846,12 @@ export default function Projects() {
                 </div>
               )}
               <div className="pcard-top">
-                <div className="pcard-type" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                <div className="pcard-type" style={{ display: 'flex', alignItems: 'center', gap: 6, color: p.textColor ? p.textColor : 'inherit' }}>
                   {p.cat.includes('chrome') && <ChromeIcon size={20} margin={0} />}
                   {p.type}
                 </div>
-                <h3 className="pcard-title">{p.title}</h3>
-                <p className="pcard-sub">{p.subtitle}</p>
+                <h3 className="pcard-title" style={{ color: p.textColor ? p.textColor : 'inherit' }}>{p.title}</h3>
+                <p className="pcard-sub" style={{ color: p.textColor ? p.textColor : 'inherit' }}>{p.subtitle}</p>
               </div>
               <div className="pcard-img-stage">
                 <div className="pcard-img-frame">
@@ -813,7 +863,7 @@ export default function Projects() {
                 </div>
               </div>
               <div className="pcard-bottom">
-                <p className="pcard-desc">{p.outcome}</p>
+                <p className="pcard-desc" style={{ color: p.textColor ? p.textColor : 'inherit' }}>{p.outcome}</p>
                 <div className="pcard-tags">
                   {p.tags.slice(0, 3).map(t => <span key={t} className="pcard-tag">{t}</span>)}
                 </div>
