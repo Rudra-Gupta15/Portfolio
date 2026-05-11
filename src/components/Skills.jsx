@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
 const SKILLS = [
-  { n: '01', label: 'Python / ML ⭐ weekly usage', pct: 94 },
-  { n: '02', label: 'Computer Vision ⭐ weekly usage', pct: 80 },
-  { n: '03', label: 'Deep Learning ⭐ weekly usage', pct: 75 },
-  { n: '04', label: 'Unity / Game Dev ⭐ weekly usage', pct: 40 },
-  { n: '05', label: 'Hardware / IoT ⭐ weekly usage', pct: 40 },
+  { n: '01', label: 'Python / ML ⭐ weekly usage', pct: 96 },
+  { n: '02', label: 'LLM & Generative AI ⭐ weekly usage', pct: 88 },
+  { n: '03', label: 'Computer Vision ⭐ weekly usage', pct: 82 },
+  { n: '04', label: 'Deep Learning ⭐ weekly usage', pct: 80 },
+  { n: '05', label: 'Hardware & IoT ⭐ weekly usage', pct: 45 },
 ];
 
 const BADGES = [
@@ -32,6 +32,9 @@ const BADGES = [
     { label: 'Pandas', bg: '#150458', icon: 'https://cdn.simpleicons.org/pandas/ffffff' },
     { label: '⚡ YOLOv8', bg: '#00bcd4', color: '#000' },
     { label: 'PyTorch', bg: '#EE4C2C', icon: 'https://cdn.simpleicons.org/pytorch/ffffff' },
+    { label: '🤖 LLM', bg: '#a855f7' },
+    { label: 'NLP', bg: '#4da8e8' },
+    { label: 'Prompt Eng.', bg: '#d4a843', color: '#000' },
   ]},
   { title: '🌐 Web & Backend', items: [
     { label: 'Flask', bg: '#222', border: '#555', icon: 'https://cdn.simpleicons.org/flask/ffffff' },
