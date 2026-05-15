@@ -14,7 +14,7 @@ export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false);
   const [progress, setProgress]   = useState(0);
   const [active,   setActive]     = useState('home');
-  const [toggled,  setToggled]    = useState(true);
+
 
   useEffect(() => {
     const onScroll = () => {
@@ -78,11 +78,6 @@ export default function Navbar() {
           <a href="#contact" className="btn-lets-talk" onClick={e => handleNav(e, '#contact')}>
             Let's Talk
           </a>
-          <div
-            className={`theme-toggle${toggled ? ' on' : ''}`}
-            onClick={() => setToggled(t => !t)}
-            title="Toggle theme"
-          />
         </div>
 
       </nav>

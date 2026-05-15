@@ -434,6 +434,9 @@ export function Publications() {
       <div className="cert-header-row">
         <div>
           <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Published <em>Work</em></h2>
+          <div className="cert-scroll-hint sr-item sr-d2" style={{ marginTop: 8 }}>
+            <span>Showing 6 published works — research, platforms, and tools</span>
+          </div>
           <div className="cert-scroll-hint sr-item sr-d2">
             <span>scroll or drag to explore</span>
             <span className="cert-arrow-anim">→</span>
@@ -498,28 +501,28 @@ export function Publications() {
 
               <div className="pub-card-right">
                 <div className="pub-badge-row">
-                  <span className="pub-badge startup">Startup</span>
+                  <span className="pub-badge presented" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>FULL STACK</span>
                   <span className="pub-badge live">Live Website</span>
-                  <span className="pub-badge ai">AI + Cybersecurity</span>
+                  <span className="pub-badge startup">Startup + Education</span>
                 </div>
 
                 <h3 className="pub-title">
-                  ConvoSec AI — Official Company Website
+                  ConvoSec AI — Official Company Platform
                 </h3>
 
                 <div className="pub-conf">
-                  Full-stack AI & Cybersecurity platform designed and developed for{" "}
+                  End-to-end AI & Cybersecurity ecosystem designed for{" "}
                   <strong>ConvoSec AI</strong>
                 </div>
 
                 <div className="pub-meta">
                   <span>🌐 www.convosecai.com</span>
                   <span>📍 Nagpur, India</span>
-                  <span>⚡ React • Node.js • Vercel</span>
+                  <span>⚡ React • Node.js • JWT Security</span>
                 </div>
 
                 <p className="pub-desc">
-                  A modern AI and cybersecurity-focused technology platform designed to deliver intelligent digital solutions through secure, scalable, and innovative web technologies. The platform integrates modern frontend frameworks with backend APIs to create a fast, interactive, and enterprise-ready experience — reflecting a mission of combining artificial intelligence with cybersecurity innovation for next-generation digital systems.
+                  Designed and developed the full-stack infrastructure for ConvoSec AI, a multi-faceted firm focusing on AI+Cybersecurity project delivery and professional education. The platform features a high-fidelity learning management system, project showcases, and a secure authenticated backend—leading to a direct full-time engineering offer.
                 </p>
 
                 <div className="pub-tags">
@@ -538,6 +541,70 @@ export function Publications() {
 
                   <a
                     href="https://www.convosecai.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pub-link"
+                  >
+                    Visit Website ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Perfionix AI Enterprise Website */}
+            <div className="pub-card sr-item sr-d4">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img
+                    src="/images/perfionixai.png"
+                    alt="Perfionix AI Website"
+                    className="pub-cert-img"
+                  />
+                </div>
+              </div>
+
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge presented" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>FREELANCE</span>
+                  <span className="pub-badge live">Live Website</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>ENTERPRISE</span>
+                </div>
+
+                <h3 className="pub-title">
+                  Perfionix AI — Enterprise Website
+                </h3>
+
+                <div className="pub-conf">
+                  AI Consulting & Product Showcase Frontend for{" "}
+                  <strong>Perfionix AI Pvt. Ltd.</strong>
+                </div>
+
+                <div className="pub-meta">
+                  <span>🌐 www.perfionixai.com</span>
+                  <span>📍 Nagpur, India</span>
+                  <span>⚡ Next.js 14 • Framer Motion • Spline 3D</span>
+                </div>
+
+                <p className="pub-desc">
+                  Premium public-facing website designed and developed from scratch for Perfionix AI Pvt. Ltd. Features a Cyber-Ops dark aesthetic with a Spline 3D hero, Framer Motion animations, and complete product showcase sections for four flagship AI products. Delivered with a 92+ Lighthouse performance score.
+                </p>
+
+                <div className="pub-tags">
+                  {[
+                    "Next.js 14",
+                    "React 18",
+                    "Tailwind CSS",
+                    "Framer Motion",
+                    "Spline 3D",
+                    "Lucide React"
+                  ].map((t) => (
+                    <span key={t} className="pub-tag">
+                      {t}
+                    </span>
+                  ))}
+
+                  <a
+                    href="https://www.perfionixai.com"
                     target="_blank"
                     rel="noreferrer"
                     className="pub-link"
@@ -720,6 +787,9 @@ export function Certifications() {
       <div className="cert-header-row">
         <div>
           <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Continuous <em>Learning</em></h2>
+          <div className="cert-scroll-hint sr-item sr-d2" style={{ marginTop: 8 }}>
+            <span>{CERTS.length} certifications & course completions</span>
+          </div>
           <div className="cert-scroll-hint sr-item sr-d2">
             <span>scroll to explore</span>
             <span className="cert-arrow-anim">→</span>
@@ -814,6 +884,9 @@ export function Achievements() {
       <div className="cert-header-row">
         <div>
           <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Beyond <em>Code</em></h2>
+          <div className="cert-scroll-hint sr-item sr-d2" style={{ marginTop: 8 }}>
+            <span>{ACHIEVEMENTS.length} professional milestones & awards</span>
+          </div>
           <div className="cert-scroll-hint sr-item sr-d2">
             <span>scroll or drag to explore</span>
             <span className="cert-arrow-anim">→</span>

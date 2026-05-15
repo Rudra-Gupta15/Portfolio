@@ -29,10 +29,10 @@ function useScrollReveal(selector) {
 /* ─── TECHNICAL STEP 1: Define the Icon component ─── */
 const ChromeIcon = ({ size = 15, margin = 6 }) => (
   <svg width={size} height={size} viewBox="0 0 48 48" style={{ marginRight: margin }}>
-    <circle cx="24" cy="24" r="24" fill="#DB4437"/>
-    <path d="M24 24 L44 24 A20 20 0 0 1 12 42 Z" fill="#0F9D58"/>
-    <path d="M24 24 L12 42 A20 20 0 0 1 4 16 Z" fill="#F4B400"/>
-    <circle cx="24" cy="24" r="10" fill="#4285F4" stroke="#fff" strokeWidth="2"/>
+    <circle cx="24" cy="24" r="24" fill="#DB4437" />
+    <path d="M24 24 L44 24 A20 20 0 0 1 12 42 Z" fill="#0F9D58" />
+    <path d="M24 24 L12 42 A20 20 0 0 1 4 16 Z" fill="#F4B400" />
+    <circle cx="24" cy="24" r="10" fill="#4285F4" stroke="#fff" strokeWidth="2" />
   </svg>
 );
 
@@ -55,7 +55,7 @@ const REVEAL_CSS = `
 `;
 
 const PROJECTS = [
-   {
+  {
     cat: 'aiml',
     image: '/images/proj-heart-disease.png',
     emoji: '❤️',
@@ -228,31 +228,31 @@ const PROJECTS = [
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
   },
   {
-  cat: 'chrome',
-  image: '/images/proj-yt-bookmark.png',
-  emoji: '🔖',
-  type: 'Chrome Extension · Manifest V3',
-  title: 'TimeMark',
-  subtitle: 'Browser Extension',
-  gradient: ['#8b0000', '#FF0000'],
-  gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
-  overview:
-    'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
-  bullets: [
-    'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
-    'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
-    'Popup panel shows video thumbnail, title, and live playback position updated in real time',
-    'One-click seek to any saved bookmark — sorted by time, with delete-one and clear-all options',
-    'Flat chrome.storage.local structure (ytbm_all array) with per-video filtering — no server, 100% local',
-    'Duplicate guard blocks saves within 2 seconds of an existing bookmark for the same video',
-    'Handles YouTube SPA navigation — MutationObserver re-injects the button across page changes without reload',
-  ],
-  techDetails:
-    'Built with Manifest V3. content.js reads video.currentTime directly from the DOM and injects the bookmark button into .ytp-right-controls. chrome.scripting.executeScript is used by popup.js to seek the video by setting currentTime on the active tab. MutationObserver tracks URL changes for SPA re-injection. Bookmarks stored as a flat array keyed by ytbm_all, filtered client-side by videoId.',
-  outcome: 'Native YouTube integration at v1.4 — zero dependencies, pure browser APIs',
-  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts', 'MutationObserver'],
-  webstore: 'https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea',
-},
+    cat: 'chrome',
+    image: '/images/proj-yt-bookmark.png',
+    emoji: '🔖',
+    type: 'Chrome Extension · Manifest V3',
+    title: 'TimeMark',
+    subtitle: 'Browser Extension',
+    gradient: ['#8b0000', '#FF0000'],
+    gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
+    overview:
+      'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
+    bullets: [
+      'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
+      'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
+      'Popup panel shows video thumbnail, title, and live playback position updated in real time',
+      'One-click seek to any saved bookmark — sorted by time, with delete-one and clear-all options',
+      'Flat chrome.storage.local structure (ytbm_all array) with per-video filtering — no server, 100% local',
+      'Duplicate guard blocks saves within 2 seconds of an existing bookmark for the same video',
+      'Handles YouTube SPA navigation — MutationObserver re-injects the button across page changes without reload',
+    ],
+    techDetails:
+      'Built with Manifest V3. content.js reads video.currentTime directly from the DOM and injects the bookmark button into .ytp-right-controls. chrome.scripting.executeScript is used by popup.js to seek the video by setting currentTime on the active tab. MutationObserver tracks URL changes for SPA re-injection. Bookmarks stored as a flat array keyed by ytbm_all, filtered client-side by videoId.',
+    outcome: 'Native YouTube integration at v1.4 — zero dependencies, pure browser APIs',
+    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts', 'MutationObserver'],
+    webstore: 'https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea',
+  },
   {
     cat: 'aiml web dataset',
     image: '/images/proj-banking-chatbot.png',
@@ -334,7 +334,7 @@ const PROJECTS = [
     title: 'AI Mail Assistant',
     subtitle: 'Local LLM-Powered Email & Messaging Automation',
     gradient: ['#4a3d31', '#d1d1d1'],
-gradientBg: 'linear-gradient(135deg, #4a3d31 0%, #6f5e4d 40%, #d1d1d1 100%)',
+    gradientBg: 'linear-gradient(135deg, #4a3d31 0%, #6f5e4d 40%, #d1d1d1 100%)',
     overview: 'A powerful, privacy-first email and messaging assistant powered by Llama 3.1 via Ollama. Automatically classifies incoming messages and generates professional AI replies — fully local, zero cloud cost, with Gmail and WhatsApp integrations.',
     bullets: [
       'Smart Auto-Reply engine classifies messages as AUTO or HUMAN (needs attention)',
@@ -378,47 +378,47 @@ gradientBg: 'linear-gradient(135deg, #4a3d31 0%, #6f5e4d 40%, #d1d1d1 100%)',
     live: 'https://resume-ai-analyzer-coral.vercel.app/',
   },
   {
-  cat: 'dataset',
-  image: '/images/proj-comics.png',
-  emoji: '📚',
-  type: 'Data Science · Dataset Creation',
-  title: 'Comic Books Dataset',
-  subtitle: 'Global Comics 2000–2026',
-  gradient: ['#1a1a2e', '#e94560'],
-  gradientBg: 'linear-gradient(135deg, #1a1a2e 0%, #1a1a2e 50%, #e94560 50%, #e94560 100%)',
-  overview: 'The most comprehensive comic book dataset on Kaggle — 10,000 entries spanning Manga, Manhwa, Manhua, Marvel, DC, and European comics with 17 structured columns for analysis and ML.',
-  bullets: [
-    '10,000 comics across 26 years (2000–2026) with 17 analysis-ready columns',
-    'Global coverage: Japan, USA, South Korea, China, Europe — 6 major regions',
-    'Unique "Theme" column tracking visual art styles (B&W, Full Color, Webtoon)',
-    'Perfect for EDA, rating prediction, genre classification, and NLP clustering',
-  ],
-  techDetails: 'Combines 40+ verified real entries with synthetically generated data following realistic distributions. Includes rare metadata like color style, awards, and format types across cultures.',
-  outcome: 'Filled a massive gap on Kaggle — first structured dataset covering global comic traditions',
-  tags: ['Pandas', 'Data Analysis', 'EDA', 'ML', 'NLP'],
-  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/comic-books-dataset-10000-entries',
-},
-{
-  cat: 'dataset',
-  image: '/images/proj-animation.png',
-  emoji: '🎬',
-  type: 'Data Science · Dataset Creation',
-  title: 'Animation Movies Dataset',
-  subtitle: '147 Years of Cinema (1878–2029)',
-  gradient: ['#0d1b2a', '#ffd700'],
-gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd700 100%)',
-  overview: '25,390 animated films spanning 147 years of cinema history, enriched with 44 features via TMDB API — including Director, Voice Cast, Animation Style, MPAA Rating, and a custom Data Quality Score system.',
-  bullets: [
-    '25,390 films across 147 years (1878–2029) with 44 analysis-ready columns',
-    'Enriched via TMDB API: Director, Voice Cast, Budget, Box Office, MPAA Rating',
-    'Custom Data Quality Score (0–5) for instant filtering — 80.9% at score 4–5',
-    'Ready for rating prediction, hidden gem detection, and era classification',
-  ],
-  techDetails: 'Built using TMDB public API with additional enrichment calls for missing metadata. Includes Era classification, Popularity Tiers, ROI calculations, and Hidden Gem flags for ML-ready analysis.',
-  outcome: '84.6% overall fill rate with quality scoring — cleanest animation dataset available',
-  tags: ['TMDB API', 'Pandas', 'Data Enrichment', 'EDA', 'ML'],
-  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/animation-movies-complete-dataset-18782029',
-},
+    cat: 'dataset',
+    image: '/images/proj-comics.png',
+    emoji: '📚',
+    type: 'Data Science · Dataset Creation',
+    title: 'Comic Books Dataset',
+    subtitle: 'Global Comics 2000–2026',
+    gradient: ['#1a1a2e', '#e94560'],
+    gradientBg: 'linear-gradient(135deg, #1a1a2e 0%, #1a1a2e 50%, #e94560 50%, #e94560 100%)',
+    overview: 'The most comprehensive comic book dataset on Kaggle — 10,000 entries spanning Manga, Manhwa, Manhua, Marvel, DC, and European comics with 17 structured columns for analysis and ML.',
+    bullets: [
+      '10,000 comics across 26 years (2000–2026) with 17 analysis-ready columns',
+      'Global coverage: Japan, USA, South Korea, China, Europe — 6 major regions',
+      'Unique "Theme" column tracking visual art styles (B&W, Full Color, Webtoon)',
+      'Perfect for EDA, rating prediction, genre classification, and NLP clustering',
+    ],
+    techDetails: 'Combines 40+ verified real entries with synthetically generated data following realistic distributions. Includes rare metadata like color style, awards, and format types across cultures.',
+    outcome: 'Filled a massive gap on Kaggle — first structured dataset covering global comic traditions',
+    tags: ['Pandas', 'Data Analysis', 'EDA', 'ML', 'NLP'],
+    kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/comic-books-dataset-10000-entries',
+  },
+  {
+    cat: 'dataset',
+    image: '/images/proj-animation.png',
+    emoji: '🎬',
+    type: 'Data Science · Dataset Creation',
+    title: 'Animation Movies Dataset',
+    subtitle: '147 Years of Cinema (1878–2029)',
+    gradient: ['#0d1b2a', '#ffd700'],
+    gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd700 100%)',
+    overview: '25,390 animated films spanning 147 years of cinema history, enriched with 44 features via TMDB API — including Director, Voice Cast, Animation Style, MPAA Rating, and a custom Data Quality Score system.',
+    bullets: [
+      '25,390 films across 147 years (1878–2029) with 44 analysis-ready columns',
+      'Enriched via TMDB API: Director, Voice Cast, Budget, Box Office, MPAA Rating',
+      'Custom Data Quality Score (0–5) for instant filtering — 80.9% at score 4–5',
+      'Ready for rating prediction, hidden gem detection, and era classification',
+    ],
+    techDetails: 'Built using TMDB public API with additional enrichment calls for missing metadata. Includes Era classification, Popularity Tiers, ROI calculations, and Hidden Gem flags for ML-ready analysis.',
+    outcome: '84.6% overall fill rate with quality scoring — cleanest animation dataset available',
+    tags: ['TMDB API', 'Pandas', 'Data Enrichment', 'EDA', 'ML'],
+    kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/animation-movies-complete-dataset-18782029',
+  },
   {
     cat: 'chrome',
     image: '/images/proj-balancetab.png',
@@ -445,143 +445,143 @@ gradientBg: 'linear-gradient(135deg, #0d1b2a 0%, #0d1b2a 50%, #ffd700 50%, #ffd7
     webstore: 'https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki',
   },
   {
-  cat: 'aiml',
-  image: '/images/proj-jarvis.png',
-  emoji: '🤖',
-  type: 'Desktop AI · FastAPI · React',
-  title: 'JARVIS',
-  subtitle: 'Advanced Desktop AI Assistant',
-  gradient: ['#0a0a1a', '#00c2ff'],
-  gradientBg: 'linear-gradient(135deg, #020617 0%, #0a0a1a 40%, #0f172a 70%, #00c2ff 100%)',
-  overview: 'A premium, always-on desktop AI assistant inspired by Tony Stark\'s JARVIS — combining local LLM reasoning, offline voice recognition, and a 3D glassmorphic interface for an immersive experience.',
-  bullets: [
-    'Dual interaction modes: LIVE_SPEECH (wake-word "Jarvis") and TEXT_ONLY — switchable from dashboard',
-    'Offline STT via Vosk (Kaldi-based) + Windows SAPI5 TTS with sequential speech queue',
-    'Local LLM brain via Ollama (Llama 3.1 / Qwen2.5-VL / phi3) with history pruning',
-    'Smart automation: dynamic path resolution, fuzzy app matching, web fallback for missing apps',
-    'Floating 3D Globe desktop widget built with Three.js and glassmorphic design',
-    '100% offline & free — zero cloud dependency, runs entirely on local hardware',
-  ],
-  techDetails: 'FastAPI backend powers voice, vision (Tesseract OCR), and LLM engines. Real-time SSE broadcasts sync interaction mode across the React/Vite Aura dashboard and floating widget. Context window managed via character-based truncation and conversational history pruning.',
-  outcome: 'Full-stack local AI ecosystem — voice + vision + automation, zero API cost',
-  tags: ['Python', 'FastAPI', 'Ollama', 'React', 'Vite', 'Vosk', 'Three.js', 'SSE'],
-  github: 'https://github.com/Rudra-Gupta15/jarvis-desktop-assistant',
+    cat: 'aiml',
+    image: '/images/proj-jarvis.png',
+    emoji: '🤖',
+    type: 'Desktop AI · FastAPI · React',
+    title: 'JARVIS',
+    subtitle: 'Advanced Desktop AI Assistant',
+    gradient: ['#0a0a1a', '#00c2ff'],
+    gradientBg: 'linear-gradient(135deg, #020617 0%, #0a0a1a 40%, #0f172a 70%, #00c2ff 100%)',
+    overview: 'A premium, always-on desktop AI assistant inspired by Tony Stark\'s JARVIS — combining local LLM reasoning, offline voice recognition, and a 3D glassmorphic interface for an immersive experience.',
+    bullets: [
+      'Dual interaction modes: LIVE_SPEECH (wake-word "Jarvis") and TEXT_ONLY — switchable from dashboard',
+      'Offline STT via Vosk (Kaldi-based) + Windows SAPI5 TTS with sequential speech queue',
+      'Local LLM brain via Ollama (Llama 3.1 / Qwen2.5-VL / phi3) with history pruning',
+      'Smart automation: dynamic path resolution, fuzzy app matching, web fallback for missing apps',
+      'Floating 3D Globe desktop widget built with Three.js and glassmorphic design',
+      '100% offline & free — zero cloud dependency, runs entirely on local hardware',
+    ],
+    techDetails: 'FastAPI backend powers voice, vision (Tesseract OCR), and LLM engines. Real-time SSE broadcasts sync interaction mode across the React/Vite Aura dashboard and floating widget. Context window managed via character-based truncation and conversational history pruning.',
+    outcome: 'Full-stack local AI ecosystem — voice + vision + automation, zero API cost',
+    tags: ['Python', 'FastAPI', 'Ollama', 'React', 'Vite', 'Vosk', 'Three.js', 'SSE'],
+    github: 'https://github.com/Rudra-Gupta15/jarvis-desktop-assistant',
   },
   {
-  cat: 'dataset',
-  image: '/images/proj-llm-catalog.png',
-  emoji: '🤖',
-  type: 'Data Science · Dataset Creation',
-  title: 'LLM Catalog Dataset',
-  subtitle: 'Specs, Price & Performance of 229 AI Models',
-  gradient: ['#020617', '#0ea5e9'],
-gradientBg: 'linear-gradient(135deg, #020617 0%, #020617 50%, #0ea5e9 50%, #0ea5e9 100%)',
-  overview: '229 large language models compared across 57 columns — covering specs, API pricing, hallucination rates, context windows, platform support, and capabilities. Hand-curated from official model cards and provider documentation across 40+ companies.',
-  bullets: [
-    '229 models from 40+ providers — OpenAI, Anthropic, Google, Meta, Mistral & more',
-    '57 columns: specs, pricing, benchmarks, modalities, deployment & licensing',
-    'Covers 14 model types: LLM, VLM, MoE, Code LLM, SLM, Reasoning LLM & more',
-    'Timeline from 2021–2026 with Live, Beta, Legacy & Deprecated status tracking',
-  ],
-  techDetails: 'Built by manually cross-referencing official model cards, Hugging Face listings, and public benchmark leaderboards. Includes boolean _Flag columns for programmatic filtering, hallucination rate estimates, API pricing per 1M tokens, and platform performance ratings across Mac, Windows, and Linux.',
-  outcome: '229 models · 57 columns · The most comprehensive open LLM comparison dataset on Kaggle',
-  tags: ['LLM', 'Benchmarking', 'NLP', 'AI', 'Pandas', 'EDA', 'Model Comparison'],
-  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/llm-showdown-200-ai-models-57-metrics',
-},
-{
-  cat: 'chrome',
-  image: '/images/proj-growth-tracker.png',
-  emoji: '🌴',
-  type: 'Chrome Extension · Manifest V3',
-  title: 'Growth Tracker',
-  subtitle: 'Browser Extension',
-  gradient: ['#1e3a0f', '#8db660'],
-  gradientBg: 'linear-gradient(135deg, #0a1f05 0%, #1e3a0f 50%, #4a7c2f 100%)',
-  overview:
-    'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
-  bullets: [
-    'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
-    'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
-    'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
-    'YouTube smart detection — classifies educational videos as productive using title keyword matching',
-    '15 achievements across streaks, volume, behavior patterns (Early Bird, Night Owl, Comeback Kid, Century Club)',
-    '4 animated SVG tree themes — Oasis (coconut), Desert (cactus), Sakura, and Midnight — each reacts to productivity %',
-    'Weekly pulse chart, visit history, domain breakdowns, and calendar with daily notes — all stored locally via Chrome Storage API',
-  ],
-  techDetails:
-    'Built with Manifest V3. background.js service worker handles all tracking via chrome.tabs and chrome.idle APIs, with a 1-minute alarm for periodic updates and midnight reset. Site blocking uses chrome.declarativeNetRequest dynamic rules — enabled on focus start, removed on stop. Pomodoro state machine lives in the service worker with chrome.notifications for interval alerts. customDomains synced via chrome.storage.onChanged listener. Four SVG tree renderers (createCoconutTree, createCactusTree, createSakuraTree, createMidnightTree) in tree.js with productivity-driven animations. Achievement engine in calculateAchievements() reads historyLog, targetHistory, and visitHistory.',
-  outcome: 'Published on Chrome Web Store at v2.6.0 — zero dependencies, fully offline, no data collection',
-  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'declarativeNetRequest', 'Chrome Storage API', 'SVG Animation', 'Pomodoro'],
-  webstore: 'https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar',
-},
-{
-  cat: 'webdev,aiml',
-  image: '/images/proj-attendance.png',
-  emoji: '⬡',
-  type: 'Full Stack · Node.js · Face-API.js',
-  title: 'Attendance-system',
-  subtitle: 'Biometric Attendance System',
-  gradient: ['#3a0a0a', '#8b0000'],
-  gradientBg: 'linear-gradient(135deg, #000000 0%, #3a0a0a 50%, #8b0000 100%)',
-  overview: 'A premium biometric attendance platform with real-time face descriptor extraction, glassmorphic UI, and a full developer management panel — built for precision, speed, and offline-first deployment.',
-  bullets: [
-    'Face descriptor extraction via face-api.js — 128-float biometric vectors for high-precision identity matching',
-    'Live webcam capture with futuristic circular scanner UI for both registration and attendance flows',
-    'RESTful Node.js + Express backend with 8 API endpoints covering signup, login, stats, and user CRUD',
-    'File-based JSON storage for rapid prototyping — users.json for profiles, attendance.json for logs',
-    'Developer Dashboard at /developer — real-time system stats, searchable user table, safe deletion',
-    'Postman collection bundled for independent API testing without frontend dependency',
-  ],
-  techDetails: 'Express.js server handles biometric registration (base64 photo → users.json) and attendance verification via face descriptor comparison. Frontend uses vanilla JS with MediaDevices API for camera access. No cloud dependency — fully self-hosted on localhost:3000.',
-  outcome: 'End-to-end biometric auth pipeline — face capture, vector matching, attendance logging, zero external APIs',
-  tags: ['Node.js', 'Express', 'face-api.js', 'HTML5', 'CSS3', 'Vanilla JS', 'REST API', 'MediaDevices'],
-  github: 'https://github.com/Rudra-Gupta15/Biometric-attendance-system/tree/main',
-},
-{
-  cat: 'dataset',
-  image: '/images/proj-games-dataset.png',
-  emoji: '🎮',
-  type: 'Data Science · Dataset Creation',
-  title: 'Ultimate Games Dataset',
-  subtitle: '15,000 Games | 43 Features | 1979–2026',
-  gradient: ['#08040f', '#ff3c00'],
-  gradientBg: 'linear-gradient(135deg, #08040f 0%, #08040f 50%, #ff3c00 50%, #ffa500 100%)',
-  overview: '15,000 video games catalogued across 43 columns — covering ratings, playtime, genres, art styles, platforms, store availability, and engagement metrics. Sourced and cleaned from community and critic data spanning nearly five decades of gaming history.',
-  bullets: [
-    '15,000 games from 1979–2026 across PC, console, and multi-platform ecosystems',
-    '43 columns: identity, release info, genres, ratings, playtime, stores & player status',
-    'Dual rating system — user ratings + Metacritic scores with tier classifications',
-    'Engagement & popularity scoring with achievements, library counts, and playtime tracking',
-  ],
-  techDetails: 'Built via automated data pipeline with post-processing cleanup. Includes boolean status columns (owned, beaten, playing, dropped) for player tracking, NLP-ready description_clean and all_tags fields, computed engagement_score and popularity_score, and decade grouping for trend analysis. Null handling documented per column with semantic tier fallbacks (unrated, no_score).',
-  outcome: '15,000 games · 43 columns · A production-ready dataset for game analytics, recommendation systems, and ML classification',
-  tags: ['Games', 'Steam', 'Metacritic', 'Ratings', 'EDA', 'NLP', 'Classification', 'Recommendations'],
-  kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/ultimate-games-dataset',
-},
-{
-  cat: 'aiml,webdev',
-  image: '/images/proj-codefix.png',
-  emoji: '⬡',
-  type: 'Full Stack · Flask · Ollama',
-  title: 'CodeFix',
-  subtitle: 'Multi-Language AI Autonomous Debugger',
-  gradient: ['#111827', '#1f2937'],
-  gradientBg: 'linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%)',
-  overview: 'A professional AI-powered online IDE that supports 10+ programming languages with runtime-assisted debugging — local Ollama models handle live stack trace analysis and autonomous fix generation entirely offline.',
-  bullets: [
-    'Runtime-assisted debugging — live stack traces injected directly into the AI prompt for zero-shot accurate bug fixing',
-    'Benchmarked 5 Ollama models (phi3:mini, qwen2.5vl:3b, qwen2.5-coder:7b, gemma2:9b, llama3.1) — selected gpt-oss:120b-cloud for structured output consistency and traceback reasoning accuracy',
-    'Three-panel workflow: Errors (line-level bug cards), Explain (plain-language AI analysis), Fix (generated corrected file with one-click Apply)',
-    'Click-to-navigate error gutter — AI returns exact line numbers, click any error card to jump directly to the broken line in CodeMirror',
-    'Multi-file explorer with tab-based navigation — create, rename, edit, and switch files seamlessly',
-    'Piston API integration for sandboxed code execution across Python, JavaScript, TypeScript, Java, C, C++, Go, PHP, Ruby, and Rust',
-  ],
-  techDetails: 'Flask REST backend exposes /api/run and /debug routes. Frontend built with vanilla JS and CodeMirror editor with direct Ollama API calls for fully offline local mode. Each language has its own runtime config and AI prompt template. gpt-oss:120b-cloud selected after benchmarking 5 Ollama models for structured output consistency and traceback reasoning accuracy.',
-  outcome: 'End-to-end autonomous debug pipeline — code execution, error detection, AI fix generation, and one-click patch with zero external dependency',
-  tags: ['Flask', 'Python', 'Ollama', 'CodeMirror', 'Piston API', 'Pylint', 'Vanilla JS', 'REST API', 'HTML5', 'CSS3'],
-  github: 'https://github.com/Rudra-Gupta15/CodeFix---AI-Powered-Autonomous-Debugger',
-},
-{
+    cat: 'dataset',
+    image: '/images/proj-llm-catalog.png',
+    emoji: '🤖',
+    type: 'Data Science · Dataset Creation',
+    title: 'LLM Catalog Dataset',
+    subtitle: 'Specs, Price & Performance of 229 AI Models',
+    gradient: ['#020617', '#0ea5e9'],
+    gradientBg: 'linear-gradient(135deg, #020617 0%, #020617 50%, #0ea5e9 50%, #0ea5e9 100%)',
+    overview: '229 large language models compared across 57 columns — covering specs, API pricing, hallucination rates, context windows, platform support, and capabilities. Hand-curated from official model cards and provider documentation across 40+ companies.',
+    bullets: [
+      '229 models from 40+ providers — OpenAI, Anthropic, Google, Meta, Mistral & more',
+      '57 columns: specs, pricing, benchmarks, modalities, deployment & licensing',
+      'Covers 14 model types: LLM, VLM, MoE, Code LLM, SLM, Reasoning LLM & more',
+      'Timeline from 2021–2026 with Live, Beta, Legacy & Deprecated status tracking',
+    ],
+    techDetails: 'Built by manually cross-referencing official model cards, Hugging Face listings, and public benchmark leaderboards. Includes boolean _Flag columns for programmatic filtering, hallucination rate estimates, API pricing per 1M tokens, and platform performance ratings across Mac, Windows, and Linux.',
+    outcome: '229 models · 57 columns · The most comprehensive open LLM comparison dataset on Kaggle',
+    tags: ['LLM', 'Benchmarking', 'NLP', 'AI', 'Pandas', 'EDA', 'Model Comparison'],
+    kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/llm-showdown-200-ai-models-57-metrics',
+  },
+  {
+    cat: 'chrome',
+    image: '/images/proj-growth-tracker.png',
+    emoji: '🌴',
+    type: 'Chrome Extension · Manifest V3',
+    title: 'Growth Tracker',
+    subtitle: 'Browser Extension',
+    gradient: ['#1e3a0f', '#8db660'],
+    gradientBg: 'linear-gradient(135deg, #0a1f05 0%, #1e3a0f 50%, #4a7c2f 100%)',
+    overview:
+      'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
+    bullets: [
+      'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
+      'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
+      'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
+      'YouTube smart detection — classifies educational videos as productive using title keyword matching',
+      '15 achievements across streaks, volume, behavior patterns (Early Bird, Night Owl, Comeback Kid, Century Club)',
+      '4 animated SVG tree themes — Oasis (coconut), Desert (cactus), Sakura, and Midnight — each reacts to productivity %',
+      'Weekly pulse chart, visit history, domain breakdowns, and calendar with daily notes — all stored locally via Chrome Storage API',
+    ],
+    techDetails:
+      'Built with Manifest V3. background.js service worker handles all tracking via chrome.tabs and chrome.idle APIs, with a 1-minute alarm for periodic updates and midnight reset. Site blocking uses chrome.declarativeNetRequest dynamic rules — enabled on focus start, removed on stop. Pomodoro state machine lives in the service worker with chrome.notifications for interval alerts. customDomains synced via chrome.storage.onChanged listener. Four SVG tree renderers (createCoconutTree, createCactusTree, createSakuraTree, createMidnightTree) in tree.js with productivity-driven animations. Achievement engine in calculateAchievements() reads historyLog, targetHistory, and visitHistory.',
+    outcome: 'Published on Chrome Web Store at v2.6.0 — zero dependencies, fully offline, no data collection',
+    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'declarativeNetRequest', 'Chrome Storage API', 'SVG Animation', 'Pomodoro'],
+    webstore: 'https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar',
+  },
+  {
+    cat: 'webdev,aiml',
+    image: '/images/proj-attendance.png',
+    emoji: '⬡',
+    type: 'Full Stack · Node.js · Face-API.js',
+    title: 'Attendance-system',
+    subtitle: 'Biometric Attendance System',
+    gradient: ['#3a0a0a', '#8b0000'],
+    gradientBg: 'linear-gradient(135deg, #000000 0%, #3a0a0a 50%, #8b0000 100%)',
+    overview: 'A premium biometric attendance platform with real-time face descriptor extraction, glassmorphic UI, and a full developer management panel — built for precision, speed, and offline-first deployment.',
+    bullets: [
+      'Face descriptor extraction via face-api.js — 128-float biometric vectors for high-precision identity matching',
+      'Live webcam capture with futuristic circular scanner UI for both registration and attendance flows',
+      'RESTful Node.js + Express backend with 8 API endpoints covering signup, login, stats, and user CRUD',
+      'File-based JSON storage for rapid prototyping — users.json for profiles, attendance.json for logs',
+      'Developer Dashboard at /developer — real-time system stats, searchable user table, safe deletion',
+      'Postman collection bundled for independent API testing without frontend dependency',
+    ],
+    techDetails: 'Express.js server handles biometric registration (base64 photo → users.json) and attendance verification via face descriptor comparison. Frontend uses vanilla JS with MediaDevices API for camera access. No cloud dependency — fully self-hosted on localhost:3000.',
+    outcome: 'End-to-end biometric auth pipeline — face capture, vector matching, attendance logging, zero external APIs',
+    tags: ['Node.js', 'Express', 'face-api.js', 'HTML5', 'CSS3', 'Vanilla JS', 'REST API', 'MediaDevices'],
+    github: 'https://github.com/Rudra-Gupta15/Biometric-attendance-system/tree/main',
+  },
+  {
+    cat: 'dataset',
+    image: '/images/proj-games-dataset.png',
+    emoji: '🎮',
+    type: 'Data Science · Dataset Creation',
+    title: 'Ultimate Games Dataset',
+    subtitle: '15,000 Games | 43 Features | 1979–2026',
+    gradient: ['#08040f', '#ff3c00'],
+    gradientBg: 'linear-gradient(135deg, #08040f 0%, #08040f 50%, #ff3c00 50%, #ffa500 100%)',
+    overview: '15,000 video games catalogued across 43 columns — covering ratings, playtime, genres, art styles, platforms, store availability, and engagement metrics. Sourced and cleaned from community and critic data spanning nearly five decades of gaming history.',
+    bullets: [
+      '15,000 games from 1979–2026 across PC, console, and multi-platform ecosystems',
+      '43 columns: identity, release info, genres, ratings, playtime, stores & player status',
+      'Dual rating system — user ratings + Metacritic scores with tier classifications',
+      'Engagement & popularity scoring with achievements, library counts, and playtime tracking',
+    ],
+    techDetails: 'Built via automated data pipeline with post-processing cleanup. Includes boolean status columns (owned, beaten, playing, dropped) for player tracking, NLP-ready description_clean and all_tags fields, computed engagement_score and popularity_score, and decade grouping for trend analysis. Null handling documented per column with semantic tier fallbacks (unrated, no_score).',
+    outcome: '15,000 games · 43 columns · A production-ready dataset for game analytics, recommendation systems, and ML classification',
+    tags: ['Games', 'Steam', 'Metacritic', 'Ratings', 'EDA', 'NLP', 'Classification', 'Recommendations'],
+    kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/ultimate-games-dataset',
+  },
+  {
+    cat: 'aiml,webdev',
+    image: '/images/proj-codefix.png',
+    emoji: '⬡',
+    type: 'Full Stack · Flask · Ollama',
+    title: 'CodeFix',
+    subtitle: 'Multi-Language AI Autonomous Debugger',
+    gradient: ['#111827', '#1f2937'],
+    gradientBg: 'linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%)',
+    overview: 'A professional AI-powered online IDE that supports 10+ programming languages with runtime-assisted debugging — local Ollama models handle live stack trace analysis and autonomous fix generation entirely offline.',
+    bullets: [
+      'Runtime-assisted debugging — live stack traces injected directly into the AI prompt for zero-shot accurate bug fixing',
+      'Benchmarked 5 Ollama models (phi3:mini, qwen2.5vl:3b, qwen2.5-coder:7b, gemma2:9b, llama3.1) — selected gpt-oss:120b-cloud for structured output consistency and traceback reasoning accuracy',
+      'Three-panel workflow: Errors (line-level bug cards), Explain (plain-language AI analysis), Fix (generated corrected file with one-click Apply)',
+      'Click-to-navigate error gutter — AI returns exact line numbers, click any error card to jump directly to the broken line in CodeMirror',
+      'Multi-file explorer with tab-based navigation — create, rename, edit, and switch files seamlessly',
+      'Piston API integration for sandboxed code execution across Python, JavaScript, TypeScript, Java, C, C++, Go, PHP, Ruby, and Rust',
+    ],
+    techDetails: 'Flask REST backend exposes /api/run and /debug routes. Frontend built with vanilla JS and CodeMirror editor with direct Ollama API calls for fully offline local mode. Each language has its own runtime config and AI prompt template. gpt-oss:120b-cloud selected after benchmarking 5 Ollama models for structured output consistency and traceback reasoning accuracy.',
+    outcome: 'End-to-end autonomous debug pipeline — code execution, error detection, AI fix generation, and one-click patch with zero external dependency',
+    tags: ['Flask', 'Python', 'Ollama', 'CodeMirror', 'Piston API', 'Pylint', 'Vanilla JS', 'REST API', 'HTML5', 'CSS3'],
+    github: 'https://github.com/Rudra-Gupta15/CodeFix---AI-Powered-Autonomous-Debugger',
+  },
+  {
     cat: 'aiml web',
     image: '/images/earth.jpeg',
     emoji: '🛰️',
@@ -589,9 +589,9 @@ gradientBg: 'linear-gradient(135deg, #020617 0%, #020617 50%, #0ea5e9 50%, #0ea5
     title: 'Earth Intelligence',
     subtitle: 'AI-Powered Multi-Hazard Satellite Monitoring',
     gradient: ['#0f0f0f', '#2a2a2a'],
-gradientBg: 'linear-gradient(135deg, #000000 0%, #0f0f0f 50%, #2a2a2a 100%)',
+    gradientBg: 'linear-gradient(135deg, #000000 0%, #0f0f0f 50%, #2a2a2a 100%)',
 
-boxShadow: '0 20px 40px rgba(0, 0, 0, 0.55)',
+    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.55)',
     overview: 'A unified, real-time environmental monitoring platform integrating live satellite and hazard data from NASA FIRMS and GDACS. Features a local AI reasoning layer that translates complex geographic data into human-readable risk assessments and categorical tiers.',
     bullets: [
       'Aggregates multi-hazard data (wildfires, floods, earthquakes, cyclones) into a single interactive Leaflet.js map',
@@ -609,27 +609,72 @@ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.55)',
     cat: 'web aiml',
     image: '/images/convosecai.png',
     emoji: '🎓',
-    type: 'Full-Stack EdTech · React · Node.js',
-    title: 'ConvoSec AI Education Platform',
-    subtitle: 'AI & Cybersecurity Learning Ecosystem',
+    type: 'Full-Stack Platform · AI + Cybersecurity',
+    title: 'ConvoSec AI',
+    subtitle: 'Unified AI & Cybersecurity Learning Ecosystem',
     textColor: '#181717ff',
     gradient: ['#faf7f2', '#ede7dc'],
     gradientBg: 'linear-gradient(135deg, #fffdf9 0%, #faf7f2 50%, #ede7dc 100%)',
-    overview: 'A full-stack, production-ready EdTech platform for AI and cybersecurity education. Features a polished dark-theme Vite/React frontend with Tailwind CSS and Framer Motion, and an Express/SQLite backend with JWT authentication and REST APIs.',
+    overview: 'Full-stack platform designed and developed for ConvoSec AI, a firm specialized in AI and Cybersecurity project delivery and professional education. Built an end-to-end ecosystem featuring a dark-themed production frontend and a secure authenticated backend.',
     bullets: [
-      'Polished dark-theme UI with Tailwind CSS 3 and Framer Motion animations',
-      'Express/SQLite backend with JWT authentication and full CRUD REST APIs',
-      'Courses module with AI & Cybersecurity categories, difficulty filters, and numbered syllabus',
-      'Personalized learning dashboard with animated progress bars for live and recorded sessions',
-      'Blog and Projects showcase sections with category filters and detailed meta',
-      'Zod validation, Helmet security, Morgan logging, and rate limiting integrated in backend'
+      'Engineered a high-performance dark-theme UI using Vite, React 18, and Framer Motion',
+      'Developed a robust Express/SQLite backend with JWT-based security and Zod validation',
+      'Integrated specialized modules for AI/Cybersecurity courses with progress tracking and syllabus management',
+      'Implemented filtered project showcases and technical blogs to align with company core offerings',
+      'Deployed a scalable infrastructure using Vercel (Frontend) and Render (Backend) with rate limiting',
     ],
-    techDetails: 'Frontend built with React 18 and Vite 6. Backend uses Node.js, Express 4, SQLite, and JSON Web Tokens for authentication. Includes Zod for validation, Helmet for security. Frontend deployed on Vercel, Backend on Render.',
-    outcome: 'Production-ready full-stack EdTech platform with responsive design and secure JWT auth',
+    techDetails: 'Full-stack architecture using React 18, Vite 6, and Tailwind CSS. Backend powered by Node.js, Express 4, and SQLite with JWT authentication. Security hardened with Helmet, Morgan logging, and Zod schema validation.',
+    outcome: 'Delivered full-stack MVP resulting in a direct job offer for full-time engineering',
     tags: ['React', 'Node.js', 'Express', 'SQLite', 'Tailwind CSS', 'Framer Motion'],
     live: 'https://convosecai.vercel.app',
   },
- 
+  {
+    cat: 'aiml iot edge',
+    image: '/images/smartwaste.png',
+    emoji: '🗑️',
+    type: 'Computer Vision · FastAPI · IoT · Edge AI',
+    title: 'Smart Waste Management System',
+    subtitle: 'AI-Powered Urban Waste Monitoring & Analytics',
+    gradient: ['#14532d', '#0ea5e9'],
+    gradientBg: 'linear-gradient(135deg, #052e16 0%, #14532d 45%, #0369a1 100%)',
+    overview: 'Edge-deployable urban waste management platform using YOLOv8 computer vision on live CCTV and dashcam feeds. Automates pickup confirmation, transfer station tracking, IoT weighbridge fusion, litter hotspot detection, and maintenance auto-ticketing across five production use cases.',
+    bullets: [
+      'YOLOv8m fine-tuned on custom waste-class dataset — mAP@0.5 of 0.87',
+      'TensorRT-optimized inference at ~28ms/frame on NVIDIA Jetson Orin Nano (8GB)',
+      'MQTT + Redis pub/sub for sub-second fusion of LPR output with IoT weighbridge sensors (UC3)',
+      'Dwell-time analysis for pickup confirmation; virtual line-crossing for transfer station counting (UC1/UC2)',
+      'Auto-ticketing engine dispatches 100% of high-severity alerts in under 2 seconds (UC5)',
+      'React 18 + Leaflet.js Cyber-Ops dashboard with real-time vehicle markers and litter heatmaps over Nagpur city layers',
+    ],
+    techDetails: 'Python 3.11, FastAPI, YOLOv8 (Ultralytics), TensorRT, OpenCV 4.x, WebSockets, PostgreSQL, Redis, MQTT. Frontend: React 18 + Vite, Leaflet.js, Recharts. Deployed on NVIDIA Jetson Orin Nano; WebSocket stress-tested at 12 concurrent feeds.',
+    outcome: 'Production-ready edge-deployable platform with full 5-UC coverage, single-command launch, and multi-city scalability roadmap',
+    tags: ['YOLOv8', 'FastAPI', 'TensorRT', 'OpenCV', 'React 18', 'Leaflet.js', 'PostgreSQL', 'Redis', 'MQTT', 'Jetson Orin Nano'],
+  },
+  {
+    cat: 'web frontend freelance',
+    image: '/images/perfionixai.png',
+    emoji: '🧠',
+    type: 'Frontend Design · Next.js 14 · Freelance',
+    title: 'Perfionix AI',
+    subtitle: 'AI Consulting & Product Showcase Frontend',
+    textColor: '#0f3b57',
+    gradient: ['#d9f3ff', '#bfe9ff'],
+    gradientBg: 'linear-gradient(135deg, #eef9ff 0%, #d9f3ff 50%, #bfe9ff 100%)',
+    overview: 'Premium public-facing website designed and developed from scratch for Perfionix AI Pvt. Ltd. Features a Cyber-Ops dark aesthetic with a Spline 3D hero, Framer Motion animations, and complete product showcase sections for four flagship AI products.',
+    bullets: [
+      'Spline 3D runtime hero with dynamic import and skeleton fallback — LCP under 2.5s on mid-range devices',
+      'Custom Tailwind CSS design system with CSS variable tokens — neon cyan, deep violet, and charcoal applied site-wide',
+      'Framer Motion scroll-triggered variants and layout animations at consistent 60fps across all browsers and devices',
+      'Individual product sections for Click4AI, Laplacian, DocNavigator, and Friday Voice Assistant with Bento grid layouts',
+      'Lighthouse Performance 92+ on desktop; validated across iPhone 14, iPad Pro, 1080p, 1440p, and 4K ultra-wide',
+      'Modular component handoff — client team extended pages and integrated backend APIs without UI refactoring',
+    ],
+    techDetails: 'Next.js 14 (App Router), React 18, Tailwind CSS, CSS Variables, Framer Motion, Spline Runtime, Lucide React. React Client Components for animated sections; Server Components for static pages. Cross-browser QA on Chrome, Firefox, Safari.',
+    outcome: 'Delivered within freelance timeline — live at perfionixai.com with 92+ Lighthouse score and a clean modular codebase ready for backend integration',
+    tags: ['Next.js 14', 'React 18', 'Tailwind CSS', 'Framer Motion', 'Spline 3D', 'Lucide React', 'Freelance', 'Frontend Design'],
+    live: 'https://www.perfionixai.com',
+  },
+
 ];
 
 const BEST_TITLES = new Set([
@@ -637,13 +682,13 @@ const BEST_TITLES = new Set([
   'ResumeAI',
   'ASL Recognition',
   'CodeFix',
-  'Growth Tracker',
   'RUD AI',
   'AI Mail Assistant',
   'TimeMark',
-  'BalanceTab',
-  'ConvoSec AI Education Platform',
+  'ConvoSec AI',
   'Earth Intelligence',
+  'Perfionix AI',
+  'Smart Waste Management System',
 ]);
 
 const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
@@ -731,10 +776,10 @@ function ProjectModal({ project, onClose }) {
               )}
               {project.webstore && (
                 <a href={project.webstore} target="_blank" rel="noreferrer"
-                  className="pmodal-github" style={{background: '#ffffff', color: '#000000'}}>
+                  className="pmodal-github" style={{ background: '#ffffff', color: '#000000' }}>
                   Web-Store ↗
                 </a>
-              )}              
+              )}
               {project.kaggle && (
                 <a href={project.kaggle} target="_blank" rel="noreferrer"
                   className="pmodal-github" style={{ background: '#3b82f6', color: '#fff' }}>
@@ -744,7 +789,7 @@ function ProjectModal({ project, onClose }) {
               {project.github && (
                 <a href={project.github} target="_blank" rel="noreferrer"
                   className="pmodal-github"
-                  style={{background: `linear-gradient(135deg, #000000, #fff)`}}>
+                  style={{ background: `linear-gradient(135deg, #000000, #fff)` }}>
                   GitHub ↗
                 </a>
               )}
@@ -760,10 +805,10 @@ function ProjectModal({ project, onClose }) {
 export default function Projects() {
   const [filter, setFilter] = useState('best');
   const [selected, setSelected] = useState(null);
-  const scrollRef   = useRef(null);
+  const scrollRef = useRef(null);
   const progressRef = useRef(null);
-  const sectionRef  = useScrollReveal('.proj-sr');
-  const [canScrollLeft,  setCanScrollLeft]  = useState(false);
+  const sectionRef = useScrollReveal('.proj-sr');
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   const checkScroll = () => {
@@ -803,7 +848,7 @@ export default function Projects() {
       <div className="proj-header-row proj-sr proj-sr-d1">
         <h2 className="sec-h">🚀 <em>Projects</em></h2>
         <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 340 }}>
-          Production systems — real pipelines solving real problems.
+          Showing {PROJECTS.length} curated systems — real pipelines solving real problems.
         </p>
       </div>
 

@@ -1,11 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const SKILLS = [
   { n: '01', label: 'Python / ML ⭐ weekly usage', pct: 96 },
   { n: '02', label: 'LLM & Generative AI ⭐ weekly usage', pct: 88 },
   { n: '03', label: 'Computer Vision ⭐ weekly usage', pct: 82 },
   { n: '04', label: 'Deep Learning ⭐ weekly usage', pct: 80 },
-  { n: '05', label: 'Hardware & IoT ⭐ weekly usage', pct: 45 },
+  { n: '05', label: 'JavaScript, HTML, CSS & React ⭐ weekly usage', pct: 92 },
 ];
 
 const BADGES = [
@@ -62,8 +62,7 @@ const BADGES = [
 export default function Skills() {
   const canvasRef = useRef(null);
   const hudRef = useRef(null);
-  const skillBarsRef = useRef([]);
-  const observedRef = useRef(false);
+  const [hasBeenObserved, setHasBeenObserved] = useState(false);
 
   useEffect(() => {
     // Neural net canvas
@@ -91,14 +90,11 @@ export default function Skills() {
       nodes.forEach(layer=>layer.forEach(n=>{n.act+=(n.target-n.act)*.04;const pulse=1+Math.sin(t*2+n.phase)*.1,r=6.5*pulse,bright=.3+n.act*.7;const gr=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*3.5);gr.addColorStop(0,`rgba(212,168,67,${bright*.25})`);gr.addColorStop(1,'transparent');ctx.beginPath();ctx.arc(n.x,n.y,r*3.5,0,Math.PI*2);ctx.fillStyle=gr;ctx.fill();ctx.beginPath();ctx.arc(n.x,n.y,r,0,Math.PI*2);ctx.fillStyle=`rgba(${Math.floor(170+bright*60)},${Math.floor(120+bright*60)},${Math.floor(30+bright*40)},${.8+bright*.2})`;ctx.fill();ctx.strokeStyle=`rgba(232,197,116,${bright*.65})`;ctx.lineWidth=1.5;ctx.stroke();}));
     })();
 
-    // Animate skill bars on scroll
+    // Observe section for animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !observedRef.current) {
-          observedRef.current = true;
-          skillBarsRef.current.forEach((el, i) => {
-            if (el) setTimeout(() => { el.style.width = SKILLS[i].pct + '%'; }, i * 100);
-          });
+        if (entry.isIntersecting && !hasBeenObserved) {
+          setHasBeenObserved(true);
         }
       });
     }, { threshold: 0.3 });
@@ -110,7 +106,7 @@ export default function Skills() {
       clearInterval(i2);
       observer.disconnect();
     };
-  }, []);
+  }, [hasBeenObserved]);
 
   return (
     <section id="skills">
@@ -146,7 +142,10 @@ export default function Skills() {
                 <span className="sk-i">{sk.n}</span>
                 <span className="sk-n">{sk.label}</span>
                 <div className="sk-tr">
-                  <div className="sk-fi" ref={el => skillBarsRef.current[i] = el} style={{ width: 0 }}></div>
+                  <div 
+                    className="sk-fi" 
+                    style={{ width: hasBeenObserved ? sk.pct + '%' : 0 }}
+                  ></div>
                 </div>
                 <span className="sk-p">{sk.pct}%</span>
               </div>

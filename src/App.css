@@ -2384,7 +2384,7 @@ footer {
 /* LIVE Badge Styles */
 .pcard-live-badge {
   position: absolute;
-  bottom: 100px;
+  bottom: 135px;
   left: 20px;
   background: linear-gradient(135deg, #ffc107, #ffeb3b);
   color: #000;

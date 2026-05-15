@@ -4,6 +4,7 @@ export default function Hero() {
   const canvasRef = useRef(null);
   
   const roles = [
+    "Fullstack Developer",
     "AI/ML Intern",
     "Chrome Extension Developer",
     "IOT Engineer",
@@ -42,7 +43,7 @@ export default function Hero() {
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, roleIndex, typingSpeed]);
+  }, [charIndex, isDeleting, roleIndex, typingSpeed, roles]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -153,6 +154,10 @@ export default function Hero() {
             <span className="h-role">AI/ML Developer</span>
             <span className="h-dot"></span>
             <span className="h-role">Game Dev Enthusiast</span>
+            <span className="h-dot"></span>
+            <span className="h-role">Fullstack Developer</span>
+            <span className="h-dot"></span>
+            <span className="h-role">Extension Developer</span>
           </div>
           <p className="hero-desc">Crafting intelligent systems and immersive experiences at the intersection of hardware and AI.</p>
           <div className="hero-btns">
