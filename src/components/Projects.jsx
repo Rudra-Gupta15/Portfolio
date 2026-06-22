@@ -56,6 +56,27 @@ const REVEAL_CSS = `
 
 const PROJECTS = [
   {
+    cat: 'web frontend',
+    image: '/images/Port.png',
+    type: 'Frontend · React · Vite',
+    title: 'Personal Portfolio',
+    subtitle: 'Dynamic 3D & Glassmorphic UI',
+    gradient: ['#1e1b4b', '#06b6d4'],
+    gradientBg: 'linear-gradient(135deg, #020617 0%, #1e1b4b 40%, #0284c7 80%, #22d3ee 100%)',
+    overview: 'My personal portfolio built to showcase my projects and skills with a highly interactive, animated, and dynamic glassmorphic design system.',
+    bullets: [
+      'Built from scratch using React, Vite, and custom CSS for a blazing fast experience',
+      'Dynamic components including animated asteroids, driving cars, and floating planets',
+      '100% custom styling — no CSS frameworks, strictly vanilla CSS with CSS modules and variables',
+      'Fully responsive mobile-first design with smooth scroll-reveal animations'
+    ],
+    techDetails: 'Frontend built with React 18 via Vite. No external component libraries were used to ensure maximum performance and pixel-perfect design control. Vanilla CSS handles complex animations like scroll-reveals and SVG path animations.',
+    outcome: 'A premium, highly personalized web experience designed and built entirely solo over a month',
+    tags: ['React', 'Vite', 'JavaScript', 'CSS', 'UI/UX'],
+    github: 'https://github.com/Rudra-Gupta15/Portfolio',
+    live: 'https://rudra-gupta.vercel.app/',
+  },
+  {
     cat: 'aiml',
     image: '/images/proj-heart-disease.png',
     emoji: '❤️',
@@ -678,6 +699,7 @@ const PROJECTS = [
 ];
 
 const BEST_TITLES = new Set([
+  'Personal Portfolio',
   'Attendance-system',
   'ResumeAI',
   'ASL Recognition',

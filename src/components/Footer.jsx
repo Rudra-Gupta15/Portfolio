@@ -575,7 +575,7 @@ export default function PortfolioFooter() {
       </div>
 
       <div className="bottom-bar">
-        © {new Date().getFullYear()} <span>Rudra Kumar Gupta</span> · Portfolio
+        © {new Date().getFullYear()} <span>Rudra Kumar Gupta</span> · Built & designed solo
       </div>
     </footer>
   );
