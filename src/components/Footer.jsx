@@ -27,14 +27,15 @@ const SOCIAL_LINKS = [
 ];
 
 const Asteroids = memo(() => {
-  const streaks = useMemo(() => Array.from({ length: 20 }, (_, i) => ({
+  const streaks = useMemo(() => Array.from({ length: 12 }, (_, i) => ({
     id: i,
-    left: Math.random() * 100,
-    top: Math.random() * 40,
-    delay: Math.random() * 12,
-    dur: 2 + Math.random() * 4,
-    width: 80 + Math.random() * 180,
-    opacity: 0.3 + Math.random() * 0.5
+    left: Math.random() * 120 - 10,
+    top: Math.random() * 45 - 10,
+    delay: Math.random() * 10,
+    dur: 4 + Math.random() * 5,
+    width: 60 + Math.random() * 100,
+    opacity: 0.4 + Math.random() * 0.5,
+    angle: -30 - Math.random() * 8
   })), []);
 
   return (
@@ -49,7 +50,8 @@ const Asteroids = memo(() => {
             width: `${s.width}px`,
             animationDelay: `${s.delay}s`,
             animationDuration: `${s.dur}s`,
-            opacity: s.opacity
+            opacity: s.opacity,
+            '--angle': `${s.angle}deg`
           }} 
         />
       ))}
@@ -161,6 +163,9 @@ export default function PortfolioFooter() {
           flex-direction: column;
           justify-content: space-between;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          /* Fading effect at the top */
+          mask-image: linear-gradient(180deg, transparent 0%, black 150px, black 100%);
+          -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 150px, black 100%);
         }
 
         .footer-container::before {
@@ -186,31 +191,36 @@ export default function PortfolioFooter() {
         
         .meteor-streak {
           position: absolute; 
-          height: 2px;
+          height: 1.5px;
           background: linear-gradient(
             90deg, 
-            rgba(34, 211, 238, 0) 0%,
-            rgba(34, 211, 238, 0.8) 20%,
-            rgba(255, 255, 255, 0.9) 50%,
-            rgba(255, 255, 255, 0.6) 80%,
-            rgba(255, 255, 255, 0) 100%
+            rgba(255, 255, 255, 1) 0%,
+            rgba(56, 189, 248, 0.9) 25%,
+            rgba(56, 189, 248, 0) 100%
           );
-          box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-          transform: rotate(-35deg); 
+          box-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
           opacity: 0;
           animation: falling-star linear infinite;
-          filter: blur(0.5px);
+          filter: blur(0.2px);
         }
         
         @keyframes falling-star {
           0% { 
-            transform: translate(200px, -200px) rotate(-35deg); 
+            transform: rotate(var(--angle, -35deg)) translateX(0px); 
             opacity: 0; 
           }
-          10% { opacity: 1; }
-          90% { opacity: 0.4; }
+          6% { 
+            opacity: 1; 
+          }
+          26% { 
+            opacity: 1; 
+          }
+          32% { 
+            transform: rotate(var(--angle, -35deg)) translateX(-1000px); 
+            opacity: 0; 
+          }
           100% { 
-            transform: translate(-1000px, 1000px) rotate(-35deg); 
+            transform: rotate(var(--angle, -35deg)) translateX(-1000px); 
             opacity: 0; 
           }
         }
@@ -247,46 +257,29 @@ export default function PortfolioFooter() {
         }
 
         .status-pill {
-          background: linear-gradient(
-            135deg,
-            rgba(6, 182, 212, 0.15) 0%,
-            rgba(14, 165, 233, 0.1) 100%
-          );
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(12px);
-          border: 1.5px solid rgba(34, 211, 238, 0.4);
+          border: 1.5px solid rgba(255, 255, 255, 0.8);
           padding: 12px 28px; 
           border-radius: 50px;
           font-size: 0.75rem; 
           letter-spacing: 2.5px; 
-          color: #22d3ee;
+          color: #1a2c3a;
           margin-bottom: 32px; 
           box-shadow: 
-            0 0 20px rgba(34, 211, 238, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            0 0 20px rgba(255, 255, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5);
           text-transform: uppercase; 
           font-weight: 600;
           position: relative;
           animation: pulse-glow 3s ease-in-out infinite;
         }
 
-        .status-pill::before {
-          content: '';
-          position: absolute;
-          left: 12px;
-          top: 50%;
-          transform: translateY(-50%);
-          width: 8px;
-          height: 8px;
-          background: #22d3ee;
-          border-radius: 50%;
-          box-shadow: 0 0 10px #22d3ee;
-          animation: pulse-dot 2s ease-in-out infinite;
-        }
-          
+
 
         @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
-          50% { box-shadow: 0 0 30px rgba(34, 211, 238, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
+          0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5); }
+          50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
         }
 
         @keyframes pulse-dot {
@@ -423,28 +416,6 @@ export default function PortfolioFooter() {
           50% { opacity: 1; }
         }
 
-        .bottom-bar {
-          position: relative; 
-          z-index: 25;
-          background: linear-gradient(
-            to top,
-            rgba(2, 6, 23, 0.98) 0%,
-            rgba(2, 6, 23, 0.92) 100%
-          );
-          backdrop-filter: blur(8px);
-          color: #64748b; 
-          text-align: center;
-          padding: 24px 20px; 
-          font-size: 0.85rem;
-          border-top: 1px solid rgba(148, 163, 184, 0.1);
-          font-weight: 400;
-          letter-spacing: 0.5px;
-        }
-
-        .bottom-bar span {
-          color: #94a3b8;
-          font-weight: 500;
-        }
 
         @media (max-width: 768px) {
           .footer-container {
@@ -499,7 +470,8 @@ export default function PortfolioFooter() {
 
           .bottom-bar {
             font-size: 0.75rem;
-            padding: 20px 16px;
+            padding: 10px 24px;
+            margin-bottom: 12px;
           }
 
           .moon {
@@ -517,7 +489,10 @@ export default function PortfolioFooter() {
       <div className="moon" />
 
       <div className="top-content">
-        <div className="status-pill">Available for New Projects</div>
+        <div className="status-pill">
+          <span className="status-dot"></span>
+          AVAILABLE FOR NEW PROJECTS
+        </div>
         <div className="social-row">
           {SOCIAL_LINKS.map(link => (
             <a 

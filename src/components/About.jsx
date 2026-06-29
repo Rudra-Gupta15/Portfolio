@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const STATS = [
   { n: '15+', icon: '🚀', label: 'Projects Built', sub: 'in production', color: '#a855f7' },
-  { n: 'Top 3%', icon: '📊', label: 'Kaggle Global', sub: 'Rank 282 / 9,414', color: '#d4a843' },
+  { n: 'Top 2.7%', icon: '📊', label: 'Kaggle Global', sub: 'Rank 278 / 10,346', color: '#d4a843' },
   { n: '3', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
   { n: '11', icon: '🎮', label: 'Games Shipped', sub: 'React, Vite, Extension', color: '#4da8e8' },
 ];
@@ -54,10 +54,10 @@ export default function About() {
         <div className="ab-card abt-bio-card">
           <div className="ab-bio-tag">
             <span className="ab-dot" />
-            Kaggle Datasets Expert · Ranked 282 / 9,414 globally
+            Kaggle Datasets Expert · Ranked 278 / 10,346 globally
           </div>
           <p className="ab-bio-text">
-            I am an <strong>Electronics Engineering undergraduate</strong> dedicated to engineering high-impact, AI-driven solutions that bridge the gap between hardware and software. My work ranges from foundational research in <strong>Real-Time Sign Language Recognition</strong> to architecting complex platforms like <strong>ConvoSec AI</strong>. 
+            I am an <strong>Electronics Engineering undergraduate</strong> dedicated to engineering high-impact, AI-driven solutions that bridge the gap between hardware and software. My work ranges from foundational research in <strong>Real-Time Sign Language Recognition</strong> to architecting complex platforms like <strong>ConvoSec AI</strong>.
             I specialize in building autonomous, privacy-first systems such as <strong>CodeFix</strong> (an AI debugger) and a <strong>Biometric Attendance System</strong>, alongside production-grade platforms like <strong>PrepMaster</strong> and <strong>ResumeAI</strong>.
           </p>
 

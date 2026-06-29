@@ -81,75 +81,75 @@ const REVEAL_CSS = `
 ══════════════════════════════════════════ */
 const CERTS = [
   {
-  icon: '🤖',
-  image: '/images/cert-ai-beginners.jpg',
-  title: 'Artificial Intelligence Beginners Guide',
-  program: 'SkillUp by Simplilearn',
-  issuer: 'Simplilearn',
-  date: '24 Feb 2026',
-  desc: 'Completed the Artificial Intelligence Beginners Guide on Simplilearn SkillUp — covering core AI concepts, applications, and industry use cases. Certificate code: 9886142.',
-  accent: '#f97316',
-  accentRgb: '249,115,22',
-  tags: ['Artificial Intelligence', 'Simplilearn', 'Beginners'],
-  badge: 'Certified',
-  verifyUrl: null,
-},
-{
-  icon: '🧬',
-  image: '/images/cert-claude-101.jpg',
-  title: 'Claude 101',
-  program: 'Anthropic',
-  issuer: 'Anthropic',
-  date: '2026',
-  desc: 'Completed Claude 101 — an introductory course by Anthropic covering the fundamentals of working with Claude AI, prompt engineering, and responsible AI usage.',
-  accent: '#d97706',
-  accentRgb: '217,119,6',
-  tags: ['Claude', 'Anthropic', 'Prompt Engineering'],
-  badge: 'Certified',
-  verifyUrl: null,
-},
-{
-  icon: '☁️',
-  image: '/images/cert-aws-ml.png',
-  title: 'Getting Started with AWS Machine Learning',
-  program: 'AWS Training · Coursera',
-  issuer: 'Amazon Web Services · Coursera',
-  date: '25 Mar 2026',
-  desc: 'Completed the AWS Machine Learning course authorized by Amazon Web Services and offered through Coursera — covering ML services, SageMaker, and cloud-based AI workflows.',
-  accent: '#f59e0b',
-  accentRgb: '245,158,11',
-  tags: ['AWS', 'Machine Learning', 'Cloud AI'],
-  badge: 'Certified',
-  verifyUrl: 'https://coursera.org/verify/E7TD3VGWVBZW',
-},
-{
-  icon: '✨',
-  image: '/images/cert-genai-beginners.jpg',
-  title: 'Generative AI for Beginners',
-  program: 'SkillUp by Simplilearn',
-  issuer: 'Simplilearn',
-  date: '18 Apr 2026',
-  desc: 'Completed the Generative AI for Beginners course on Simplilearn SkillUp — exploring LLMs, image generation, and practical GenAI applications. Certificate code: 10122834.',
-  accent: '#8b5cf6',
-  accentRgb: '139,92,246',
-  tags: ['Generative AI', 'LLMs', 'Simplilearn'],
-  badge: 'Certified',
-  verifyUrl: null,
-},
-{
-  icon: '🐍',
-  image: '/images/cert-ml-python.jpg',
-  title: 'Machine Learning Using Python',
-  program: 'SkillUp by Simplilearn',
-  issuer: 'Simplilearn',
-  date: '21 Apr 2026',
-  desc: 'Completed Machine Learning Using Python on Simplilearn SkillUp — covering supervised and unsupervised learning, model building, and ML pipelines in Python. Certificate code: 10134812.',
-  accent: '#10b981',
-  accentRgb: '16,185,129',
-  tags: ['Machine Learning', 'Python', 'Simplilearn'],
-  badge: 'Certified',
-  verifyUrl: null,
-},
+    icon: '🤖',
+    image: '/images/cert-ai-beginners.jpg',
+    title: 'Artificial Intelligence Beginners Guide',
+    program: 'SkillUp by Simplilearn',
+    issuer: 'Simplilearn',
+    date: '24 Feb 2026',
+    desc: 'Completed the Artificial Intelligence Beginners Guide on Simplilearn SkillUp — covering core AI concepts, applications, and industry use cases. Certificate code: 9886142.',
+    accent: '#f97316',
+    accentRgb: '249,115,22',
+    tags: ['Artificial Intelligence', 'Simplilearn', 'Beginners'],
+    badge: 'Certified',
+    verifyUrl: null,
+  },
+  {
+    icon: '🧬',
+    image: '/images/cert-claude-101.jpg',
+    title: 'Claude 101',
+    program: 'Anthropic',
+    issuer: 'Anthropic',
+    date: '2026',
+    desc: 'Completed Claude 101 — an introductory course by Anthropic covering the fundamentals of working with Claude AI, prompt engineering, and responsible AI usage.',
+    accent: '#d97706',
+    accentRgb: '217,119,6',
+    tags: ['Claude', 'Anthropic', 'Prompt Engineering'],
+    badge: 'Certified',
+    verifyUrl: null,
+  },
+  {
+    icon: '☁️',
+    image: '/images/cert-aws-ml.png',
+    title: 'Getting Started with AWS Machine Learning',
+    program: 'AWS Training · Coursera',
+    issuer: 'Amazon Web Services · Coursera',
+    date: '25 Mar 2026',
+    desc: 'Completed the AWS Machine Learning course authorized by Amazon Web Services and offered through Coursera — covering ML services, SageMaker, and cloud-based AI workflows.',
+    accent: '#f59e0b',
+    accentRgb: '245,158,11',
+    tags: ['AWS', 'Machine Learning', 'Cloud AI'],
+    badge: 'Certified',
+    verifyUrl: 'https://coursera.org/verify/E7TD3VGWVBZW',
+  },
+  {
+    icon: '✨',
+    image: '/images/cert-genai-beginners.jpg',
+    title: 'Generative AI for Beginners',
+    program: 'SkillUp by Simplilearn',
+    issuer: 'Simplilearn',
+    date: '18 Apr 2026',
+    desc: 'Completed the Generative AI for Beginners course on Simplilearn SkillUp — exploring LLMs, image generation, and practical GenAI applications. Certificate code: 10122834.',
+    accent: '#8b5cf6',
+    accentRgb: '139,92,246',
+    tags: ['Generative AI', 'LLMs', 'Simplilearn'],
+    badge: 'Certified',
+    verifyUrl: null,
+  },
+  {
+    icon: '🐍',
+    image: '/images/cert-ml-python.jpg',
+    title: 'Machine Learning Using Python',
+    program: 'SkillUp by Simplilearn',
+    issuer: 'Simplilearn',
+    date: '21 Apr 2026',
+    desc: 'Completed Machine Learning Using Python on Simplilearn SkillUp — covering supervised and unsupervised learning, model building, and ML pipelines in Python. Certificate code: 10134812.',
+    accent: '#10b981',
+    accentRgb: '16,185,129',
+    tags: ['Machine Learning', 'Python', 'Simplilearn'],
+    badge: 'Certified',
+    verifyUrl: null,
+  },
   {
     icon: '🧠',
     image: '/images/cert-ai-aware.png',
@@ -271,13 +271,24 @@ const ACHIEVEMENTS = [
   {
     icon: '📊',
     title: 'Kaggle Datasets Expert',
-    loc: 'Global Rank: 360 / 9,044',
+    loc: 'Global Rank: 278 / 10,346',
     date: '2026',
-    sub: 'Ranked in the Top 4% globally for high-quality dataset creation and data science contributions. Recognized for impactful community contributions as a final-year student.',
+    sub: 'Ranked in the Top 2.7% globally for high-quality dataset creation and data science contributions. Recognized for impactful community contributions as a final-year student.',
     accent: '#4da8e8',
     accentRgb: '77,168,232',
     badge: 'Kaggle',
     tags: ['Data Science', 'datasets', 'AI']
+  },
+  {
+    icon: '📦',
+    title: 'Chrome Extension Developer',
+    loc: '460+ Combined Installs',
+    date: '2026',
+    sub: 'Designed, built, and launched 3 browser extensions on the Chrome Web Store (BalanceTab, TimeMark, Growth Tracker) with Manifest V3, gaining 460+ installs and active users.',
+    accent: '#10b981',
+    accentRgb: '16,185,129',
+    badge: 'Extensions',
+    tags: ['Manifest V3', 'Chrome API', 'Publishing']
   },
   {
     icon: '🎯',
@@ -291,15 +302,15 @@ const ACHIEVEMENTS = [
     tags: ['Sponsorship', 'Management', 'Leadership']
   },
   {
-  icon: '🤖',
-  title: 'Event Manager — RoboRace',
-  loc: 'College Technical Fest (ICON)',
-  date: '2024',
-  sub: 'Managed and executed RoboRace, a flagship robotics competition at ICON. Handled end-to-end event logistics, participant coordination, judging criteria, and on-ground operations.',
-  accent: '#e05b9a',
-  accentRgb: '224,91,154',
-  badge: 'Event Management',
-  tags: ['Robotics', 'Event Management', 'Operations']
+    icon: '🤖',
+    title: 'Event Manager — RoboRace',
+    loc: 'College Technical Fest (ICON)',
+    date: '2024',
+    sub: 'Managed and executed RoboRace, a flagship robotics competition at ICON. Handled end-to-end event logistics, participant coordination, judging criteria, and on-ground operations.',
+    accent: '#e05b9a',
+    accentRgb: '224,91,154',
+    badge: 'Event Management',
+    tags: ['Robotics', 'Event Management', 'Operations']
   },
   {
     icon: '👑',
@@ -475,10 +486,10 @@ export function Publications() {
                   {['Machine Learning', 'Computer Vision', 'Sign Language', 'IEEE'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
-                  <a 
-                    href="https://ieeexplore.ieee.org/document/11469377" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href="https://ieeexplore.ieee.org/document/11469377"
+                    target="_blank"
+                    rel="noreferrer"
                     className="pub-link"
                   >
                     View IEEE Paper ↗
@@ -633,9 +644,10 @@ export function Publications() {
                 <div className="pub-conf"> Chrome &amp; Edge New Tab Replacement </div>
                 <div className="pub-meta">
                   <span>📅 25 March 2026</span>
-                  <span>📅 1 April 2026</span>
                   <span>📦 Chrome Web Store (v3)</span>
-                  <span>🎮 7 Arcade Games</span>
+                  <span>👤 30+ Active Users</span>
+                  <span>📥 185+ Installs</span>
+                  <span>⭐ 5.0/5 Rating</span>
                 </div>
                 <p className="pub-desc">
                   Fuses gamer aesthetics with a productivity dashboard. Features an Orbitron-font dashboard, 7 HTML5 Canvas mini-games, real-time weather, an AI quick-launch dock, and zero-cloud local storage.
@@ -644,10 +656,10 @@ export function Publications() {
                   {['Manifest V3', 'Canvas API', 'Open-Meteo API', 'Pure JS', 'Performance'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
-                  <a 
-                    href="https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href="https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki"
+                    target="_blank"
+                    rel="noreferrer"
                     className="pub-link"
                   >
                     View Extension ↗
@@ -674,9 +686,9 @@ export function Publications() {
                 <div className="pub-conf"> Native Browser Integration &amp; Utility </div>
                 <div className="pub-meta">
                   <span>📅 24 March 2026</span>
-                  <span>📅 1 April 2026</span>
                   <span>📦 Chrome Web Store (v3)</span>
-                  <span>🛠️ Pure Browser APIs</span>
+                  <span>👤 10+ Active Users</span>
+                  <span>📥 154+ Installs</span>
                 </div>
                 <p className="pub-desc">
                   Lets users bookmark exact timestamps in any YouTube video with a native in-player button. Features high-precision seeking, green flash feedback, and a dynamic popup panel with real-time playback updates.
@@ -685,10 +697,10 @@ export function Publications() {
                   {['Manifest V3', 'JavaScript', 'MutationObserver', 'Content Scripts', 'Storage API'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
-                  <a 
-                    href="https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href="https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea"
+                    target="_blank"
+                    rel="noreferrer"
                     className="pub-link"
                   >
                     View Extension ↗
@@ -715,10 +727,9 @@ export function Publications() {
                 <div className="pub-conf"> Chrome New Tab · Behavioral Productivity Tracker </div>
                 <div className="pub-meta">
                   <span>📅 10 April 2026</span>
-                  <span>📅 13 April 2026</span>
                   <span>📦 Chrome Web Store (v3)</span>
-                  <span>🌴 4 Tree Themes</span>
-                  <span>🏆 15 Achievements</span>
+                  <span>👤 8+ Active Users</span>
+                  <span>📥 128+ Installs</span>
                 </div>
                 <p className="pub-desc">
                   Tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not a manually started timer. Features Pomodoro mode, declarativeNetRequest site blocking, YouTube smart detection, weekly stats, and a full task manager. Zero data collection, 100% local.
@@ -727,10 +738,10 @@ export function Publications() {
                   {['Manifest V3', 'declarativeNetRequest', 'SVG Animation', 'Chrome Storage API', 'Pomodoro', 'Pure JS'].map(t => (
                     <span key={t} className="pub-tag">{t}</span>
                   ))}
-                  <a 
-                    href="https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar" 
-                    target="_blank" 
-                    rel="noreferrer" 
+                  <a
+                    href="https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar"
+                    target="_blank"
+                    rel="noreferrer"
                     className="pub-link"
                   >
                     View Extension ↗
@@ -906,15 +917,18 @@ export function Achievements() {
                 className={`ach-tile sr-item sr-d${Math.min(i, 7)}`}
                 style={{ '--accent': a.accent, '--accent-rgb': a.accentRgb }}
               >
-                <div className="ach-tile-left">
-                  <div className="ach-tile-glow" />
+                <div className="ach-tile-glow" />
+                <div className="ach-tile-top-bar">
                   <div className="ach-tile-icon-wrap">{a.icon}</div>
-                  <div className="ach-tile-badge">{a.badge}</div>
+                  <span className="ach-tile-badge">{a.badge}</span>
                 </div>
-                <div className="ach-tile-right">
-                  <div className="ach-tile-title">{a.title}</div>
-                  <div className="ach-tile-loc">{a.loc}</div>
-                  <div className="ach-tile-date">{a.date}</div>
+                <div className="ach-tile-content">
+                  <h3 className="ach-tile-title">{a.title}</h3>
+                  <div className="ach-tile-meta">
+                    <span className="ach-tile-loc">{a.loc}</span>
+                    <span className="ach-tile-sep">•</span>
+                    <span className="ach-tile-date">{a.date}</span>
+                  </div>
                   <div className="ach-tile-desc">{a.sub}</div>
                   <div className="ach-tile-tags">
                     {a.tags.map(t => (

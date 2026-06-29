@@ -260,6 +260,7 @@ const PROJECTS = [
     overview:
       'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
     bullets: [
+      '📈 Chrome Web Store: 154+ installs • 10+ active users',
       'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
       'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
       'Popup panel shows video thumbnail, title, and live playback position updated in real time',
@@ -451,6 +452,7 @@ const PROJECTS = [
     gradientBg: 'linear-gradient(135deg, #000000 0%, #1a1a1a 45%, #444444 100%)',
     overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook.',
     bullets: [
+      '📈 Chrome Web Store: 185+ installs • 30+ active users • 5.0 ★ Rating',
       'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
       'Live clock with real-time weather via Open-Meteo API + browser geolocation',
       'Smart search bar supporting Google, DuckDuckGo, Bing, YouTube, and GitHub engines',
@@ -521,6 +523,7 @@ const PROJECTS = [
     overview:
       'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
     bullets: [
+      '📈 Chrome Web Store: 128+ installs • 8+ active users',
       'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
       'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
       'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
@@ -725,7 +728,9 @@ const TABS_LABELS = {
   chrome: 'Chrome Ext',
 };
 
-function ProjectModal({ project, onClose }) {
+function ProjectModal({ project, onClose, index, onPrev, onNext }) {
+  const [lightbox, setLightbox] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     document.body.classList.add('modal-open');
@@ -739,86 +744,124 @@ function ProjectModal({ project, onClose }) {
   }, [onClose]);
   if (!project) return null;
 
+  const techVal1 = project.tags && project.tags[0] ? project.tags[0] : "Frontend";
+  const techDesc1 = project.type ? project.type.split(' · ')[0] : "Web Development";
+  const outcomeDesc = project.outcome ? project.outcome : "Production-ready deployment";
+
   return createPortal(
     <div className="pmodal-overlay" onClick={onClose}>
-      <div className="pmodal pmodal-v2" onClick={e => e.stopPropagation()} style={{ color: project.textColor || 'inherit' }}>
-        <div className="pmodal-header" style={{ background: project.gradientBg }}>
-          <button className="pmodal-close" onClick={onClose} style={{ color: project.textColor || 'inherit' }}>✕</button>
-          <div className="pmodal-header-content">
-            <span className="pmodal-emoji">{project.emoji}</span>
-            <div>
-              <div className="pmodal-type" style={{ color: project.textColor ? project.textColor : 'inherit' }}>{project.type}</div>
-              <h2 className="pmodal-title" style={{ color: project.textColor ? project.textColor : 'inherit' }}>{project.title}</h2>
-              <div className="pmodal-subtitle-txt" style={{ color: project.textColor ? project.textColor : 'inherit' }}>{project.subtitle}</div>
+      <div className="pmodal-split" onClick={e => e.stopPropagation()}>
+
+        {/* LEFT PANEL - Immersive Visuals */}
+        <div className="pmodal-split-left" style={{ backgroundImage: `url(${project.image || '/images/default-project.png'})` }}>
+          <div className="pmodal-left-overlay" />
+          <div className="pmodal-left-content">
+            <div className="pmodal-left-num">{index !== undefined ? String(index + 1).padStart(2, '0') : '01'}</div>
+            <div className="pmodal-left-cat">{project.cat ? project.cat.toUpperCase() : 'PROJECT'}</div>
+            <h2 className="pmodal-left-title">{project.title}</h2>
+            <p className="pmodal-left-sub">{project.subtitle}</p>
+
+            <div className="pmodal-left-tags">
+              {project.tags && project.tags.slice(0, 4).map(t => (
+                <span key={t} className="pmodal-left-tag">{t}</span>
+              ))}
             </div>
           </div>
         </div>
-        {project.image ? (
-          <div className="pmodal-img-wrap">
-            <img src={project.image} alt={project.title} className="pmodal-img"
-              onError={e => { e.target.parentElement.classList.add('pmodal-img-missing'); e.target.style.display = 'none'; }} />
-            <div className="pmodal-img-placeholder">{project.emoji}</div>
+
+        {/* RIGHT PANEL - Editorial Architecture Details */}
+        <div className="pmodal-split-right">
+          <div className="pmodal-control-group">
+            <button className="pmodal-nav-btn" onClick={onPrev} title="Previous Project">‹</button>
+            <button className="pmodal-nav-btn" onClick={onNext} title="Next Project">›</button>
+            <button className="pmodal-split-close" onClick={onClose} title="Close Modal">✕</button>
           </div>
-        ) : (
-          <div className="pmodal-emoji-banner" style={{ background: project.gradientBg + '88' }}>
-            <span className="pmodal-banner-emoji">{project.emoji}</span>
-          </div>
-        )}
-        <div className="pmodal-body">
-          <div className="pmodal-section">
-            <div className="pmodal-section-label">📋 Overview</div>
-            <p className="pmodal-overview">{project.overview}</p>
-          </div>
-          <div className="pmodal-section">
-            <div className="pmodal-section-label">🔧 What It Does</div>
-            <ul className="pmodal-bullets">
-              {project.bullets.map(b => <li key={b}>{b}</li>)}
-            </ul>
-          </div>
-          {project.techDetails && (
-            <div className="pmodal-section">
-              <div className="pmodal-section-label">⚙️ Technical Details</div>
-              <p className="pmodal-tech-detail">{project.techDetails}</p>
+
+          <div className="pmodal-right-scroll">
+            <div className="pmodal-right-section">
+              <div className="pmodal-right-arch-label">PROJECT ARCHITECTURE</div>
+
+              <div className="pmodal-right-overview">
+                <strong>Project Overview:</strong> {project.overview}
+              </div>
+
+              <div className="pmodal-right-concepts">
+                <strong>Key Concepts:</strong>
+                <ul className="pmodal-right-bullets">
+                  {project.bullets && project.bullets.map(b => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {project.techDetails && (
+                <div className="pmodal-right-tech-details">
+                  <strong>Technical Details:</strong>
+                  <p>{project.techDetails}</p>
+                </div>
+              )}
             </div>
-          )}
-          <div className="pmodal-outcome">
-            <span className="pmodal-outcome-icon">🏆</span>
-            {project.outcome}
-          </div>
-          <div className="pmodal-footer">
-            <div className="pmodal-tags">
-              {project.tags.map(t => <span key={t} className="pmodal-tag">{t}</span>)}
+
+            {/* Bottom Stack Cards */}
+            <div className="pmodal-right-grid">
+              <div className="pmodal-grid-card">
+                <div className="pmodal-grid-label">PRIMARY STACK</div>
+                <div className="pmodal-grid-value">{techVal1}</div>
+                <div className="pmodal-grid-desc">{techDesc1}</div>
+              </div>
+              <div className="pmodal-grid-card">
+                <div className="pmodal-grid-label">KEY OUTCOME</div>
+                <div className="pmodal-grid-value">Success</div>
+                <div className="pmodal-grid-desc">{outcomeDesc}</div>
+              </div>
             </div>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+
+            {/* Action Buttons */}
+            <div className="pmodal-split-footer">
               {project.live && (
                 <a href={project.live} target="_blank" rel="noreferrer"
-                  className="pmodal-github" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff' }}>
+                  className="pmodal-action-btn primary-btn" style={{ background: project.gradient ? project.gradient[1] : '#d4a843' }}>
                   Live Demo ↗
                 </a>
               )}
               {project.webstore && (
                 <a href={project.webstore} target="_blank" rel="noreferrer"
-                  className="pmodal-github" style={{ background: '#ffffff', color: '#000000' }}>
+                  className="pmodal-action-btn webstore-btn">
                   Web-Store ↗
                 </a>
               )}
               {project.kaggle && (
                 <a href={project.kaggle} target="_blank" rel="noreferrer"
-                  className="pmodal-github" style={{ background: '#3b82f6', color: '#fff' }}>
+                  className="pmodal-action-btn kaggle-btn">
                   Kaggle ↗
                 </a>
               )}
+              {project.image && (
+                <button onClick={() => setLightbox(true)}
+                  className="pmodal-action-btn webstore-btn"
+                  style={{ cursor: 'pointer' }}>
+                  View Image ↗
+                </button>
+              )}
               {project.github && (
                 <a href={project.github} target="_blank" rel="noreferrer"
-                  className="pmodal-github"
-                  style={{ background: `linear-gradient(135deg, #000000, #fff)` }}>
+                  className="pmodal-action-btn github-btn">
                   GitHub ↗
                 </a>
               )}
             </div>
           </div>
         </div>
+
       </div>
+
+      {/* Lightbox for Full-Size Design Image */}
+      {lightbox && (
+        <div className="plightbox-overlay" onClick={() => setLightbox(false)}>
+          <button className="plightbox-close" onClick={() => setLightbox(false)}>✕</button>
+          <img src={project.image} alt={project.title} className="plightbox-img" onClick={e => e.stopPropagation()} />
+        </div>
+      )}
     </div>,
     document.body
   );
@@ -860,6 +903,20 @@ export default function Projects() {
     if (filter === 'live') return !!(p.live || p.webstore);
     return (p.cat || '').includes(filter);
   });
+
+  const handlePrev = () => {
+    if (!selected) return;
+    const idx = visible.findIndex(p => p.title === selected.title);
+    const prevIdx = (idx - 1 + visible.length) % visible.length;
+    setSelected(visible[prevIdx]);
+  };
+
+  const handleNext = () => {
+    if (!selected) return;
+    const idx = visible.findIndex(p => p.title === selected.title);
+    const nextIdx = (idx + 1) % visible.length;
+    setSelected(visible[nextIdx]);
+  };
 
   return (
     <section id="projects" ref={sectionRef}>
@@ -951,7 +1008,15 @@ export default function Projects() {
         </span>
       </div>
 
-      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
+      {selected && (
+        <ProjectModal
+          project={selected}
+          onClose={() => setSelected(null)}
+          index={PROJECTS.findIndex(p => p.title === selected.title)}
+          onPrev={handlePrev}
+          onNext={handleNext}
+        />
+      )}
     </section>
   );
 }
