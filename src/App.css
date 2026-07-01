@@ -1733,8 +1733,8 @@ footer {
 
 @media(max-width:600px) {
   .hero-name {
-    font-size: clamp(40px, 12vw, 64px);
-    letter-spacing: -1px;
+    font-size: clamp(72px, 22vw, 120px);
+    letter-spacing: -2px;
     margin-bottom: 20px;
   }
 
@@ -5870,6 +5870,30 @@ footer {
 @media (max-width: 600px) {
   .abt-stats-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .ab-stat-card {
+    aspect-ratio: 1 / 1;
+    padding: 16px 8px;
+    gap: 4px;
+  }
+
+  .ab-stat-n {
+    font-size: 28px;
+  }
+
+  .ab-stat-icon {
+    font-size: 18px;
+    margin: 4px 0;
+  }
+
+  .ab-stat-l {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .ab-stat-sub {
+    font-size: 9px;
   }
 
   .abt-specs-row {
