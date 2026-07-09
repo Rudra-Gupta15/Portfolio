@@ -925,6 +925,30 @@ section:not(#home) {
   gap: 0;
   margin-bottom: 28px;
   border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.proj-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-scroll-hint {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: -20px;
+  margin-bottom: 24px;
+}
+@media (min-width: 900px) {
+  .tabs-scroll-hint {
+    display: none;
+  }
 }
 
 .p-tab {
@@ -943,6 +967,7 @@ section:not(#home) {
   border-left: none;
   border-right: none;
   font-family: var(--fd);
+  white-space: nowrap;
 }
 
 .p-tab:hover {
@@ -3780,10 +3805,18 @@ footer {
 }
 
 /* LIVE Badge Styles */
-.pcard-live-badge {
+.pcard-badges-container {
   position: absolute;
   bottom: 135px;
   left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  z-index: 10;
+}
+
+.pcard-live-badge {
   background: linear-gradient(135deg, #ffc107, #ffeb3b);
   color: #000;
   padding: 6px 12px;
@@ -3793,7 +3826,6 @@ footer {
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
   animation: pcard-badge-pulse 2s ease-in-out infinite;
-  z-index: 10;
 }
 
 @keyframes pcard-badge-pulse {
@@ -6495,4 +6527,43 @@ footer {
 @keyframes plightboxZoom {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}.pcard-live-badge.badge-expandable {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 32px;
+  min-width: 32px;
+  box-sizing: border-box;
+  gap: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.pcard-live-badge.badge-expandable:hover {
+  padding: 0 14px;
+}
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.badge-text {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pcard-live-badge.badge-expandable:hover .badge-text {
+  max-width: 120px;
+  opacity: 1;
+  margin-left: 8px;
 }

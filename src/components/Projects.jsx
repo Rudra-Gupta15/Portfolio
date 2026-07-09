@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* ─── Scroll-reveal hook ─── */
@@ -79,7 +79,6 @@ const PROJECTS = [
   {
     cat: 'aiml',
     image: '/images/proj-heart-disease.png',
-    emoji: '❤️',
     type: 'Healthcare AI',
     title: 'Heart Disease Prediction',
     subtitle: 'ML-Powered Early Detection',
@@ -100,7 +99,6 @@ const PROJECTS = [
   {
     cat: 'aiml',
     image: '/images/proj-ml-comparison.png',
-    emoji: '📊',
     type: 'Research AI',
     title: 'ML Algorithm Comparison',
     subtitle: 'Benchmarking Framework',
@@ -121,7 +119,6 @@ const PROJECTS = [
   {
     cat: 'web',
     image: '/images/proj-weather.png',
-    emoji: '🌦️',
     type: 'ML Dashboard',
     title: 'Hyperlocal Weather Impact',
     subtitle: 'Forecasting & Analytics',
@@ -143,7 +140,6 @@ const PROJECTS = [
   {
     cat: 'web aiml',
     image: '/images/proj-versustech.png',
-    emoji: '📱',
     type: 'Full-Stack Data Science',
     title: 'VersusTech',
     subtitle: 'Device Recommendation Engine',
@@ -164,7 +160,6 @@ const PROJECTS = [
   {
     cat: 'aiml web',
     image: '/images/proj-movie-recommender.png',
-    emoji: '🎬',
     type: 'ML + Streamlit',
     title: 'Movie Recommender System',
     subtitle: 'Content-Based Filtering',
@@ -186,7 +181,6 @@ const PROJECTS = [
   {
     cat: 'web',
     image: '/images/proj-snow-run.png',
-    emoji: '🏍️',
     type: 'Game Development · React',
     title: 'Snow Run Game',
     subtitle: 'Multi-Level Browser Racing Game',
@@ -209,7 +203,6 @@ const PROJECTS = [
   {
     cat: 'aiml dataset',
     image: '/images/proj-asl.png',
-    emoji: '🤟',
     type: 'College Major · AI/ML/IoT',
     title: 'ASL Recognition',
     subtitle: 'Multi-Scale Machine Learning',
@@ -231,7 +224,6 @@ const PROJECTS = [
   {
     cat: 'hardware',
     image: '/images/proj-food-machine.png',
-    emoji: '⚙️',
     type: 'Electronics & IoT',
     title: 'Raj Food Machine',
     subtitle: 'Industrial Automation',
@@ -251,7 +243,6 @@ const PROJECTS = [
   {
     cat: 'chrome',
     image: '/images/proj-yt-bookmark.png',
-    emoji: '🔖',
     type: 'Chrome Extension · Manifest V3',
     title: 'TimeMark',
     subtitle: 'Browser Extension',
@@ -278,7 +269,6 @@ const PROJECTS = [
   {
     cat: 'aiml web dataset',
     image: '/images/proj-banking-chatbot.png',
-    emoji: '🏦',
     type: 'Machine Learning · Flask',
     title: 'Banking ChatBot',
     subtitle: 'TF-IDF + Cosine Similarity',
@@ -302,7 +292,6 @@ const PROJECTS = [
   {
     cat: 'aiml web dataset',
     image: '/images/proj-rud-ai.png',
-    emoji: '🤖',
     type: 'Conversational AI · Flask',
     title: 'RUD AI',
     subtitle: 'Multi-Mode AI Assistant',
@@ -326,7 +315,6 @@ const PROJECTS = [
   {
     cat: 'web education dataset',
     image: '/images/proj-prepmaster.png',
-    emoji: '⚡',
     type: 'Quiz Platform · React · Vite',
     title: 'PrepMaster',
     subtitle: 'Complete Placement & Interview Prep',
@@ -351,7 +339,6 @@ const PROJECTS = [
   {
     cat: 'aiml',
     image: '/images/proj-aimailassistant.png',
-    emoji: '🤖',
     type: 'AI Assistant · Python · FastAPI',
     title: 'AI Mail Assistant',
     subtitle: 'Local LLM-Powered Email & Messaging Automation',
@@ -376,7 +363,6 @@ const PROJECTS = [
   {
     cat: 'aiml',
     image: '/images/proj-resumeai.png',
-    emoji: '🚀',
     type: 'AI Tool · React · Groq · Ollama',
     title: 'ResumeAI',
     subtitle: 'Premium ATS Resume Analyzer',
@@ -402,7 +388,6 @@ const PROJECTS = [
   {
     cat: 'dataset',
     image: '/images/proj-comics.png',
-    emoji: '📚',
     type: 'Data Science · Dataset Creation',
     title: 'Comic Books Dataset',
     subtitle: 'Global Comics 2000–2026',
@@ -423,7 +408,6 @@ const PROJECTS = [
   {
     cat: 'dataset',
     image: '/images/proj-animation.png',
-    emoji: '🎬',
     type: 'Data Science · Dataset Creation',
     title: 'Animation Movies Dataset',
     subtitle: '147 Years of Cinema (1878–2029)',
@@ -444,7 +428,6 @@ const PROJECTS = [
   {
     cat: 'chrome',
     image: '/images/proj-balancetab.png',
-    emoji: '⚖️',
     type: 'Chrome Extension · Manifest V3',
     title: 'BalanceTab',
     subtitle: 'Gamer + Office New Tab Dashboard',
@@ -470,7 +453,6 @@ const PROJECTS = [
   {
     cat: 'aiml',
     image: '/images/proj-jarvis.png',
-    emoji: '🤖',
     type: 'Desktop AI · FastAPI · React',
     title: 'JARVIS',
     subtitle: 'Advanced Desktop AI Assistant',
@@ -493,12 +475,12 @@ const PROJECTS = [
   {
     cat: 'dataset',
     image: '/images/proj-llm-catalog.png',
-    emoji: '🤖',
     type: 'Data Science · Dataset Creation',
     title: 'LLM Catalog Dataset',
     subtitle: 'Specs, Price & Performance of 229 AI Models',
-    gradient: ['#020617', '#0ea5e9'],
-    gradientBg: 'linear-gradient(135deg, #020617 0%, #020617 50%, #0ea5e9 50%, #0ea5e9 100%)',
+    gradient: ['#cbd5e1', '#0369a1'],
+    gradientBg: 'linear-gradient(135deg, #e2e8f0 0%, #e2e8f0 50%, #0284c7 50%, #0284c7 100%)',
+    textColor: '#0f172a',
     overview: '229 large language models compared across 57 columns — covering specs, API pricing, hallucination rates, context windows, platform support, and capabilities. Hand-curated from official model cards and provider documentation across 40+ companies.',
     bullets: [
       '229 models from 40+ providers — OpenAI, Anthropic, Google, Meta, Mistral & more',
@@ -514,7 +496,6 @@ const PROJECTS = [
   {
     cat: 'chrome',
     image: '/images/proj-growth-tracker.png',
-    emoji: '🌴',
     type: 'Chrome Extension · Manifest V3',
     title: 'Growth Tracker',
     subtitle: 'Browser Extension',
@@ -541,7 +522,6 @@ const PROJECTS = [
   {
     cat: 'webdev,aiml',
     image: '/images/proj-attendance.png',
-    emoji: '⬡',
     type: 'Full Stack · Node.js · Face-API.js',
     title: 'Attendance-system',
     subtitle: 'Biometric Attendance System',
@@ -564,7 +544,6 @@ const PROJECTS = [
   {
     cat: 'dataset',
     image: '/images/proj-games-dataset.png',
-    emoji: '🎮',
     type: 'Data Science · Dataset Creation',
     title: 'Ultimate Games Dataset',
     subtitle: '15,000 Games | 43 Features | 1979–2026',
@@ -585,7 +564,6 @@ const PROJECTS = [
   {
     cat: 'aiml,webdev',
     image: '/images/proj-codefix.png',
-    emoji: '⬡',
     type: 'Full Stack · Flask · Ollama',
     title: 'CodeFix',
     subtitle: 'Multi-Language AI Autonomous Debugger',
@@ -608,7 +586,6 @@ const PROJECTS = [
   {
     cat: 'aiml web',
     image: '/images/earth.jpeg',
-    emoji: '🛰️',
     type: 'AI Environmental System · FastAPI',
     title: 'Earth Intelligence',
     subtitle: 'AI-Powered Multi-Hazard Satellite Monitoring',
@@ -630,9 +607,8 @@ const PROJECTS = [
     tags: ['FastAPI', 'Python', 'LLM', 'Leaflet.js', 'Vanilla JS', 'NASA API', 'GDACS'],
   },
   {
-    cat: 'web aiml',
+    cat: 'web aiml freelancer',
     image: '/images/convosecai.png',
-    emoji: '🎓',
     type: 'Full-Stack Platform · AI + Cybersecurity',
     title: 'ConvoSec AI',
     subtitle: 'Unified AI & Cybersecurity Learning Ecosystem',
@@ -653,9 +629,8 @@ const PROJECTS = [
     live: 'https://convosecai.vercel.app',
   },
   {
-    cat: 'aiml iot edge',
+    cat: 'aiml iot edge office',
     image: '/images/smartwaste.png',
-    emoji: '🗑️',
     type: 'Computer Vision · FastAPI · IoT · Edge AI',
     title: 'Smart Waste Management System',
     subtitle: 'AI-Powered Urban Waste Monitoring & Analytics',
@@ -675,9 +650,8 @@ const PROJECTS = [
     tags: ['YOLOv8', 'FastAPI', 'TensorRT', 'OpenCV', 'React 18', 'Leaflet.js', 'PostgreSQL', 'Redis', 'MQTT', 'Jetson Orin Nano'],
   },
   {
-    cat: 'web frontend freelance',
+    cat: 'web frontend freelancer',
     image: '/images/perfionixai.png',
-    emoji: '🧠',
     type: 'Frontend Design · Next.js 14 · Freelance',
     title: 'Perfionix AI',
     subtitle: 'AI Consulting & Product Showcase Frontend',
@@ -698,6 +672,93 @@ const PROJECTS = [
     tags: ['Next.js 14', 'React 18', 'Tailwind CSS', 'Framer Motion', 'Spline 3D', 'Lucide React', 'Freelance', 'Frontend Design'],
     live: 'https://www.perfionixai.com',
   },
+  {
+    cat: 'web webdev office',
+    image: '/images/proj-nsdl-audit.png',
+    type: 'Compliance Tooling · FastAPI · React',
+    title: 'Workstation Compliance Audit Portal',
+    subtitle: 'Automated System Audit & Reporting Platform',
+    gradient: ['#2563eb', '#60a5fa'],
+    gradientBg: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)',
+    textColor: '#0f172a',
+    overview: 'A compliance auditing platform that automatically collects workstation configuration details and generates standardized, downloadable audit reports — built to satisfy regulatory system-compliance requirements common in financial and government sectors.',
+    bullets: [
+      'Automated system audit script gathers hardware, network, OS, security-patch, and installed-software information with explicit user consent',
+      'FastAPI backend validates and structures incoming audit data with strict schema enforcement for data integrity',
+      'Auto-generates professional, formatted PDF compliance reports for each audit session',
+      'Session-based architecture keeps every audit run traceable and independently reportable',
+      'Structured logging captures the full backend request/response lifecycle for troubleshooting and audit trails',
+    ],
+    techDetails: 'Backend built with FastAPI and Pydantic for strict schema validation of incoming system-audit payloads. PDF report generation handled server-side with ReportLab. A companion automation script performs the actual on-machine data collection with a mandatory consent step before any data is captured or transmitted.',
+    outcome: 'End-to-end compliance audit pipeline — from on-machine data collection to a downloadable, standardized PDF report',
+    tags: ['FastAPI', 'Python', 'Pydantic', 'ReportLab', 'React'],
+  },
+  {
+    cat: 'web office',
+    image: '/images/proj-beltron.png',
+    type: 'Government Portal · React · Vite',
+    title: 'BELTRON Bihar Website',
+    subtitle: 'Full-Scale Government Corporation Portal',
+    gradient: ['#003366', '#1d75d8'],
+    gradientBg: 'linear-gradient(135deg, #001a33 0%, #003366 45%, #1d75d8 100%)',
+    overview: 'A pixel-faithful, multi-page government portal built for Bihar State Electronics Development Corporation (BELTRON) — combining a robust institutional layout with live content syncing and a fully custom design system.',
+    bullets: [
+      '13+ dedicated pages — About, Board of Directors, Tenders, Projects, Services, Gallery, News, and more — under a single React Router setup',
+      'Sticky mega-navigation with responsive dropdowns and an accessibility bar for language and font-size controls',
+      'Auto-sliding hero carousel, scrolling notice ticker, and a tabbed tenders/vacancies board matching real institutional portal UX patterns',
+      'Hybrid content system — static homepage data alongside structured JSON stores for large, frequently updated datasets like tenders, projects, and news',
+      'Custom data-sync utilities keep local content stores aligned with the live public website',
+      'Fully responsive, animated throughout with Framer Motion and a dedicated government-grade color and typography system',
+    ],
+    techDetails: 'Built with React 18, React Router v6, and Vite 5 for fast multi-page routing and builds. Styled with Tailwind CSS on top of a custom design token system (primary blue, government gray, Inter + Poppins typography). Swiper.js powers the hero carousel, and Framer Motion handles page and component transitions.',
+    outcome: 'A complete, production-grade government institutional website — 13+ pages, live-synced content, and a polished custom UI',
+    tags: ['React', 'React Router', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Swiper.js'],
+    live: 'https://beltron-web.vercel.app/',
+  },
+  {
+    cat: 'aiml web',
+    image: '/images/proj-reposcan.png',
+    type: 'Code Analysis · FastAPI · Local LLM',
+    title: 'Github-Reposcan',
+    subtitle: 'AI-Powered Repository Scanner & Vulnerability Analyzer',
+    gradient: ['#171717', '#d4d4d8'],
+    gradientBg: 'linear-gradient(135deg, #000000 0%, #171717 45%, #52525b 100%)',
+    overview: 'An interactive repository scanner that blends deterministic static analysis with local LLM reasoning — paste any public repo URL and get a SonarQube-style report with AI-powered explanations, suggested fixes, and a built-in interactive IDE.',
+    bullets: [
+      'Hybrid analysis engine combines industry-standard static analyzers with a local LLM for contextual triage — no code ever leaves the machine',
+      'Real-time "Mission Control" progress rail visualizes each stage of the scan pipeline as it runs',
+      'Rich analytics dashboard — issue severity breakdown, language distribution, and a density-ranked "Fix These First" list',
+      'Integrated in-browser IDE with file tree, syntax highlighting, and inline markers linking code directly to flagged issues',
+      'Context-aware AI chat streams answers about the codebase, explains specific bugs, and can draft patches on request',
+      'Goes beyond linters — a dedicated deep-scan pass hunts for logic bugs static tools miss, like race conditions and unhandled exceptions',
+    ],
+    techDetails: 'FastAPI backend orchestrates a multi-stage pipeline — cloning, static analysis, and LLM-based triage — while a React + Vite frontend renders the live dashboard and IDE. AI reasoning runs entirely on a locally hosted LLM, with results streamed to the client in real time via SSE.',
+    outcome: 'Full SonarQube-style analysis and AI code review pipeline, running locally with zero cloud dependency',
+    tags: ['FastAPI', 'React', 'Vite', 'Ollama', 'Python', 'SSE'],
+    github: 'https://github.com/Rudra-Gupta15/Github_Scanner',
+  },
+  {
+    cat: 'aiml web office',
+    image: '/images/proj-testcase-generator.png',
+    type: 'AI Testing Pipeline · FastAPI · Local LLM',
+    title: 'AI Test Case Generator',
+    subtitle: 'Automated QA Pipeline from Requirements to Test Cases',
+    gradient: ['#000000', '#52525b'],
+    gradientBg: 'linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%)',
+    textColor: '#000000',
+    overview: 'An AI-powered pipeline that converts project documentation — BRDs, FSDs, Figma designs, and website references — into complete, ready-to-execute QA test suites, running entirely on a local LLM.',
+    bullets: [
+      'Multi-stage generation architecture designed to avoid context overload and hallucination on large test suites',
+      'Automatically extracts features, user flows, and requirement gaps directly from source documents and designs',
+      'Plans test coverage before generation — balancing positive, negative, and edge-case scenarios per feature',
+      'Configurable generation modes let users tune output between deterministic validations and broader edge-case exploration',
+      'Final output is a clean, sequentially numbered, fully validated test suite with no missed features',
+    ],
+    techDetails: 'Built with a FastAPI backend and a React/Vite frontend, powered by a locally hosted LLM for full data privacy. The system is structured to isolate reasoning steps and keep generation scoped and reliable, rather than relying on a single large prompt.',
+    outcome: 'Reliable, repeatable QA coverage generated automatically from raw requirements — zero manual test-writing',
+    tags: ['FastAPI', 'React', 'Vite', 'Ollama', 'Python'],
+    github: 'https://github.com/Rudra-Gupta15/qa-doc-verifier',
+  },
 
 ];
 
@@ -710,13 +771,14 @@ const BEST_TITLES = new Set([
   'RUD AI',
   'AI Mail Assistant',
   'TimeMark',
-  'ConvoSec AI',
   'Earth Intelligence',
-  'Perfionix AI',
   'Smart Waste Management System',
+  'AI Test Case Generator',
+  'Github-Reposcan',
+  'BELTRON Bihar Website',
 ]);
 
-const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome'];
+const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome', 'office', 'freelancer'];
 const TABS_LABELS = {
   best: '⭐ Best',
   all: 'All',
@@ -726,6 +788,8 @@ const TABS_LABELS = {
   hardware: 'Hardware',
   dataset: 'Datasets',
   chrome: 'Chrome Ext',
+  office: 'Office',
+  freelancer: 'Freelancer',
 };
 
 function ProjectModal({ project, onClose, index, onPrev, onNext }) {
@@ -939,6 +1003,12 @@ export default function Projects() {
         ))}
       </div>
 
+      <div className="tabs-scroll-hint proj-sr proj-sr-d2">
+        <span className="pscroll-arrow-anim">←</span>
+        swipe tags
+        <span className="pscroll-arrow-anim" style={{ animationDelay: '0.5s' }}>→</span>
+      </div>
+
       <div className="pcard-nav proj-sr proj-sr-d3">
         <div className="pscroll-hint">
           <span className="pscroll-arrow-anim">←</span>
@@ -964,11 +1034,26 @@ export default function Projects() {
               <div className="pcard-bg" style={{ background: p.gradientBg }} />
               <div className="pcard-blob1" style={{ background: p.gradient[1] }} />
               <div className="pcard-blob2" style={{ background: p.gradient[0] }} />
-              {(p.live || p.webstore) && (
-                <div className="pcard-live-badge">
-                  🚀 LIVE
-                </div>
-              )}
+              <div className="pcard-badges-container">
+                {p.cat.includes('freelancer') && (
+                  <div className="pcard-live-badge badge-expandable" style={{ background: 'linear-gradient(135deg, #4b5563, #1f2937)', color: '#fff', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)' }}>
+                    <span className="badge-icon">💼</span>
+                    <span className="badge-text">FREELANCE</span>
+                  </div>
+                )}
+                {p.cat.includes('office') && (
+                  <div className="pcard-live-badge badge-expandable" style={{ background: 'linear-gradient(135deg, #0ea5e9, #2563eb)', color: '#fff', boxShadow: '0 4px 12px rgba(14, 165, 233, 0.3)' }}>
+                    <span className="badge-icon">🏢</span>
+                    <span className="badge-text">OFFICE</span>
+                  </div>
+                )}
+                {(p.live || p.webstore) && (
+                  <div className="pcard-live-badge badge-expandable">
+                    <span className="badge-icon">🚀</span>
+                    <span className="badge-text">LIVE</span>
+                  </div>
+                )}
+              </div>
               <div className="pcard-top">
                 <div className="pcard-type" style={{ display: 'flex', alignItems: 'center', gap: 6, color: p.textColor ? p.textColor : 'inherit' }}>
                   {p.cat.includes('chrome') && <ChromeIcon size={20} margin={0} />}
