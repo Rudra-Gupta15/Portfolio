@@ -10,7 +10,7 @@ export default function Hero() {
     "IOT Engineer",
     "Electronics Engineer",
     "Game Dev Enthusiast",
-    "Kaggle Expert [Top 4%]"
+    "Kaggle Expert [Top 2.6%]"
   ];
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);

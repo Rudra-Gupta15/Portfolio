@@ -271,9 +271,9 @@ const ACHIEVEMENTS = [
   {
     icon: '📊',
     title: 'Kaggle Datasets Expert',
-    loc: 'Global Rank: 278 / 10,346',
+    loc: 'Global Rank: 275 / 10,627',
     date: '2026',
-    sub: 'Ranked in the Top 2.7% globally for high-quality dataset creation and data science contributions. Recognized for impactful community contributions as a final-year student.',
+    sub: 'Ranked in the Top 2.6% globally for high-quality dataset creation and data science contributions. Recognized for impactful community contributions as a final-year student.',
     accent: '#4da8e8',
     accentRgb: '77,168,232',
     badge: 'Kaggle',
@@ -282,9 +282,9 @@ const ACHIEVEMENTS = [
   {
     icon: '📦',
     title: 'Chrome Extension Developer',
-    loc: '460+ Combined Installs',
+    loc: '500+ Combined Installs',
     date: '2026',
-    sub: 'Designed, built, and launched 3 browser extensions on the Chrome Web Store (BalanceTab, TimeMark, Growth Tracker) with Manifest V3, gaining 460+ installs and active users.',
+    sub: 'Designed, built, and launched 3 browser extensions on the Chrome Web Store (BalanceTab, TimeMark, Growth Tracker) with Manifest V3, gaining 500+ installs and active users.',
     accent: '#10b981',
     accentRgb: '16,185,129',
     badge: 'Extensions',

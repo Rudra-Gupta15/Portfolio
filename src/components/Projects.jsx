@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* ─── Scroll-reveal hook ─── */
@@ -251,7 +251,7 @@ const PROJECTS = [
     overview:
       'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
     bullets: [
-      '📈 Chrome Web Store: 154+ installs • 10+ active users',
+      '📈 Chrome Web Store: 150+ installs • 10+ active users',
       'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
       'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
       'Popup panel shows video thumbnail, title, and live playback position updated in real time',
@@ -435,7 +435,7 @@ const PROJECTS = [
     gradientBg: 'linear-gradient(135deg, #000000 0%, #1a1a1a 45%, #444444 100%)',
     overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook.',
     bullets: [
-      '📈 Chrome Web Store: 185+ installs • 30+ active users • 5.0 ★ Rating',
+      '📈 Chrome Web Store: 200+ installs • 30+ active users • 5.0 ★ Rating (2 Reviews)',
       'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
       'Live clock with real-time weather via Open-Meteo API + browser geolocation',
       'Smart search bar supporting Google, DuckDuckGo, Bing, YouTube, and GitHub engines',
@@ -504,7 +504,7 @@ const PROJECTS = [
     overview:
       'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
     bullets: [
-      '📈 Chrome Web Store: 128+ installs • 8+ active users',
+      '📈 Chrome Web Store: 150+ installs • 8+ active users',
       'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
       'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
       'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
