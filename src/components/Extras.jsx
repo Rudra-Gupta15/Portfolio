@@ -270,10 +270,15 @@ const CERTS = [
 const ACHIEVEMENTS = [
   {
     icon: '📊',
-    title: 'Kaggle Datasets Expert',
-    loc: 'Global Rank: 275 / 10,627',
+    title: 'Kaggle Dataset & Notebook Expert',
+    loc: (
+      <span style={{ display: 'inline-block', textAlign: 'left', lineHeight: '1.4', verticalAlign: 'middle' }}>
+        Datasets: 273 / 10,622 <br />
+        Notebooks: 2,334 / 62,113
+      </span>
+    ),
     date: '2026',
-    sub: 'Ranked in the Top 2.6% globally for high-quality dataset creation and data science contributions. Recognized for impactful community contributions as a final-year student.',
+    sub: 'Kaggle: Dataset Expert (Rank 273/10,622) • Notebook Expert (Rank 2,334/62,113) • Published 9 datasets and 11 notebooks.',
     accent: '#4da8e8',
     accentRgb: '77,168,232',
     badge: 'Kaggle',

@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 
 const TIMELINE = [
-  {
+  /* {
     date: 'Current',
     role: 'Full-Stack Developer',
     org: 'ConvoSec AI · Startup',
@@ -14,7 +14,7 @@ const TIMELINE = [
       'Optimizing enterprise-grade deployment infrastructure on Vercel.',
     ],
     chips: ['React', 'Node.js', 'Cybersecurity', 'AI Solutions'],
-  },
+  }, */
   {
     date: 'Current',
     role: 'AI/ML Intern',
