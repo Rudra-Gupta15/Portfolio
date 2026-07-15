@@ -9,7 +9,7 @@ const STATS = [
     </span>
   ), color: '#d4a843' },
   { n: '3', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
-  { n: '11', icon: '🎮', label: 'Games Shipped', sub: 'React, Vite, Extension', color: '#4da8e8' },
+  { n: '500+', icon: '👥', label: 'Downloads', sub: 'Across 3 Chrome Extensions', color: '#4da8e8' },
 ];
 
 const TRAITS = [
@@ -18,7 +18,7 @@ const TRAITS = [
   { icon: '🎯', label: 'Problem Solver' },
   { icon: '🤝', label: 'Team Player' },
   { icon: '🚀', label: 'Self-Starter' },
-  { icon: '🎮', label: 'Game Dev' },
+  { icon: '💡', label: 'Innovator' },
 ];
 
 const SPECS = [
@@ -71,8 +71,8 @@ export default function About() {
           </p>
 
           <p className="ab-bio-text">
-            <strong style={{ color: '#a855f7' }}>Beyond AI, I’m deeply invested in Game Development</strong>,
-            using Unity and C# to craft immersive, logic-driven experiences. For me, whether it’s a computer vision system or a 5-level 2D platformer, the goal is the same: <strong>building seamless, interactive technology that works.</strong>
+            <strong style={{ color: '#a855f7' }}>My ultimate philosophy is delivering impact.</strong>
+            Whether I'm architecting a computer vision system, fine-tuning an LLM, or deploying a full-stack platform, my focus remains the same: <strong>building seamless, interactive technology that works in the real world.</strong>
           </p>
           <div className="ab-trait-row">
             {TRAITS.map(t => (

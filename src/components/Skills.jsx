@@ -9,11 +9,6 @@ const SKILLS = [
 ];
 
 const BADGES = [
-  { title: '🎮 Game Enthusiast', items: [
-    { label: 'Unity', bg: '#1a1a2e', border: '#444', icon: 'https://cdn.simpleicons.org/unity/ffffff' },
-    { label: 'C#', bg: '#1e4d8c' },
-    { label: '🎮 Game Dev', bg: '#e74c3c' },
-  ]},
   { title: '💻 Programming Languages', items: [
     { label: 'Python', bg: '#3572A5', icon: 'https://cdn.simpleicons.org/python/ffffff' },
     { label: 'C', bg: '#555', border: '#777' },

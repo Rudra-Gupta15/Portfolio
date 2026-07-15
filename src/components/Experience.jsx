@@ -32,21 +32,6 @@ const TIMELINE = [
   },
   {
     date: 'Current',
-    role: 'Game Developer',
-    org: 'Self-Directed · Unity 6',
-    type: 'self',
-    accent: '#a855f7',
-    desc: 'Independently building games and interactive experiences using Unity.',
-    bullets: [
-      'Shipped 2 complete games using Unity 6 and C# scripting.',
-      'Built 2D platformers with physics engines and particle systems.',
-      'Developed 3D environments with enemy AI and lighting.',
-      'Exploring procedural generation and shader programming.',
-    ],
-    chips: ['Unity 6', 'C#', 'Game Design', 'Physics'],
-  },
-  {
-    date: 'Current',
     role: 'Chrome Extension Developer',
     org: 'Chrome Web Store · Independent',
     type: 'self',
@@ -59,6 +44,21 @@ const TIMELINE = [
       'Managing version updates and user feedback on Web Store.',
     ],
     chips: ['JavaScript', 'Chrome APIs', 'HTML/CSS', 'Web Store'],
+  },
+  {
+    date: '2025 — 2026',
+    role: 'Game Developer',
+    org: 'Self-Directed · Unity 6',
+    type: 'self',
+    accent: '#a855f7',
+    desc: 'Independently building games and interactive experiences using Unity.',
+    bullets: [
+      'Shipped 2 complete games using Unity 6 and C# scripting.',
+      'Built 2D platformers with physics engines and particle systems.',
+      'Developed 3D environments with enemy AI and lighting.',
+      'Exploring procedural generation and shader programming.',
+    ],
+    chips: ['Unity 6', 'C#', 'Game Design', 'Physics'],
   },
   {
     date: '2022 — 2026',

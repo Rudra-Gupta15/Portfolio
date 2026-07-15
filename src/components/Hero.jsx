@@ -9,7 +9,6 @@ export default function Hero() {
     "Chrome Extension Developer",
     "IOT Engineer",
     "Electronics Engineer",
-    "Game Dev Enthusiast",
     "Kaggle Dataset & Notebook Expert"
   ];
   const [roleIndex, setRoleIndex] = useState(0);
