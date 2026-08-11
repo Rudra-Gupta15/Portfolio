@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* ─── Scroll-reveal hook ─── */
@@ -759,6 +759,29 @@ const PROJECTS = [
     tags: ['FastAPI', 'React', 'Vite', 'Ollama', 'Python'],
     github: 'https://github.com/Rudra-Gupta15/qa-doc-verifier',
   },
+    {
+    cat: 'web office security backend',
+    image: '/images/proj-infra-pulse.png',
+    type: 'Compliance Audit Engine · FastAPI · osquery',
+    title: 'Infra-Pulse Audit Portal',
+    subtitle: 'Automated Multi-OS Asset Discovery & NSDL Compliance System',
+    gradient: ['#1e3a8a', '#1e2e6a'],
+    gradientBg: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)',
+    textColor: '#ffffff',
+    overview: 'An automated, full-stack IT asset management and security compliance portal designed for enterprise and financial infrastructure. It conducts deep telemetry collection via native PowerShell/Bash scripts or an osquery SQL engine across Windows, macOS, and Linux to evaluate endpoints against regulatory standards.',
+    bullets: [
+      'Dual-engine telemetry architecture supporting zero-dependency Native OS Diagnostics (PowerShell/Bash) and osquery Relational SQL queries',
+      'Automated extraction of OS specs, installed software, security hotfixes, antivirus status, open network ports, USB usage, and local user privileges',
+      'Real-time compliance evaluation engine with interactive telemetry viewing, rule-based pass/fail grading, and live status tracking',
+      'Multi-device inventory management with historical audit diff analysis, configuration change detection, and automated PDF report export',
+      'Lightweight local architecture with SQLite database caching, background audit execution, and zero mandatory agent installation',
+    ],
+    techDetails: 'Built with a FastAPI (Python) backend and a responsive Vanilla JS/CSS frontend interface. System telemetry is harvested dynamically using native OS script execution (PowerShell/VBScript for Windows, Bash for macOS/Linux) or via direct osquery SQL daemon queries, storing report snapshots in a local SQLite database.',
+    outcome: 'Automated end-to-end IT compliance auditing, reducing inspection overhead from hours to seconds with zero third-party software dependencies',
+    tags: ['FastAPI', 'Python', 'PowerShell', 'osquery', 'SQLite', 'JavaScript', 'HTML/CSS'],
+    github: 'https://github.com/Rudra-Gupta15/Prevoyance_inspection',
+  },
+
 
 ];
 

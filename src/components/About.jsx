@@ -62,8 +62,7 @@ export default function About() {
             Kaggle: Dataset Expert (Rank 273/10,622) • Notebook Expert (Rank 2,334/62,113) • Published 9 datasets and 11 notebooks
           </div>
           <p className="ab-bio-text">
-            I am an <strong>Electronics Engineering undergraduate</strong> dedicated to engineering high-impact, AI-driven solutions that bridge the gap between hardware and software. My work ranges from foundational research in <strong>Real-Time Sign Language Recognition</strong> to architecting complex platforms like <strong>ConvoSec AI</strong>.
-            I specialize in building autonomous, privacy-first systems such as <strong>CodeFix</strong> (an AI debugger) and a <strong>Biometric Attendance System</strong>, alongside production-grade platforms like <strong>PrepMaster</strong> and <strong>ResumeAI</strong>.
+            I am an <strong>Electronics Engineering graduate</strong> and <strong>Jr. Software Developer (AI/ML)</strong> focused on building high-impact, AI-driven solutions that bridge hardware, software, and intelligent systems. I specialize in developing intelligent, privacy-first systems such as <strong>CodeFix</strong> and <strong>Biometric Attendance System</strong>, alongside production-grade platforms like <strong>PrepMaster</strong> and <strong>ResumeAI</strong>.
           </p>
 
           <p className="ab-bio-text">
