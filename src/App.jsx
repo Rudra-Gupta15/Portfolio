@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import useMagneticTilt from './components/useMagneticTilt';
 
 export default function App() {
-  useMagneticTilt('.cert-card, .ach-card, .tl-card');
+  useMagneticTilt('.pcard, .cert-tile, .ach-tile');
   return (
     <>
       <StarBackground />

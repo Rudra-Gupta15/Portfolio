@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 const STATS = [
   { n: '15+', icon: '🚀', label: 'Projects Built', sub: 'in production', color: '#a855f7' },
-  { n: 'Top 2.6%', icon: '📊', label: 'Kaggle Global', sub: (
+  { n: 'Top 2.0%', icon: '📊', label: 'Kaggle Global', sub: (
     <span style={{ display: 'flex', flexDirection: 'column', gap: '2px', alignItems: 'center' }}>
-      <span>Datasets: 273 / 10k</span>
-      <span>Notebooks: 2.3k / 62k</span>
+      <span>Datasets: 220 / 11k</span>
+      <span>Notebooks: 2.3k / 61k</span>
     </span>
   ), color: '#d4a843' },
   { n: '3', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
@@ -59,7 +59,7 @@ export default function About() {
         <div className="ab-card abt-bio-card">
           <div className="ab-bio-tag">
             <span className="ab-dot" />
-            Kaggle: Dataset Expert (Rank 273/10,622) • Notebook Expert (Rank 2,334/62,113) • Published 9 datasets and 11 notebooks
+            Kaggle: Dataset Expert (Rank 220/11,018 • 3/4 Silver to Master) • Code Expert (Rank 2,336/61,392) • 9 datasets & 11 notebooks
           </div>
           <p className="ab-bio-text">
             I am an <strong>Electronics Engineering graduate</strong> and <strong>Jr. Software Developer (AI/ML)</strong> focused on building high-impact, AI-driven solutions that bridge hardware, software, and intelligent systems. I specialize in developing intelligent, privacy-first systems such as <strong>CodeFix</strong> and <strong>Biometric Attendance System</strong>, alongside production-grade platforms like <strong>PrepMaster</strong> and <strong>ResumeAI</strong>.

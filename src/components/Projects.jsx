@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* ─── Scroll-reveal hook ─── */
@@ -765,8 +765,8 @@ const PROJECTS = [
     type: 'Compliance Audit Engine · FastAPI · osquery',
     title: 'Infra-Pulse Audit Portal',
     subtitle: 'Automated Multi-OS Asset Discovery & NSDL Compliance System',
-    gradient: ['#1e3a8a', '#1e2e6a'],
-    gradientBg: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)',
+    gradient: ['#1d4ed8', '#e0f2fe'],
+    gradientBg: 'linear-gradient(135deg, #0c1a3a 0%, #1a3fa8 40%, #2563eb 70%, #bfdbfe 100%)',
     textColor: '#ffffff',
     overview: 'An automated, full-stack IT asset management and security compliance portal designed for enterprise and financial infrastructure. It conducts deep telemetry collection via native PowerShell/Bash scripts or an osquery SQL engine across Windows, macOS, and Linux to evaluate endpoints against regulatory standards.',
     bullets: [
@@ -973,9 +973,14 @@ export default function Projects() {
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
-    el.addEventListener('scroll', checkScroll, { passive: true });
-    checkScroll();
-    return () => el.removeEventListener('scroll', checkScroll);
+    const check = () => {
+      if (!scrollRef.current) return;
+      setCanScrollLeft(scrollRef.current.scrollLeft > 10);
+      setCanScrollRight(scrollRef.current.scrollLeft < scrollRef.current.scrollWidth - scrollRef.current.clientWidth - 10);
+    };
+    el.addEventListener('scroll', check, { passive: true });
+    check();
+    return () => el.removeEventListener('scroll', check);
   }, [filter]);
 
   const scroll = (dir) => {
@@ -1091,7 +1096,7 @@ export default function Projects() {
                     <img src={p.image} alt={p.title} className="pcard-img"
                       onError={e => { e.target.style.display = 'none'; e.target.parentElement.classList.add('pcard-img-miss'); }} />
                   ) : null}
-                  <div className="pcard-img-placeholder" style={{ opacity: p.image ? 0.12 : 0.5, fontSize: p.image ? 72 : 56 }}>{p.emoji}</div>
+                  <div className="pcard-img-placeholder" style={{ opacity: p.image ? 0.12 : 0.5 }} />
                 </div>
               </div>
               <div className="pcard-bottom">

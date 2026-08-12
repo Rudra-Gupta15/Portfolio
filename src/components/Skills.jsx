@@ -15,7 +15,7 @@ const BADGES = [
     { label: 'C++', bg: '#00599C', icon: 'https://cdn.simpleicons.org/cplusplus/ffffff' },
     { label: 'C#', bg: '#1e4d8c' },
     { label: 'HTML5', bg: '#e34c26', icon: 'https://cdn.simpleicons.org/html5/ffffff' },
-    { label: 'CSS3', bg: '#264de4', icon: 'https://cdn.simpleicons.org/css3/ffffff' },
+    { label: 'CSS3', bg: '#264de4', icon: 'https://cdn.simpleicons.org/css/ffffff' },
     { label: 'JS', bg: '#f7df1e', color: '#000', icon: 'https://cdn.simpleicons.org/javascript/000000' },
     { label: 'SQL', bg: '#336791', icon: 'https://cdn.simpleicons.org/postgresql/ffffff' },
   ]},
@@ -42,7 +42,7 @@ const BADGES = [
   { title: '⚙️ Tools & Platforms', items: [
     { label: 'Git', bg: '#F05032', icon: 'https://cdn.simpleicons.org/git/ffffff' },
     { label: 'GitHub', bg: '#222', border: '#555', icon: 'https://cdn.simpleicons.org/github/ffffff' },
-    { label: 'VS Code', bg: '#007ACC', icon: 'https://cdn.simpleicons.org/visualstudiocode/ffffff' },
+    { label: 'VS Code', bg: '#007ACC', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
     { label: 'Jupyter', bg: '#F37626', icon: 'https://cdn.simpleicons.org/jupyter/ffffff' },
     { label: 'Google Colab', bg: '#F9AB00', color: '#000' },
     { label: 'Arduino', bg: '#00979D', icon: 'https://cdn.simpleicons.org/arduino/ffffff' },
@@ -116,7 +116,7 @@ export default function Skills() {
                 <div className="badge-row">
                   {group.items.map(b => (
                     <div key={b.label} className="badge" style={{ background: b.bg, border: b.border ? `1px solid ${b.border}` : undefined, color: b.color || '#fff' }}>
-                      {b.icon && <img src={b.icon} alt="" className="badge-icon" style={{width:15,height:15}} />}
+                      {b.icon && <img src={b.icon} alt="" className="badge-icon" style={{width:15,height:15}} onError={(e) => { e.currentTarget.style.display = 'none'; }} />}
                       {b.label}
                     </div>
                   ))}

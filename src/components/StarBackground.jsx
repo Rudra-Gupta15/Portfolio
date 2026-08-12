@@ -31,8 +31,6 @@ export default function StarBackground() {
         opacity: rand(0.25, 0.85),
         pulse: rand(0, Math.PI * 2),
         pulseSpeed: rand(0.005, 0.02),
-        // extra twinkle
-        twinkleDir: 1,
       };
     }
 

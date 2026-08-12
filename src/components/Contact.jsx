@@ -41,7 +41,7 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div className="sec-label">07 — Let's Connect</div>
+      <div className="sec-label">08 — Let's Connect</div>
       <h2 className="sec-h">Get in <em>Touch</em></h2>
       <div className="contact-wrap">
         <div className="contact-left">

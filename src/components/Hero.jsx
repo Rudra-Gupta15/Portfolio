@@ -1,16 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 
+// Defined outside component so the array reference is stable across renders
+const ROLES = [
+  "Fullstack Developer",
+  "Jr. Software Developer (AI/ML)",
+  "Chrome Extension Developer",
+  "IOT Engineer",
+  "Electronics Engineer",
+  "Kaggle Dataset & Code Expert"
+];
+
 export default function Hero() {
   const canvasRef = useRef(null);
 
-  const roles = [
-    "Fullstack Developer",
-    "AI/ML Intern",
-    "Chrome Extension Developer",
-    "IOT Engineer",
-    "Electronics Engineer",
-    "Kaggle Dataset & Notebook Expert"
-  ];
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -19,7 +21,7 @@ export default function Hero() {
 
   useEffect(() => {
     const handleType = () => {
-      const currentRole = roles[roleIndex];
+      const currentRole = ROLES[roleIndex];
       if (isDeleting) {
         setText(currentRole.substring(0, charIndex - 1));
         setCharIndex(prev => prev - 1);
@@ -35,26 +37,31 @@ export default function Hero() {
         setTypingSpeed(2000); // Wait before deleting
       } else if (isDeleting && charIndex === 0) {
         setIsDeleting(false);
-        setRoleIndex(prev => (prev + 1) % roles.length);
+        setRoleIndex(prev => (prev + 1) % ROLES.length);
         setTypingSpeed(500); // Wait before typing next
       }
     };
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, roleIndex, typingSpeed, roles]);
+  }, [charIndex, isDeleting, roleIndex, typingSpeed]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
+    let globeCleanup = null;
+
     // Load Three.js dynamically
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-    script.onload = () => initGlobe(canvas);
+    script.onload = () => { globeCleanup = initGlobe(canvas); };
     document.head.appendChild(script);
 
-    return () => { document.head.removeChild(script); };
+    return () => {
+      if (globeCleanup) globeCleanup();
+      if (document.head.contains(script)) document.head.removeChild(script);
+    };
   }, []);
 
   function initGlobe(canvas) {
@@ -150,7 +157,7 @@ export default function Hero() {
           <div className="hero-roles">
             <span className="h-role">Electronics Engineer</span>
             <span className="h-dot"></span>
-            <span className="h-role">AI/ML Developer</span>
+            <span className="h-role">Jr. Software Developer (AI/ML)</span>
             <span className="h-dot"></span>
             <span className="h-role">Game Dev Enthusiast</span>
             <span className="h-dot"></span>

@@ -81,185 +81,275 @@ const REVEAL_CSS = `
 ══════════════════════════════════════════ */
 const CERTS = [
   {
-    icon: '🤖',
+    image: '/images/cert-prevoyance-internship.jpg',
+    topBadge: 'FEATURED CREDENTIAL',
+    title: 'AI/ML Internship Completed!',
+    program: 'Prevoyance IT Solutions Pvt. Ltd.',
+    issuer: 'Prevoyance IT Solutions Pvt. Ltd.',
+    date: '1 Jan 2026 – 1 Jun 2026',
+    dateShort: 'Jun 2026',
+    desc: 'Awarded for outstanding performance and dedication in completing the 6-month AI/ML internship at Prevoyance IT Solutions Pvt. Ltd.',
+    highlights: [
+      'Worked on real-world AI/ML projects and solutions',
+      'Explored LLMs, Machine Learning models and AI applications',
+      'Gained hands-on experience in model training, evaluation and deployment',
+      'Strengthened problem-solving, research and teamwork skills',
+    ],
+    accent: '#d4a843',
+    accentRgb: '212,168,67',
+    tags: ['AI/ML', 'LLMS', 'MACHINE LEARNING', 'PREVOYANCE IT'],
+    badge: 'INTERNSHIP',
+    verifyUrl: null,
+  },
+  {
     image: '/images/cert-ai-beginners.jpg',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'Artificial Intelligence Beginners Guide',
     program: 'SkillUp by Simplilearn',
     issuer: 'Simplilearn',
     date: '24 Feb 2026',
-    desc: 'Completed the Artificial Intelligence Beginners Guide on Simplilearn SkillUp — covering core AI concepts, applications, and industry use cases. Certificate code: 9886142.',
+    dateShort: 'Feb 2026',
+    desc: 'Completed the Artificial Intelligence Beginners Guide on Simplilearn SkillUp covering core AI concepts.',
+    highlights: [
+      'Mastered foundational AI & Machine Learning concepts',
+      'Explored neural networks, computer vision, and real-world AI use cases',
+      'Earned verified completion certificate (Code: 9886142)',
+    ],
     accent: '#f97316',
     accentRgb: '249,115,22',
-    tags: ['Artificial Intelligence', 'Simplilearn', 'Beginners'],
-    badge: 'Certified',
+    tags: ['ARTIFICIAL INTELLIGENCE', 'SIMPLILEARN', 'BEGINNERS'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '🧬',
     image: '/images/cert-claude-101.jpg',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'Claude 101',
     program: 'Anthropic',
     issuer: 'Anthropic',
     date: '2026',
-    desc: 'Completed Claude 101 — an introductory course by Anthropic covering the fundamentals of working with Claude AI, prompt engineering, and responsible AI usage.',
+    dateShort: '2026',
+    desc: 'Completed Claude 101 by Anthropic covering fundamentals of working with Claude AI & prompt engineering.',
+    highlights: [
+      'Completed official Anthropic prompt engineering & Claude API fundamentals',
+      'Learned structured prompting, system messages, and XML formatting',
+      'Applied responsible AI safety guidelines and LLM workflow patterns',
+    ],
     accent: '#d97706',
     accentRgb: '217,119,6',
-    tags: ['Claude', 'Anthropic', 'Prompt Engineering'],
-    badge: 'Certified',
+    tags: ['CLAUDE', 'ANTHROPIC', 'PROMPT ENG.'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '☁️',
     image: '/images/cert-aws-ml.png',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'Getting Started with AWS Machine Learning',
     program: 'AWS Training · Coursera',
     issuer: 'Amazon Web Services · Coursera',
     date: '25 Mar 2026',
-    desc: 'Completed the AWS Machine Learning course authorized by Amazon Web Services and offered through Coursera — covering ML services, SageMaker, and cloud-based AI workflows.',
+    dateShort: 'Mar 2026',
+    desc: 'Authorized by Amazon Web Services and offered through Coursera — covering cloud-based AI workflows.',
+    highlights: [
+      'Authorized course by AWS covering cloud machine learning services',
+      'Hands-on experience with Amazon SageMaker, Rekognition & Comprehend',
+      'Built end-to-end cloud ML pipelines and automated data workflows',
+    ],
     accent: '#f59e0b',
     accentRgb: '245,158,11',
-    tags: ['AWS', 'Machine Learning', 'Cloud AI'],
-    badge: 'Certified',
+    tags: ['AWS', 'MACHINE LEARNING', 'CLOUD AI'],
+    badge: 'CERTIFIED',
     verifyUrl: 'https://coursera.org/verify/E7TD3VGWVBZW',
   },
   {
-    icon: '✨',
     image: '/images/cert-genai-beginners.jpg',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'Generative AI for Beginners',
     program: 'SkillUp by Simplilearn',
     issuer: 'Simplilearn',
     date: '18 Apr 2026',
-    desc: 'Completed the Generative AI for Beginners course on Simplilearn SkillUp — exploring LLMs, image generation, and practical GenAI applications. Certificate code: 10122834.',
+    dateShort: 'Apr 2026',
+    desc: 'Explored Large Language Models (LLMs), image generation, and practical GenAI applications.',
+    highlights: [
+      'Hands-on training in Large Language Models (LLMs) and Prompt Engineering',
+      'Understood diffusion models, GANs, and generative AI architecture',
+      'Earned verified completion certificate (Code: 10122834)',
+    ],
     accent: '#8b5cf6',
     accentRgb: '139,92,246',
-    tags: ['Generative AI', 'LLMs', 'Simplilearn'],
-    badge: 'Certified',
+    tags: ['GENERATIVE AI', 'LLMS', 'SIMPLILEARN'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '🐍',
     image: '/images/cert-ml-python.jpg',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'Machine Learning Using Python',
     program: 'SkillUp by Simplilearn',
     issuer: 'Simplilearn',
     date: '21 Apr 2026',
-    desc: 'Completed Machine Learning Using Python on Simplilearn SkillUp — covering supervised and unsupervised learning, model building, and ML pipelines in Python. Certificate code: 10134812.',
+    dateShort: 'Apr 2026',
+    desc: 'Covered supervised and unsupervised learning algorithms, model building, and ML pipelines in Python.',
+    highlights: [
+      'Built end-to-end ML pipelines using Scikit-Learn, Pandas, and NumPy',
+      'Model evaluation, feature scaling, hyperparameter tuning & cross-validation',
+      'Earned verified completion certificate (Code: 10134812)',
+    ],
     accent: '#10b981',
     accentRgb: '16,185,129',
-    tags: ['Machine Learning', 'Python', 'Simplilearn'],
-    badge: 'Certified',
+    tags: ['MACHINE LEARNING', 'PYTHON', 'SIMPLILEARN'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '🧠',
     image: '/images/cert-ai-aware.png',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'AI Aware',
     program: 'AI For All',
     issuer: 'Intel · Digital India · CBSE',
     date: '12 Feb 2026',
-    desc: 'Completed the AI Aware stage of the AI For All program — foundational understanding of artificial intelligence concepts and applications.',
+    dateShort: 'Feb 2026',
+    desc: 'Completed the AI Aware stage of the AI For All program — foundational AI concepts.',
+    highlights: [
+      'Foundational certification by Intel and Digital India',
+      'Understanding of AI impact, computer vision, and data science concepts',
+    ],
     accent: '#0071c5',
     accentRgb: '0,113,197',
-    tags: ['Artificial Intelligence', 'Intel', 'Digital India'],
-    badge: 'Certified',
+    tags: ['ARTIFICIAL INTELLIGENCE', 'INTEL', 'DIGITAL INDIA'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '💡',
     image: '/images/cert-ai-appreciate.png',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'AI Appreciate',
     program: 'AI For All',
     issuer: 'Intel · Digital India · CBSE',
     date: '12 Feb 2026',
-    desc: 'Completed the AI Appreciate stage — deeper appreciation of AI capabilities, ethical implications, and real-world use cases.',
+    dateShort: 'Feb 2026',
+    desc: 'Completed the AI Appreciate stage — deeper appreciation of AI capabilities & ethical implications.',
+    highlights: [
+      'Advanced appreciation stage of Intel AI For All program',
+      'Explored AI ethics, privacy-first AI development, and societal impact',
+    ],
     accent: '#00aaff',
     accentRgb: '0,170,255',
-    tags: ['AI Ethics', 'Intel', 'Applied AI'],
-    badge: 'Certified',
+    tags: ['AI ETHICS', 'INTEL', 'APPLIED AI'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '🐍',
     image: '/images/cert-python-iit.jpg',
+    topBadge: 'ACADEMIC CREDENTIAL',
     title: 'Python 3.4.3 Training',
     program: 'Spoken Tutorial · IIT Bombay',
     issuer: 'IIT Bombay · YCCE',
-    date: 'June 21, 2023',
-    desc: 'Completed Python 3.4.3 training organized at Yeshwantrao Chavan College of Engineering via the Spoken Tutorial Project, IIT Bombay. Passed an online exam conducted remotely from IIT Bombay. Credits: 4 | Score: 65%.',
+    date: '21 June 2023',
+    dateShort: 'Jun 2023',
+    desc: 'Passed online exam conducted remotely from IIT Bombay. Credits: 4 | Score: 65%.',
+    highlights: [
+      'Passed remote online exam conducted directly by IIT Bombay',
+      'Earned 4 academic credits in core Python programming & data structures',
+    ],
     accent: '#ffd43b',
     accentRgb: '255,212,59',
-    tags: ['Python', 'IIT Bombay', 'Programming'],
-    badge: 'Certified',
+    tags: ['PYTHON', 'IIT BOMBAY', 'PROGRAMMING'],
+    badge: 'CERTIFIED',
     verifyUrl: null,
   },
   {
-    icon: '💻',
     image: '/images/cert-cpp-dsa.jpg',
+    topBadge: 'VERIFIED CERTIFICATION',
     title: 'Data Structures & Algorithms in C++',
     program: 'Great Learning Academy',
     issuer: 'Great Learning Academy',
     date: 'March 2024',
-    desc: 'Completed the free online course on Data Structures and Algorithms in C++ provided by Great Learning Academy. Covers core DSA concepts, problem-solving techniques, and algorithmic thinking.',
+    dateShort: 'Mar 2024',
+    desc: 'Covers core DSA concepts, problem-solving techniques, and algorithmic thinking.',
+    highlights: [
+      'Algorithmic problem-solving and time/space complexity analysis',
+      'Arrays, Linked Lists, Trees, Graphs, Sorting & Searching algorithms',
+    ],
     accent: '#a855f7',
     accentRgb: '168,85,247',
-    tags: ['C++', 'DSA', 'Algorithms'],
-    badge: 'Certified',
+    tags: ['C++', 'DSA', 'ALGORITHMS'],
+    badge: 'CERTIFIED',
     verifyUrl: 'https://verify.mygreatlearning.com/TFINJJEO',
   },
   {
-    icon: '🎮',
     image: null,
+    topBadge: 'COURSE COMPLETION',
     title: 'Complete C# Unity 2D Game Dev',
     program: 'Udemy Course',
     issuer: 'Udemy · GameDev.tv Team',
     date: '2024',
-    desc: 'Mastered 2D game mechanics and C# scripting in Unity 6, including physics, enemy AI, tilemaps, and game architecture.',
+    dateShort: '2024',
+    desc: 'Mastered 2D game mechanics and C# scripting in Unity 6, including physics, enemy AI, and tilemaps.',
+    highlights: [
+      'Mastered 2D physics, tilemaps, and character controller scripting',
+      'Built AI state machines, pathfinding, and animation controllers in Unity',
+    ],
     accent: '#a855f7',
     accentRgb: '168,85,247',
-    tags: ['Unity', 'C#', '2D Games'],
-    badge: 'Completed',
+    tags: ['UNITY', 'C#', '2D GAMES'],
+    badge: 'COMPLETED',
     verifyUrl: null,
   },
   {
-    icon: '🌌',
     image: null,
+    topBadge: 'COURSE COMPLETION',
     title: 'Complete C# Unity 3D Game Dev',
     program: 'Udemy Course',
     issuer: 'Udemy · GameDev.tv Team',
     date: '2024',
-    desc: 'Advanced 3D creation in Unity 6 — lighting, physics, particle systems, advanced C# patterns and complex game architecture.',
+    dateShort: '2024',
+    desc: 'Advanced 3D creation in Unity 6 — lighting, physics, particle systems, and advanced C# patterns.',
+    highlights: [
+      'Advanced 3D environment creation, lighting, and particle systems',
+      'Implemented C# design patterns, object pooling, and game state managers',
+    ],
     accent: '#5be05b',
     accentRgb: '91,224,91',
-    tags: ['Unity 6', 'C#', '3D Games'],
-    badge: 'Completed',
+    tags: ['UNITY 6', 'C#', '3D GAMES'],
+    badge: 'COMPLETED',
     verifyUrl: null,
   },
   {
-    icon: '✈️',
     image: '/images/cert-aeromodel.jpg',
+    topBadge: 'WORKSHOP',
     title: 'Glider Making Workshop',
     program: 'Avion · YCCE',
     issuer: 'Yeshwantrao Chavan College of Engineering',
     date: '2024',
-    desc: 'Hands-on glider making workshop by Avion (Aeromodelling Club, Mech Dept.) in collaboration with Aerovision. Practical aerospace engineering concepts.',
+    dateShort: '2024',
+    desc: 'Hands-on glider making workshop by Avion (Aeromodelling Club) in collaboration with Aerovision.',
+    highlights: [
+      'Hands-on aerodynamics, wing design, and center of gravity calculations',
+      'Fabricated and balanced micro-glider models for competitive flight testing',
+    ],
     accent: '#06b6d4',
     accentRgb: '6,182,212',
-    tags: ['Aeromodelling', 'Mechanical', 'Workshop'],
-    badge: 'Participated',
+    tags: ['AEROMODELLING', 'MECHANICAL', 'WORKSHOP'],
+    badge: 'PARTICIPATED',
     verifyUrl: null,
   },
   {
-    icon: '🎨',
     image: '/images/cert-drawing.jpg',
+    topBadge: 'COMPETITION',
     title: 'Drawing Competition — Kalasparsh',
     program: 'KALASPARSH Art Club',
     issuer: 'Yeshwantrao Chavan College of Engineering',
     date: '2024',
-    desc: 'Participated in the Kalasparsh Drawing Competition, showcasing creative imagination and artistry. Organized by the Art Club of YCCE.',
+    dateShort: '2024',
+    desc: 'Participated in the Kalasparsh Drawing Competition, showcasing creative imagination and artistry.',
+    highlights: [
+      'Showcased creative imagination, visual design, and artistic execution',
+    ],
     accent: '#ec4899',
     accentRgb: '236,72,153',
-    tags: ['Art', 'Drawing', 'Creative'],
-    badge: 'Participated',
+    tags: ['ART', 'DRAWING', 'CREATIVE'],
+    badge: 'PARTICIPATED',
     verifyUrl: null,
   },
 ];
@@ -270,15 +360,15 @@ const CERTS = [
 const ACHIEVEMENTS = [
   {
     icon: '📊',
-    title: 'Kaggle Dataset & Notebook Expert',
+    title: 'Kaggle Dataset & Code Expert',
     loc: (
       <span style={{ display: 'inline-block', textAlign: 'left', lineHeight: '1.4', verticalAlign: 'middle' }}>
-        Datasets: 273 / 10,622 <br />
-        Notebooks: 2,334 / 62,113
+        Datasets: 220 / 11,018 <br />
+        Code: 2,336 / 61,392
       </span>
     ),
     date: '2026',
-    sub: 'Kaggle: Dataset Expert (Rank 273/10,622) • Notebook Expert (Rank 2,334/62,113) • Published 9 datasets and 11 notebooks.',
+    sub: 'Kaggle: Dataset Expert (Rank 220/11,018, Peak 217 • 3/4 Silver to Master) • Code Expert (Rank 2,336/61,392, Peak 2,271).',
     accent: '#4da8e8',
     accentRgb: '77,168,232',
     badge: 'Kaggle',
@@ -828,26 +918,66 @@ export function Certifications() {
               >
                 <div className="cert-tile-glow" />
                 <div className="cert-tile-bar" />
+
+                {/* Certificate image preview */}
                 {c.image && (
                   <div className="cert-tile-img-strip">
                     <img src={c.image} alt={c.title} className="cert-tile-img" />
                     <div className="cert-tile-img-overlay" />
                   </div>
                 )}
+
                 <div className="cert-tile-content">
+                  {/* Badge + Date row */}
                   <div className="cert-tile-top">
-                    <span className="cert-tile-icon">{c.icon}</span>
                     <span className="cert-tile-badge">{c.badge}</span>
+                    <span className="cert-tile-date">{c.dateShort || c.date}</span>
                   </div>
-                  <div className="cert-tile-title">{c.title}</div>
+
+                  {/* Title */}
+                  <h3 className="cert-tile-title">{c.title}</h3>
+
+                  {/* Issuer */}
                   <div className="cert-tile-issuer">{c.issuer}</div>
-                  <div className="cert-tile-date">{c.date}</div>
+
+                  {/* Date line */}
+                  <div className="cert-tile-dateline">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0,opacity:0.55}}>
+                      <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    <span>{c.date}</span>
+                  </div>
+
+                  {/* Key Highlights */}
+                  {c.highlights && c.highlights.length > 0 && (
+                    <div className="cert-tile-highlights">
+                      <div className="cert-tile-hl-label">KEY HIGHLIGHTS</div>
+                      <ul className="cert-tile-hl-list">
+                        {c.highlights.slice(0, 3).map((h, hi) => (
+                          <li key={hi} className="cert-tile-hl-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{flexShrink:0,color:'var(--accent)'}}>
+                              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                              <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <span>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Tags */}
                   <div className="cert-tile-tags">
                     {c.tags.slice(0, 3).map(t => (
                       <span key={t} className="cert-tile-tag">{t}</span>
                     ))}
                   </div>
-                  <div className="cert-tile-tap">click to view →</div>
+
+                  {/* Footer link */}
+                  <div className="cert-tile-tap">
+                    <span>CLICK TO VIEW CERTIFICATE</span>
+                    <span className="cert-tile-arrow">→</span>
+                  </div>
                 </div>
               </div>
             ))}
