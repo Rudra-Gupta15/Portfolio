@@ -541,7 +541,7 @@ export function Publications() {
         <div>
           <h2 className="sec-h sr-item sr-d1" style={{ marginBottom: 6 }}>Published <em>Work</em></h2>
           <div className="cert-scroll-hint sr-item sr-d2" style={{ marginTop: 8 }}>
-            <span>Showing 6 published works — research, platforms, and tools</span>
+            <span>Showing 8 published works — 679+ total installs · 58 active users across 5 extensions</span>
           </div>
           <div className="cert-scroll-hint sr-item sr-d2">
             <span>scroll or drag to explore</span>
@@ -740,9 +740,11 @@ export function Publications() {
                 <div className="pub-meta">
                   <span>📅 25 March 2026</span>
                   <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 30+ Active Users</span>
-                  <span>📥 185+ Installs</span>
+                  <span>👤 33 Active Users</span>
+                  <span>📥 257 Installs</span>
                   <span>⭐ 5.0/5 Rating</span>
+                  <span>📉 7% Uninstall Rate</span>
+                  <span>🇺🇸 73% USA · ChromeOS 59%</span>
                 </div>
                 <p className="pub-desc">
                   Fuses gamer aesthetics with a productivity dashboard. Features an Orbitron-font dashboard, 7 HTML5 Canvas mini-games, real-time weather, an AI quick-launch dock, and zero-cloud local storage.
@@ -782,8 +784,10 @@ export function Publications() {
                 <div className="pub-meta">
                   <span>📅 24 March 2026</span>
                   <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 10+ Active Users</span>
-                  <span>📥 154+ Installs</span>
+                  <span>👤 14 Active Users</span>
+                  <span>📥 222 Installs</span>
+                  <span>📉 4.9% Uninstall Rate</span>
+                  <span>🇺🇸 84% USA · ChromeOS 68%</span>
                 </div>
                 <p className="pub-desc">
                   Lets users bookmark exact timestamps in any YouTube video with a native in-player button. Features high-precision seeking, green flash feedback, and a dynamic popup panel with real-time playback updates.
@@ -823,8 +827,10 @@ export function Publications() {
                 <div className="pub-meta">
                   <span>📅 10 April 2026</span>
                   <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 8+ Active Users</span>
-                  <span>📥 128+ Installs</span>
+                  <span>👤 8 Active Users</span>
+                  <span>📥 191 Installs</span>
+                  <span>📉 2.1% Uninstall Rate</span>
+                  <span>🇺🇸 89% USA · ChromeOS 72%</span>
                 </div>
                 <p className="pub-desc">
                   Tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not a manually started timer. Features Pomodoro mode, declarativeNetRequest site blocking, YouTube smart detection, weekly stats, and a full task manager. Zero data collection, 100% local.
@@ -835,6 +841,89 @@ export function Publications() {
                   ))}
                   <a
                     href="https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pub-link"
+                  >
+                    View Extension ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* VaultCraft Extension */}
+            <div className="pub-card sr-item sr-d3">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img src="/images/proj-vaultcraft.png" alt="VaultCraft Extension" className="pub-cert-img" />
+                </div>
+              </div>
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge presented" style={{ background: '#0B254522', border: '1px solid #0B254566', color: '#60a5fa' }}>VaultCraft</span>
+                  <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
+                  <span className="pub-badge conf" style={{ background: '#2E7D3222', border: '1px solid #2E7D3266', color: '#4ade80' }}>v1.1</span>
+                  <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
+                </div>
+                <h3 className="pub-title">Smart Inventory Manager — VaultCraft</h3>
+                <div className="pub-conf">Chrome Web Store · Local-First Inventory &amp; Price Tracker</div>
+                <div className="pub-meta">
+                  <span>📅 August 2026</span>
+                  <span>📦 Chrome Web Store (v3)</span>
+                  <span>👤 3 Active Users</span>
+                  <span>📥 9 Installs</span>
+                  <span>🇺🇸 100% USA</span>
+                </div>
+                <p className="pub-desc">
+                  Organise what you own, track prices across stores, and plan monthly purchases — all stored 100% locally with zero accounts, no server, and no data collection. Features a monthly purchase roadmap and background alarm-based auto price sync.
+                </p>
+                <div className="pub-tags">
+                  {['Manifest V3', 'Chrome Storage API', 'chrome.alarms', 'Price Tracking', 'Pure JS'].map(t => (
+                    <span key={t} className="pub-tag">{t}</span>
+                  ))}
+                  <a
+                    href="https://chromewebstore.google.com/detail/vaultcraft-smart-inventor/aeadbbachelnncoamakagcidapdenglb"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="pub-link"
+                  >
+                    View Extension ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* GameValue Extension */}
+            <div className="pub-card sr-item sr-d4">
+              <div className="pub-card-left">
+                <div className="pub-img-frame">
+                  <img src="/images/proj-gamevalue.png" alt="GameValue Extension" className="pub-cert-img" />
+                </div>
+              </div>
+              <div className="pub-card-right">
+                <div className="pub-badge-row">
+                  <span className="pub-badge presented" style={{ background: '#FFB00022', border: '1px solid #FFB00066', color: '#fbbf24' }}>GameValue</span>
+                  <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v1.0</span>
+                  <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
+                </div>
+                <h3 className="pub-title">Steam Deal Price Tracker — GameValue</h3>
+                <div className="pub-conf">Chrome Web Store · AI-Powered Game Deal Scorer</div>
+                <div className="pub-meta">
+                  <span>📅 August 2026</span>
+                  <span>📦 Chrome Web Store (v3)</span>
+                  <span>📊 Stats Pending</span>
+                  <span>⚡ Groq AI · CheapShark API · Steam API</span>
+                </div>
+                <p className="pub-desc">
+                  Finds Steam deals using real price history and gives a buy-vs-wait score — plus wishlist alerts and AI recommendations via a hosted Express backend on Render. No API keys are stored in the extension.
+                </p>
+                <div className="pub-tags">
+                  {['Manifest V3', 'Groq AI', 'CheapShark API', 'Steam API', 'Express', 'Render'].map(t => (
+                    <span key={t} className="pub-tag">{t}</span>
+                  ))}
+                  <a
+                    href="https://chromewebstore.google.com/detail/gamevalue-%E2%80%94-steam-deal-pr/obfhccegbcmojihajljanhnnpfikkhii"
                     target="_blank"
                     rel="noreferrer"
                     className="pub-link"
