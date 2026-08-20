@@ -9,7 +9,7 @@ const STATS = [
     </span>
   ), color: '#d4a843' },
   { n: '3', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
-  { n: '500+', icon: '👥', label: 'Downloads', sub: 'Across 3 Chrome Extensions', color: '#4da8e8' },
+  { n: '500+', icon: '👥', label: 'Downloads', sub: 'Across 5 Chrome Extensions', color: '#4da8e8' },
 ];
 
 const TRAITS = [
