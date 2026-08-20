@@ -47,7 +47,7 @@ const TIMELINE = [
   },
     {
     date: 'Jan 2026 — Jun 2026',
-    role: 'Jr. Software Developer (AI/ML)',
+    role: 'AIML Intern',
     org: 'Prevoyance IT Solutions Pvt Ltd',
     type: 'work',
     accent: '#d4a843',
