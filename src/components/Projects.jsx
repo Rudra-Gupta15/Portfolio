@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* ─── Scroll-reveal hook ─── */
@@ -629,27 +629,6 @@ const PROJECTS = [
     live: 'https://convosecai.vercel.app',
   },
   {
-    cat: 'aiml iot edge office',
-    image: '/images/smartwaste.png',
-    type: 'Computer Vision · FastAPI · IoT · Edge AI',
-    title: 'Smart Waste Management System',
-    subtitle: 'AI-Powered Urban Waste Monitoring & Analytics',
-    gradient: ['#14532d', '#0ea5e9'],
-    gradientBg: 'linear-gradient(135deg, #052e16 0%, #14532d 45%, #0369a1 100%)',
-    overview: 'Edge-deployable urban waste management platform using YOLOv8 computer vision on live CCTV and dashcam feeds. Automates pickup confirmation, transfer station tracking, IoT weighbridge fusion, litter hotspot detection, and maintenance auto-ticketing across five production use cases.',
-    bullets: [
-      'YOLOv8m fine-tuned on custom waste-class dataset — mAP@0.5 of 0.87',
-      'TensorRT-optimized inference at ~28ms/frame on NVIDIA Jetson Orin Nano (8GB)',
-      'MQTT + Redis pub/sub for sub-second fusion of LPR output with IoT weighbridge sensors (UC3)',
-      'Dwell-time analysis for pickup confirmation; virtual line-crossing for transfer station counting (UC1/UC2)',
-      'Auto-ticketing engine dispatches 100% of high-severity alerts in under 2 seconds (UC5)',
-      'React 18 + Leaflet.js Cyber-Ops dashboard with real-time vehicle markers and litter heatmaps over Nagpur city layers',
-    ],
-    techDetails: 'Python 3.11, FastAPI, YOLOv8 (Ultralytics), TensorRT, OpenCV 4.x, WebSockets, PostgreSQL, Redis, MQTT. Frontend: React 18 + Vite, Leaflet.js, Recharts. Deployed on NVIDIA Jetson Orin Nano; WebSocket stress-tested at 12 concurrent feeds.',
-    outcome: 'Production-ready edge-deployable platform with full 5-UC coverage, single-command launch, and multi-city scalability roadmap',
-    tags: ['YOLOv8', 'FastAPI', 'TensorRT', 'OpenCV', 'React 18', 'Leaflet.js', 'PostgreSQL', 'Redis', 'MQTT', 'Jetson Orin Nano'],
-  },
-  {
     cat: 'web frontend freelancer',
     image: '/images/perfionixai.png',
     type: 'Frontend Design · Next.js 14 · Freelance',
@@ -673,49 +652,6 @@ const PROJECTS = [
     live: 'https://www.perfionixai.com',
   },
   {
-    cat: 'web webdev office',
-    image: '/images/proj-nsdl-audit.png',
-    type: 'Compliance Tooling · FastAPI · React',
-    title: 'Workstation Compliance Audit Portal',
-    subtitle: 'Automated System Audit & Reporting Platform',
-    gradient: ['#2563eb', '#60a5fa'],
-    gradientBg: 'linear-gradient(135deg, #ffffff 0%, #eff6ff 100%)',
-    textColor: '#0f172a',
-    overview: 'A compliance auditing platform that automatically collects workstation configuration details and generates standardized, downloadable audit reports — built to satisfy regulatory system-compliance requirements common in financial and government sectors.',
-    bullets: [
-      'Automated system audit script gathers hardware, network, OS, security-patch, and installed-software information with explicit user consent',
-      'FastAPI backend validates and structures incoming audit data with strict schema enforcement for data integrity',
-      'Auto-generates professional, formatted PDF compliance reports for each audit session',
-      'Session-based architecture keeps every audit run traceable and independently reportable',
-      'Structured logging captures the full backend request/response lifecycle for troubleshooting and audit trails',
-    ],
-    techDetails: 'Backend built with FastAPI and Pydantic for strict schema validation of incoming system-audit payloads. PDF report generation handled server-side with ReportLab. A companion automation script performs the actual on-machine data collection with a mandatory consent step before any data is captured or transmitted.',
-    outcome: 'End-to-end compliance audit pipeline — from on-machine data collection to a downloadable, standardized PDF report',
-    tags: ['FastAPI', 'Python', 'Pydantic', 'ReportLab', 'React'],
-  },
-  {
-    cat: 'web office',
-    image: '/images/proj-beltron.png',
-    type: 'Government Portal · React · Vite',
-    title: 'BELTRON Bihar Website',
-    subtitle: 'Full-Scale Government Corporation Portal',
-    gradient: ['#003366', '#1d75d8'],
-    gradientBg: 'linear-gradient(135deg, #001a33 0%, #003366 45%, #1d75d8 100%)',
-    overview: 'A pixel-faithful, multi-page government portal built for Bihar State Electronics Development Corporation (BELTRON) — combining a robust institutional layout with live content syncing and a fully custom design system.',
-    bullets: [
-      '13+ dedicated pages — About, Board of Directors, Tenders, Projects, Services, Gallery, News, and more — under a single React Router setup',
-      'Sticky mega-navigation with responsive dropdowns and an accessibility bar for language and font-size controls',
-      'Auto-sliding hero carousel, scrolling notice ticker, and a tabbed tenders/vacancies board matching real institutional portal UX patterns',
-      'Hybrid content system — static homepage data alongside structured JSON stores for large, frequently updated datasets like tenders, projects, and news',
-      'Custom data-sync utilities keep local content stores aligned with the live public website',
-      'Fully responsive, animated throughout with Framer Motion and a dedicated government-grade color and typography system',
-    ],
-    techDetails: 'Built with React 18, React Router v6, and Vite 5 for fast multi-page routing and builds. Styled with Tailwind CSS on top of a custom design token system (primary blue, government gray, Inter + Poppins typography). Swiper.js powers the hero carousel, and Framer Motion handles page and component transitions.',
-    outcome: 'A complete, production-grade government institutional website — 13+ pages, live-synced content, and a polished custom UI',
-    tags: ['React', 'React Router', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Swiper.js'],
-    live: 'https://beltron-web.vercel.app/',
-  },
-  {
     cat: 'aiml web',
     image: '/images/proj-reposcan.png',
     type: 'Code Analysis · FastAPI · Local LLM',
@@ -736,50 +672,6 @@ const PROJECTS = [
     outcome: 'Full SonarQube-style analysis and AI code review pipeline, running locally with zero cloud dependency',
     tags: ['FastAPI', 'React', 'Vite', 'Ollama', 'Python', 'SSE'],
     github: 'https://github.com/Rudra-Gupta15/Github_Scanner',
-  },
-  {
-    cat: 'aiml web office',
-    image: '/images/proj-testcase-generator.png',
-    type: 'AI Testing Pipeline · FastAPI · Local LLM',
-    title: 'AI Test Case Generator',
-    subtitle: 'Automated QA Pipeline from Requirements to Test Cases',
-    gradient: ['#000000', '#52525b'],
-    gradientBg: 'linear-gradient(135deg, #ffffff 0%, #e4e4e7 100%)',
-    textColor: '#000000',
-    overview: 'An AI-powered pipeline that converts project documentation — BRDs, FSDs, Figma designs, and website references — into complete, ready-to-execute QA test suites, running entirely on a local LLM.',
-    bullets: [
-      'Multi-stage generation architecture designed to avoid context overload and hallucination on large test suites',
-      'Automatically extracts features, user flows, and requirement gaps directly from source documents and designs',
-      'Plans test coverage before generation — balancing positive, negative, and edge-case scenarios per feature',
-      'Configurable generation modes let users tune output between deterministic validations and broader edge-case exploration',
-      'Final output is a clean, sequentially numbered, fully validated test suite with no missed features',
-    ],
-    techDetails: 'Built with a FastAPI backend and a React/Vite frontend, powered by a locally hosted LLM for full data privacy. The system is structured to isolate reasoning steps and keep generation scoped and reliable, rather than relying on a single large prompt.',
-    outcome: 'Reliable, repeatable QA coverage generated automatically from raw requirements — zero manual test-writing',
-    tags: ['FastAPI', 'React', 'Vite', 'Ollama', 'Python'],
-    github: 'https://github.com/Rudra-Gupta15/qa-doc-verifier',
-  },
-    {
-    cat: 'web office security backend',
-    image: '/images/proj-infra-pulse.png',
-    type: 'Compliance Audit Engine · FastAPI · osquery',
-    title: 'Infra-Pulse Audit Portal',
-    subtitle: 'Automated Multi-OS Asset Discovery & NSDL Compliance System',
-    gradient: ['#1d4ed8', '#e0f2fe'],
-    gradientBg: 'linear-gradient(135deg, #0c1a3a 0%, #1a3fa8 40%, #2563eb 70%, #bfdbfe 100%)',
-    textColor: '#ffffff',
-    overview: 'An automated, full-stack IT asset management and security compliance portal designed for enterprise and financial infrastructure. It conducts deep telemetry collection via native PowerShell/Bash scripts or an osquery SQL engine across Windows, macOS, and Linux to evaluate endpoints against regulatory standards.',
-    bullets: [
-      'Dual-engine telemetry architecture supporting zero-dependency Native OS Diagnostics (PowerShell/Bash) and osquery Relational SQL queries',
-      'Automated extraction of OS specs, installed software, security hotfixes, antivirus status, open network ports, USB usage, and local user privileges',
-      'Real-time compliance evaluation engine with interactive telemetry viewing, rule-based pass/fail grading, and live status tracking',
-      'Multi-device inventory management with historical audit diff analysis, configuration change detection, and automated PDF report export',
-      'Lightweight local architecture with SQLite database caching, background audit execution, and zero mandatory agent installation',
-    ],
-    techDetails: 'Built with a FastAPI (Python) backend and a responsive Vanilla JS/CSS frontend interface. System telemetry is harvested dynamically using native OS script execution (PowerShell/VBScript for Windows, Bash for macOS/Linux) or via direct osquery SQL daemon queries, storing report snapshots in a local SQLite database.',
-    outcome: 'Automated end-to-end IT compliance auditing, reducing inspection overhead from hours to seconds with zero third-party software dependencies',
-    tags: ['FastAPI', 'Python', 'PowerShell', 'osquery', 'SQLite', 'JavaScript', 'HTML/CSS'],
-    github: 'https://github.com/Rudra-Gupta15/Prevoyance_inspection',
   },
   {
   cat: 'chrome',
@@ -848,13 +740,10 @@ const BEST_TITLES = new Set([
   'AI Mail Assistant',
   'TimeMark',
   'Earth Intelligence',
-  'Smart Waste Management System',
-  'AI Test Case Generator',
   'Github-Reposcan',
-  'BELTRON Bihar Website',
 ]);
 
-const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome', 'office', 'freelancer'];
+const TABS = ['best', 'all', 'live', 'aiml', 'web', 'hardware', 'dataset', 'chrome', 'freelancer'];
 const TABS_LABELS = {
   best: '⭐ Best',
   all: 'All',
@@ -864,7 +753,6 @@ const TABS_LABELS = {
   hardware: 'Hardware',
   dataset: 'Datasets',
   chrome: 'Chrome Ext',
-  office: 'Office',
   freelancer: 'Freelancer',
 };
 
@@ -1122,12 +1010,7 @@ export default function Projects() {
                     <span className="badge-text">FREELANCE</span>
                   </div>
                 )}
-                {p.cat.includes('office') && (
-                  <div className="pcard-live-badge badge-expandable" style={{ background: 'linear-gradient(135deg, #0ea5e9, #2563eb)', color: '#fff', boxShadow: '0 4px 12px rgba(14, 165, 233, 0.3)' }}>
-                    <span className="badge-icon">🏢</span>
-                    <span className="badge-text">OFFICE</span>
-                  </div>
-                )}
+
                 {(p.live || p.webstore) && (
                   <div className="pcard-live-badge badge-expandable">
                     <span className="badge-icon">🚀</span>
