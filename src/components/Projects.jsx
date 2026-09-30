@@ -753,7 +753,7 @@ const TABS_LABELS = {
   hardware: 'Hardware',
   dataset: 'Datasets',
   chrome: 'Chrome Ext',
-  freelancer: 'Freelancer',
+  freelancer: 'Live Web',
 };
 
 function ProjectModal({ project, onClose, index, onPrev, onNext }) {
