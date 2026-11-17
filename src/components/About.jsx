@@ -8,8 +8,8 @@ const STATS = [
       <span>Notebooks: 2.3k / 61k</span>
     </span>
   ), color: '#d4a843' },
-  { n: '3', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
-  { n: '500+', icon: '👥', label: 'Downloads', sub: 'Across 5 Chrome Extensions', color: '#4da8e8' },
+  { n: '5', icon: '📦', label: 'Extensions Built', sub: 'Chrome + Firefox compatible', color: '#5be05b' },
+  { n: '3000+', icon: '👥', label: 'Downloads', sub: 'Across 5 Chrome Extensions', color: '#4da8e8' },
 ];
 
 const TRAITS = [

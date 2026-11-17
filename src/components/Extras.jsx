@@ -374,17 +374,17 @@ const ACHIEVEMENTS = [
     badge: 'Kaggle',
     tags: ['Data Science', 'datasets', 'AI']
   },
-  {
-    icon: '📦',
-    title: 'Chrome Extension Developer',
-    loc: '500+ Combined Installs',
-    date: '2026',
-    sub: 'Designed, built, and launched 3 browser extensions on the Chrome Web Store (BalanceTab, TimeMark, Growth Tracker) with Manifest V3, gaining 500+ installs and active users.',
-    accent: '#10b981',
-    accentRgb: '16,185,129',
-    badge: 'Extensions',
-    tags: ['Manifest V3', 'Chrome API', 'Publishing']
-  },
+ {
+  icon: '📦',
+  title: 'Chrome Extension Developer',
+  loc: '3,451 Combined Installs',
+  date: '2026',
+  sub: 'Designed, built, and launched 5 browser extensions on the Chrome Web Store (BalanceTab, TimeMark, Growth Tracker, VaultCraft, and GameValue) using Manifest V3, reaching 3,451 combined installs.',
+  accent: '#10b981',
+  accentRgb: '16,185,129',
+  badge: 'Extensions',
+  tags: ['Manifest V3', 'Chrome API', 'Publishing', 'Product Development']
+},
   {
     icon: '🎯',
     title: 'Vice President — Sponsorship',
@@ -737,14 +737,14 @@ export function Publications() {
                 </div>
                 <h3 className="pub-title">Gamer + Productivity Dashboard — BalanceTab</h3>
                 <div className="pub-conf"> Chrome &amp; Edge New Tab Replacement </div>
-                <div className="pub-meta">
-                  <span>📅 25 March 2026</span>
-                  <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 33 Active Users</span>
-                  <span>📥 257 Installs</span>
-                  <span>⭐ 5.0/5 Rating</span>
-                  <span>📉 7% Uninstall Rate</span>
-                  <span>🇺🇸 73% USA · ChromeOS 59%</span>
+                <div className="pub-meta">                
+                <span>📅 25 March 2026</span>
+                <span>📦 Chrome Web Store (v2.11.1)</span>
+                <span>👤 51 Users</span>
+                <span>📥 819 Installs</span>
+                <span>⭐ 5.0/5 Rating</span>
+                <span>🇷🇴 49% Romania · 🇺🇸 37% USA</span>
+                <span>💻 ChromeOS 30% · Windows 13%</span>
                 </div>
                 <p className="pub-desc">
                   Fuses gamer aesthetics with a productivity dashboard. Features an Orbitron-font dashboard, 7 HTML5 Canvas mini-games, real-time weather, an AI quick-launch dock, and zero-cloud local storage.
@@ -781,13 +781,14 @@ export function Publications() {
                 </div>
                 <h3 className="pub-title">YouTube Timestamp Bookmarks — TimeMark</h3>
                 <div className="pub-conf"> Native Browser Integration &amp; Utility </div>
-                <div className="pub-meta">
-                  <span>📅 24 March 2026</span>
-                  <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 14 Active Users</span>
-                  <span>📥 222 Installs</span>
-                  <span>📉 4.9% Uninstall Rate</span>
-                  <span>🇺🇸 84% USA · ChromeOS 68%</span>
+                <div className="pub-meta">               
+                <span>📅 24 March 2026</span>
+                <span>📦 Chrome Web Store (v2.0.1)</span>
+                <span>👤 27 Users</span>
+                <span>📥 786 Installs</span>
+                <span>⭐ 5.0/5 Rating</span>
+                <span>📉 2.5% Uninstall Rate</span>
+                <span>🇷🇴 52% Romania · 🇺🇸 40% USA</span>
                 </div>
                 <p className="pub-desc">
                   Lets users bookmark exact timestamps in any YouTube video with a native in-player button. Features high-precision seeking, green flash feedback, and a dynamic popup panel with real-time playback updates.
@@ -824,13 +825,14 @@ export function Publications() {
                 </div>
                 <h3 className="pub-title">Productivity Tree — Growth Tracker</h3>
                 <div className="pub-conf"> Chrome New Tab · Behavioral Productivity Tracker </div>
-                <div className="pub-meta">
-                  <span>📅 10 April 2026</span>
-                  <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 8 Active Users</span>
-                  <span>📥 191 Installs</span>
-                  <span>📉 2.1% Uninstall Rate</span>
-                  <span>🇺🇸 89% USA · ChromeOS 72%</span>
+                <div className="pub-meta">                 
+                <span>📅 10 April 2026</span>
+                <span>📦 Chrome Web Store (v2.8.0)</span>
+                <span>👤 16 Users</span>
+                <span>📥 740 Installs</span>
+                <span>⭐ 5.0/5 Rating</span>
+                <span>🇷🇴 55% Romania · 🇺🇸 39% USA</span>
+                <span>💻 ChromeOS 31% · Windows 6%</span>
                 </div>
                 <p className="pub-desc">
                   Tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not a manually started timer. Features Pomodoro mode, declarativeNetRequest site blocking, YouTube smart detection, weekly stats, and a full task manager. Zero data collection, 100% local.
@@ -868,11 +870,14 @@ export function Publications() {
                 <h3 className="pub-title">Smart Inventory Manager — VaultCraft</h3>
                 <div className="pub-conf">Chrome Web Store · Local-First Inventory &amp; Price Tracker</div>
                 <div className="pub-meta">
-                  <span>📅 August 2026</span>
-                  <span>📦 Chrome Web Store (v3)</span>
-                  <span>👤 3 Active Users</span>
-                  <span>📥 9 Installs</span>
-                  <span>🇺🇸 100% USA</span>
+                <span>📅 August 2026</span>
+                <span>📦 Chrome Web Store (v1.2.1)</span>
+                <span>👤 5 Users</span>
+                <span>📥 559 Installs</span>
+                <span>⭐ 5.0/5 Rating</span>
+                <span>📥 9 Installs</span>
+                <span>🇷🇴 73% Romania · 🇺🇸 23% USA</span>
+
                 </div>
                 <p className="pub-desc">
                   Organise what you own, track prices across stores, and plan monthly purchases — all stored 100% locally with zero accounts, no server, and no data collection. Features a monthly purchase roadmap and background alarm-based auto price sync.
@@ -911,9 +916,12 @@ export function Publications() {
                 <div className="pub-conf">Chrome Web Store · AI-Powered Game Deal Scorer</div>
                 <div className="pub-meta">
                   <span>📅 August 2026</span>
-                  <span>📦 Chrome Web Store (v3)</span>
-                  <span>📊 Stats Pending</span>
+                  <span>📦 Chrome Web Store (v1.1.1)</span>
+                  <span>👤 6 Users</span>
+                  <span>📥 547 Installs</span>
+                  <span>⭐ 5.0/5 Rating</span>
                   <span>⚡ Groq AI · CheapShark API · Steam API</span>
+                  <span>🌍 Romania 74% · USA 21%</span>
                 </div>
                 <p className="pub-desc">
                   Finds Steam deals using real price history and gives a buy-vs-wait score — plus wishlist alerts and AI recommendations via a hosted Express backend on Render. No API keys are stored in the extension.

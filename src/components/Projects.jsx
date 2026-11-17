@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /* ─── Scroll-reveal hook ─── */
@@ -239,33 +239,52 @@ const PROJECTS = [
     techDetails: 'ESP32 microcontrollers with MQTT protocol. Temperature, pressure, and flow sensors feed real-time monitoring dashboards.',
     outcome: 'Automated cross-device industrial food production system',
     tags: ['IoT', 'ESP32', 'MQTT', 'Sensors', 'Electronics'],
-  },
-  {
-    cat: 'chrome',
-    image: '/images/proj-yt-bookmark.png',
-    type: 'Chrome Extension · Manifest V3',
-    title: 'TimeMark',
-    subtitle: 'Browser Extension',
-    gradient: ['#8b0000', '#FF0000'],
-    gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
-    overview:
-      'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
-    bullets: [
-      '📈 Chrome Web Store: 222 installs • 14 active users • 4.9% uninstall rate • #1 region 🇺🇸 USA (84%)',
-      'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
-      'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
-      'Popup panel shows video thumbnail, title, and live playback position updated in real time',
-      'One-click seek to any saved bookmark — sorted by time, with delete-one and clear-all options',
-      'Flat chrome.storage.local structure (ytbm_all array) with per-video filtering — no server, 100% local',
-      'Duplicate guard blocks saves within 2 seconds of an existing bookmark for the same video',
-      'Handles YouTube SPA navigation — MutationObserver re-injects the button across page changes without reload',
-    ],
-    techDetails:
-      'Built with Manifest V3. content.js reads video.currentTime directly from the DOM and injects the bookmark button into .ytp-right-controls. chrome.scripting.executeScript is used by popup.js to seek the video by setting currentTime on the active tab. MutationObserver tracks URL changes for SPA re-injection. Bookmarks stored as a flat array keyed by ytbm_all, filtered client-side by videoId.',
-    outcome: 'Native YouTube integration at v1.4 — 222 installs, 14 active users, 4.9% uninstall rate',
-    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'Content Scripts', 'MutationObserver'],
-    webstore: 'https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea',
-  },
+  }, 
+
+
+{
+  cat: 'chrome',
+  image: '/images/proj-yt-bookmark.png',
+  type: 'Chrome Extension · Manifest V3',
+  title: 'TimeMark ',
+  subtitle: 'Video Timestamp Bookmarks',
+  gradient: ['#8b0000', '#FF0000'],
+  gradientBg: 'linear-gradient(135deg, #3a0000 0%, #8b0000 50%, #FF0000 100%)',
+
+  overview:
+    'A Chrome extension named TimeMark that lets you bookmark exact timestamps in any YouTube video and jump back to them instantly — with a pink in-player button, toast confirmations, and a full popup panel.',
+
+  bullets: [
+    '📈 Chrome Web Store: Version 2.0.1 • 786 installs • 27 users • 5.0 ★ Rating • 2.5% uninstall rate',
+    '🌍 Top regions: Romania (52%), followed by USA (40%)',
+    'Pink bookmark button (#e91e63) injected directly into YouTube player controls with green flash feedback on save',
+    'Toast notification confirms each save with timestamp — warns on duplicates or missing video',
+    'Popup panel shows video thumbnail, title, and live playback position updated in real time',
+    'One-click seek to any saved bookmark — sorted by time, with delete-one and clear-all options',
+    'Flat chrome.storage.local structure (ytbm_all array) with per-video filtering — no server, 100% local',
+    'Duplicate guard blocks saves within 2 seconds of an existing bookmark for the same video',
+    'Handles YouTube SPA navigation — MutationObserver re-injects the button across page changes without reload',
+  ],
+
+  techDetails:
+    'Built with Manifest V3. content.js reads video.currentTime directly from the DOM and injects the bookmark button into .ytp-right-controls. chrome.scripting.executeScript is used by popup.js to seek the video by setting currentTime on the active tab. MutationObserver tracks URL changes for SPA re-injection. Bookmarks stored as a flat array keyed by ytbm_all, filtered client-side by videoId.',
+
+  outcome:
+    'Published on Chrome Web Store — Version 2.0.1, 786 installs, 27 users and a 5.0 ★ rating, with an international audience led by Romania (52%) and USA (40%).',
+
+  tags: [
+    'Chrome Extension',
+    'Manifest V3',
+    'JavaScript',
+    'Chrome Storage API',
+    'Content Scripts',
+    'MutationObserver',
+  ],
+
+  webstore:
+    'https://chromewebstore.google.com/detail/timemark-%E2%80%94-video-timestam/kdpmjbeocligojphcnadcjobbpbkkbea',
+},
+
   {
     cat: 'aiml web dataset',
     image: '/images/proj-banking-chatbot.png',
@@ -425,31 +444,47 @@ const PROJECTS = [
     tags: ['TMDB API', 'Pandas', 'Data Enrichment', 'EDA', 'ML'],
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/animation-movies-complete-dataset-18782029',
   },
-  {
-    cat: 'chrome',
-    image: '/images/proj-balancetab.png',
-    type: 'Chrome Extension · Manifest V3',
-    title: 'BalanceTab',
-    subtitle: 'Gamer + Office New Tab Dashboard',
-    gradient: ['#1a1a1a', '#555555'],
-    gradientBg: 'linear-gradient(135deg, #000000 0%, #1a1a1a 45%, #444444 100%)',
-    overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook.',
-    bullets: [
-      '📈 Chrome Web Store: 257 installs • 33 active users • 5.0 ★ Rating • 7% uninstall rate • #1 region 🇺🇸 USA (73%)',
-      'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
-      'Live clock with real-time weather via Open-Meteo API + browser geolocation',
-      'Smart search bar supporting Google, DuckDuckGo, Bing, YouTube, and GitHub engines',
-      'AI Quick Links panel — one-click access to Claude, ChatGPT, Gemini, Perplexity, Copilot & Mistral',
-      '7 built-in mini-games: Snake, Breakout, Flappy Bird, Cyber Pong, Super Mario, Dash Racer, Space Shooter',
-      'Recent Tabs panel via chrome.sessions API — reopen closed tabs instantly',
-      'Auto-saving Notebook — local notes via chrome.storage.local, never uploaded',
-      'Productivity & Gaming quick-launch dock — Gmail, Slack, Notion, Steam, Discord & more',
-    ],
-    techDetails: 'Built with Manifest V3. Weather from Open-Meteo API via browser geolocation. Recent tabs via chrome.sessions + chrome.tabs APIs. All 7 games on HTML5 Canvas with pure JS game loops. Settings and notebook persisted in chrome.storage.local. Zero dependencies — no npm, no bundler, single HTML + JS file.',
-    outcome: 'Every new tab becomes a gamer dashboard — 257 installs, 33 active users, 5.0 ★ on Chrome Web Store',
-    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Canvas API', 'Open-Meteo API'],
-    webstore: 'https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki',
-  },
+
+{
+  cat: 'chrome',
+  image: '/images/proj-balancetab.png',
+  type: 'Chrome Extension · Manifest V3',
+  title: 'BalanceTab',
+  subtitle: 'Gamer + Office New Tab Dashboard',
+  gradient: ['#1a1a1a', '#555555'],
+  gradientBg: 'linear-gradient(135deg, #000000 0%, #1a1a1a 45%, #444444 100%)',
+
+  overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook.',
+
+  bullets: [
+    '📈 Chrome Web Store: Version 2.11.1 • 819 installs • 51 users • 5.0 ★ Rating',
+    '🌍 Top regions: Romania (49%), followed by USA (37%)',
+    'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
+    'Live clock with real-time weather via Open-Meteo API + browser geolocation',
+    'Smart search bar supporting Google, DuckDuckGo, Bing, YouTube, and GitHub engines',
+    'AI Quick Links panel — one-click access to Claude, ChatGPT, Gemini, Perplexity, Copilot & Mistral',
+    '7 built-in mini-games: Snake, Breakout, Flappy Bird, Cyber Pong, Super Mario, Dash Racer, Space Shooter',
+    'Recent Tabs panel via chrome.sessions API — reopen closed tabs instantly',
+    'Auto-saving Notebook — local notes via chrome.storage.local, never uploaded',
+    'Productivity & Gaming quick-launch dock — Gmail, Slack, Notion, Steam, Discord & more',
+  ],
+
+  techDetails: 'Built with Manifest V3. Weather from Open-Meteo API via browser geolocation. Recent tabs via chrome.sessions + chrome.tabs APIs. All 7 games on HTML5 Canvas with pure JS game loops. Settings and notebook persisted in chrome.storage.local. Zero dependencies — no npm, no bundler, single HTML + JS file.',
+
+  outcome: 'Published on Chrome Web Store — Version 2.11.1, 819 installs, 51 users and a 5.0 ★ rating, with Romania (49%) and USA (37%) leading its audience.',
+
+  tags: [
+    'Chrome Extension',
+    'Manifest V3',
+    'JavaScript',
+    'Canvas API',
+    'Open-Meteo API',
+  ],
+
+  webstore: 'https://chromewebstore.google.com/detail/balancetab-%E2%80%94-gamer-+-offi/nglnanlbnedkffjgncmokibcliabkpki',
+},
+
+
   {
     cat: 'aiml',
     image: '/images/proj-jarvis.png',
@@ -493,32 +528,55 @@ const PROJECTS = [
     tags: ['LLM', 'Benchmarking', 'NLP', 'AI', 'Pandas', 'EDA', 'Model Comparison'],
     kaggle: 'https://www.kaggle.com/datasets/rudrakumargupta/llm-showdown-200-ai-models-57-metrics',
   },
-  {
-    cat: 'chrome',
-    image: '/images/proj-growth-tracker.png',
-    type: 'Chrome Extension · Manifest V3',
-    title: 'Growth Tracker',
-    subtitle: 'Browser Extension',
-    gradient: ['#1e3a0f', '#8db660'],
-    gradientBg: 'linear-gradient(135deg, #0a1f05 0%, #1e3a0f 50%, #4a7c2f 100%)',
-    overview:
-      'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
-    bullets: [
-      '📈 Chrome Web Store: 191 installs • 8 active users • 2.1% uninstall rate • #1 region 🇺🇸 USA (89%)',
-      'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
-      'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
-      'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
-      'YouTube smart detection — classifies educational videos as productive using title keyword matching',
-      '15 achievements across streaks, volume, behavior patterns (Early Bird, Night Owl, Comeback Kid, Century Club)',
-      '4 animated SVG tree themes — Oasis (coconut), Desert (cactus), Sakura, and Midnight — each reacts to productivity %',
-      'Weekly pulse chart, visit history, domain breakdowns, and calendar with daily notes — all stored locally via Chrome Storage API',
-    ],
-    techDetails:
-      'Built with Manifest V3. background.js service worker handles all tracking via chrome.tabs and chrome.idle APIs, with a 1-minute alarm for periodic updates and midnight reset. Site blocking uses chrome.declarativeNetRequest dynamic rules — enabled on focus start, removed on stop. Pomodoro state machine lives in the service worker with chrome.notifications for interval alerts. customDomains synced via chrome.storage.onChanged listener. Four SVG tree renderers (createCoconutTree, createCactusTree, createSakuraTree, createMidnightTree) in tree.js with productivity-driven animations. Achievement engine in calculateAchievements() reads historyLog, targetHistory, and visitHistory.',
-    outcome: 'Published on Chrome Web Store at v2.6.0 — 191 installs, 8 active users, only 2.1% uninstall rate',
-    tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'declarativeNetRequest', 'Chrome Storage API', 'SVG Animation', 'Pomodoro'],
-    webstore: 'https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar',
-  },
+
+
+{
+  cat: 'chrome',
+  image: '/images/proj-growth-tracker.png',
+  type: 'Chrome Extension · Manifest V3',
+  title: 'Growth Tracker',
+  subtitle: 'Productivity Tree',
+  gradient: ['#1e3a0f', '#8db660'],
+  gradientBg: 'linear-gradient(135deg, #0a1f05 0%, #1e3a0f 50%, #4a7c2f 100%)',
+
+  overview:
+    'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
+
+  bullets: [
+    '📈 Chrome Web Store: Version 2.8.0 • 740 installs • 16 users',
+    '🌍 Top regions: Romania (55%), followed by USA (39%)',
+    '🗣️ Language distribution: English (US) (74%) and English (UK) (13%)',
+    '💻 Platform distribution: ChromeOS (31%), Windows (6%), macOS and other operating systems',
+    'Always-on behavioral tracking — tree reflects what Chrome actually sees you doing, not a manually started session',
+    'declarativeNetRequest site blocker activates during focus sessions — blocks distractions, lifts automatically on break or stop',
+    'Pomodoro mode with custom focus/break durations, interval notifications, and auto-blocking per cycle',
+    'YouTube smart detection — classifies educational videos as productive using title keyword matching',
+    '15 achievements across streaks, volume, behavior patterns (Early Bird, Night Owl, Comeback Kid, Century Club)',
+    '4 animated SVG tree themes — Oasis (coconut), Desert (cactus), Sakura, and Midnight — each reacts to productivity %',
+    'Weekly pulse chart, visit history, domain breakdowns, and calendar with daily notes — all stored locally via Chrome Storage API',
+  ],
+
+  techDetails:
+    'Built with Manifest V3. background.js service worker handles all tracking via chrome.tabs and chrome.idle APIs, with a 1-minute alarm for periodic updates and midnight reset. Site blocking uses chrome.declarativeNetRequest dynamic rules — enabled on focus start, removed on stop. Pomodoro state machine lives in the service worker with chrome.notifications for interval alerts. customDomains synced via chrome.storage.onChanged listener. Four SVG tree renderers (createCoconutTree, createCactusTree, createSakuraTree, createMidnightTree) in tree.js with productivity-driven animations. Achievement engine in calculateAchievements() reads historyLog, targetHistory, and visitHistory.',
+
+  outcome:
+    'Published on Chrome Web Store — Version 2.8.0, 740 installs and 16 users, with an international audience led by Romania (55%) and USA (39%).',
+
+  tags: [
+    'Chrome Extension',
+    'Manifest V3',
+    'JavaScript',
+    'declarativeNetRequest',
+    'Chrome Storage API',
+    'SVG Animation',
+    'Pomodoro',
+  ],
+
+  webstore:
+    'https://chromewebstore.google.com/detail/growth-tracker-productivi/npdkgjbiebohlhaielkmojlaailppjoo?hl=en-US&utm_source=ext_sidebar',
+},
+
+
   {
     cat: 'webdev,aiml',
     image: '/images/proj-attendance.png',
@@ -673,19 +731,27 @@ const PROJECTS = [
     tags: ['FastAPI', 'React', 'Vite', 'Ollama', 'Python', 'SSE'],
     github: 'https://github.com/Rudra-Gupta15/Github_Scanner',
   },
-  {
+  
+
+
+{
   cat: 'chrome',
   image: '/images/proj-vaultcraft.png',
   type: 'Chrome Extension · Manifest V3',
   title: 'VaultCraft',
-  subtitle: 'Browser Extension',
-  // VaultCraft
-gradient: ['#FFFFFF', '#0B2545'],
-gradientBg: 'linear-gradient(135deg, #05101a 0%, #0B2545 60%, #1a2f45 100%)',
+  subtitle: 'Smart Inventory & Price Vault',
+
+  gradient: ['#FFFFFF', '#0B2545'],
+  gradientBg: 'linear-gradient(135deg, #05101a 0%, #0B2545 60%, #1a2f45 100%)',
+
   overview:
     'A Chrome extension to organize what you own, track prices across stores, and plan monthly purchases — all stored locally with zero accounts.',
+
   bullets: [
-    '📈 Chrome Web Store: 9 installs • 3 active users • 0% uninstall rate • #1 region 🇺🇸 USA (100%)',
+    '📈 Chrome Web Store: Version 1.2.1 • 559 installs • 5 users • 5.0 ★ rating',
+    '🌍 Top regions: Romania (73%), followed by USA (23%)',
+    '🗣️ Language distribution: English (US) (71%) and English (UK) (29%)',
+    '💻 Platform distribution: ChromeOS (17%), Windows and other operating systems (80%)',
     '📦 Inventory manager — add items with name, category, quantity, and notes',
     'Live price comparison across multiple stores via optional scripting permission',
     'Monthly purchase roadmap — plan what to buy and when',
@@ -694,25 +760,44 @@ gradientBg: 'linear-gradient(135deg, #05101a 0%, #0B2545 60%, #1a2f45 100%)',
     '100% local via Chrome Storage API — no server, no login, no data collection',
     'Welcome and farewell onboarding flows for smooth first-run and uninstall experience',
   ],
+
   techDetails:
     'Built with Manifest V3. Storage abstracted into storage.js with chrome.storage.local. Background service worker uses chrome.alarms for periodic price sync. Optional permissions (tabs, scripting, host_permissions) requested at runtime only when price comparison is triggered — minimal footprint by default.',
-  outcome: 'Published on Chrome Web Store at v1.1 — 9 installs, 3 active users, 0% uninstall rate',
-  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Chrome Storage API', 'chrome.alarms', 'Price Tracking'],
-  webstore: 'https://chromewebstore.google.com/detail/vaultcraft-smart-inventor/aeadbbachelnncoamakagcidapdenglb',
+
+  outcome:
+    'Published on Chrome Web Store — Version 1.2.1, 559 installs, 5 users and a 5.0 ★ rating, with 73% of its regional audience from Romania.',
+
+  tags: [
+    'Chrome Extension',
+    'Manifest V3',
+    'JavaScript',
+    'Chrome Storage API',
+    'chrome.alarms',
+    'Price Tracking',
+  ],
+
+  webstore:
+    'https://chromewebstore.google.com/detail/vaultcraft-smart-inventor/aeadbbachelnncoamakagcidapdenglb',
 },
 
 {
   cat: 'chrome',
   image: '/images/proj-gamevalue.png',
   type: 'Chrome Extension · Manifest V3',
-  title: 'GameValue',
-  subtitle: 'Browser Extension',
+  title: 'GameValue ',
+  subtitle: 'Steam Deal & Price Tracker',
+
   gradient: ['#1a1400', '#FFB000'],
   gradientBg: 'linear-gradient(135deg, #0B0D10 0%, #1a1400 50%, #2A1f00 100%)',
+
   overview:
     'A Chrome extension that finds Steam deals using real price history and gives a buy-vs-wait score — plus wishlist alerts and AI recommendations via a hosted backend.',
+
   bullets: [
-    '🕐 Chrome Web Store: Stats pending — submitted v1.0 with AI-powered deal scoring via hosted backend',
+    '📈 Chrome Web Store: Version 1.1.1 • 547 installs • 6 users • 5.0 ★ rating',
+    '🌍 Top regions: Romania (74%), followed by USA (21%)',
+    '🗣️ Language distribution: English (US) (50%), German (17%) and Russian (17%)',
+    '💻 Platform distribution: ChromeOS (16%), Windows and other operating systems (82%)',
     'Buy-vs-wait score calculated from historical price data — not just current discount',
     'Steam wishlist import — paste your Steam ID and track all wishlist games at once',
     'AI game recommendations via Groq LLM through a hosted Express backend on Render',
@@ -720,13 +805,27 @@ gradientBg: 'linear-gradient(135deg, #05101a 0%, #0B2545 60%, #1a2f45 100%)',
     'Cold-start aware backend fetch — shows "server waking up" message instead of freezing',
     'Steam library browser with category filters and max price slider',
   ],
+
   techDetails:
     'Built with Manifest V3. Frontend in popup.html + app.js with dock-style tab navigation. Backend proxy on Render (steamradar.onrender.com) holds Groq and Steam API keys — no secrets in extension. chrome.alarms drives periodic wishlist checks. chrome.notifications fires deal alerts. Fetch wrapper handles cold-start delays (3s slow threshold, 60s abort timeout) with user-friendly messaging.',
-  outcome: 'Published on Chrome Web Store at v1.0 — stats pending, AI-powered deal scoring via hosted backend, no keys exposed in extension',
-  tags: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'Groq AI', 'CheapShark API', 'Steam API', 'Express', 'Render'],
-  webstore: 'https://chromewebstore.google.com/detail/gamevalue-%E2%80%94-steam-deal-pr/obfhccegbcmojihajljanhnnpfikkhii',
-},
 
+  outcome:
+    'Published on Chrome Web Store — Version 1.1.1, 547 installs, 6 users and 5.0 ★ rating, with Romania accounting for 74% of its regional audience.',
+
+  tags: [
+    'Chrome Extension',
+    'Manifest V3',
+    'JavaScript',
+    'Groq AI',
+    'CheapShark API',
+    'Steam API',
+    'Express',
+    'Render',
+  ],
+
+  webstore:
+    'https://chromewebstore.google.com/detail/gamevalue-%E2%80%94-steam-deal-pr/obfhccegbcmojihajljanhnnpfikkhii',
+},
 
 ];
 

@@ -30,21 +30,35 @@ const TIMELINE = [
   ],
   chips: ['AI/ML', 'LLM', 'Software Development', 'Python', 'Deep Learning', 'Problem Solving'],
   },
-  {
-    date: 'Current',
-    role: 'Chrome Extension Developer',
-    org: 'Chrome Web Store · Independent',
-    type: 'self',
-    accent: '#34c4e8',
-    desc: 'Building and publishing browser extensions on the Chrome Web Store — real tools for real users.',
-    bullets: [
-      'BalanceTab: Productivity and gaming balance dashboard (v2.8).',
-      'TimeMark: Instant video timestamp bookmarking tool (v1.4).',
-      'End-to-end ownership: UI design to store publishing.',
-      'Managing version updates and user feedback on Web Store.',
-    ],
-    chips: ['JavaScript', 'Chrome APIs', 'HTML/CSS', 'Web Store'],
-  },
+
+
+
+{
+  date: 'Current',
+  role: 'Chrome Extension Developer',
+  org: 'Chrome Web Store · Independent',
+  type: 'self',
+  accent: '#34c4e8',
+
+  desc: 'Independently building, publishing and maintaining browser extensions used by an international audience — with 3,451 total installs across five published products.',
+
+  bullets: [
+    'Built 5 Chrome extensions: BalanceTab (productivity dashboard), TimeMark (YouTube bookmarks), Growth Tracker (productivity tracking), VaultCraft (inventory management) and GameValue (Steam deal tracking).',
+    'Owned the complete product lifecycle — ideation, UI/UX, development, testing, publishing, analytics and updates.',
+  ],
+
+  chips: [
+    'JavaScript',
+    'Manifest V3',
+    'Chrome APIs',
+    'HTML/CSS',
+    'Express.js',
+    'REST APIs',
+    'AI Integration',
+  ],
+},
+
+
     {
     date: 'Jan 2026 — Jun 2026',
     role: 'AIML Intern',
