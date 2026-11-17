@@ -732,7 +732,7 @@ export function Publications() {
                 <div className="pub-badge-row">
                   <span className="pub-badge presented" style={{ background: '#3b82f622', border: '1px solid #3b82f666', color: '#60a5fa' }}>BalanceTab</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
-                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.9</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.11.1</span>
                   <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">Gamer + Productivity Dashboard — BalanceTab</h3>
@@ -776,7 +776,7 @@ export function Publications() {
                 <div className="pub-badge-row">
                   <span className="pub-badge presented" style={{ background: '#e91e6322', border: '1px solid #e91e6366', color: '#f06292' }}>TimeMark</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
-                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v1.4</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.0.1</span>
                   <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">YouTube Timestamp Bookmarks — TimeMark</h3>
@@ -820,7 +820,7 @@ export function Publications() {
                 <div className="pub-badge-row">
                   <span className="pub-badge presented" style={{ background: '#14532d22', border: '1px solid #14532d66', color: '#4ade80' }}>Growth Tracker</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
-                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.6</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v2.8.0</span>
                   <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">Productivity Tree — Growth Tracker</h3>
@@ -864,7 +864,7 @@ export function Publications() {
                 <div className="pub-badge-row">
                   <span className="pub-badge presented" style={{ background: '#0B254522', border: '1px solid #0B254566', color: '#60a5fa' }}>VaultCraft</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
-                  <span className="pub-badge conf" style={{ background: '#2E7D3222', border: '1px solid #2E7D3266', color: '#4ade80' }}>v1.1</span>
+                  <span className="pub-badge conf" style={{ background: '#2E7D3222', border: '1px solid #2E7D3266', color: '#4ade80' }}>v1.2.1</span>
                   <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">Smart Inventory Manager — VaultCraft</h3>
@@ -909,7 +909,7 @@ export function Publications() {
                 <div className="pub-badge-row">
                   <span className="pub-badge presented" style={{ background: '#FFB00022', border: '1px solid #FFB00066', color: '#fbbf24' }}>GameValue</span>
                   <span className="pub-badge conf" style={{ background: '#0ea5e922', border: '1px solid #0ea5e966', color: '#38bdf8' }}>EXTENSION</span>
-                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v1.0</span>
+                  <span className="pub-badge conf" style={{ background: '#a855f722', border: '1px solid #a855f766', color: '#c084fc' }}>v1.1.1</span>
                   <span className="pub-badge presented" style={{ background: '#10b98122', border: '1px solid #10b98166', color: '#34d399' }}>🚀 LAUNCHED</span>
                 </div>
                 <h3 className="pub-title">Steam Deal Price Tracker — GameValue</h3>
