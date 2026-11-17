@@ -457,7 +457,7 @@ const PROJECTS = [
   overview: 'A fully custom Chrome new tab replacement that fuses a gamer aesthetic with a productivity dashboard — live clock, real-time weather, smart multi-engine search, 7 built-in mini-games, AI quick links, recent tabs, and a local notebook.',
 
   bullets: [
-    '📈 Chrome Web Store: Version 2.11.1 • 819 installs • 51 users • 5.0 ★ Rating',
+    '📈 Chrome Web Store: Version 2.11.1 • 819 installs • 51 users • 5.0 ★ Rating • 4.5% uninstall rate',
     '🌍 Top regions: Romania (49%), followed by USA (37%)',
     'Replaces new tab with a sleek Orbitron-font dashboard with animated Yin-Yang background',
     'Live clock with real-time weather via Open-Meteo API + browser geolocation',
@@ -543,7 +543,7 @@ const PROJECTS = [
     'A Chrome extension that tracks real browsing behavior all day and grows a live SVG tree based on actual productivity — not just a timer. Includes site blocking, Pomodoro mode, 15 achievements, 4 tree themes, weekly stats, and a full task manager. 100% local, zero accounts.',
 
   bullets: [
-    '📈 Chrome Web Store: Version 2.8.0 • 740 installs • 16 users',
+    '📈 Chrome Web Store: Version 2.8.0 • 740 installs • 16 users • 1.2% uninstall rate',
     '🌍 Top regions: Romania (55%), followed by USA (39%)',
     '🗣️ Language distribution: English (US) (74%) and English (UK) (13%)',
     '💻 Platform distribution: ChromeOS (31%), Windows (6%), macOS and other operating systems',
@@ -748,7 +748,7 @@ const PROJECTS = [
     'A Chrome extension to organize what you own, track prices across stores, and plan monthly purchases — all stored locally with zero accounts.',
 
   bullets: [
-    '📈 Chrome Web Store: Version 1.2.1 • 559 installs • 5 users • 5.0 ★ rating',
+    '📈 Chrome Web Store: Version 1.2.1 • 559 installs • 5 users • 5.0 ★ rating • 0.2% uninstall rate',
     '🌍 Top regions: Romania (73%), followed by USA (23%)',
     '🗣️ Language distribution: English (US) (71%) and English (UK) (29%)',
     '💻 Platform distribution: ChromeOS (17%), Windows and other operating systems (80%)',
@@ -794,7 +794,7 @@ const PROJECTS = [
     'A Chrome extension that finds Steam deals using real price history and gives a buy-vs-wait score — plus wishlist alerts and AI recommendations via a hosted backend.',
 
   bullets: [
-    '📈 Chrome Web Store: Version 1.1.1 • 547 installs • 6 users • 5.0 ★ rating',
+    '📈 Chrome Web Store: Version 1.1.1 • 547 installs • 6 users • 5.0 ★ rating • 0.4% uninstall rate',
     '🌍 Top regions: Romania (74%), followed by USA (21%)',
     '🗣️ Language distribution: English (US) (50%), German (17%) and Russian (17%)',
     '💻 Platform distribution: ChromeOS (16%), Windows and other operating systems (82%)',
