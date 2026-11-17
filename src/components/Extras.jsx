@@ -830,7 +830,6 @@ export function Publications() {
                 <span>📦 Chrome Web Store (v2.8.0)</span>
                 <span>👤 16 Users</span>
                 <span>📥 740 Installs</span>
-                <span>⭐ 5.0/5 Rating</span>
                 <span>🇷🇴 55% Romania · 🇺🇸 39% USA</span>
                 <span>💻 ChromeOS 31% · Windows 6%</span>
                 </div>
